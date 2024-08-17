@@ -2,24 +2,24 @@ NOM -> NixOsModule
 Flake section -> PO: Package Only, PN: Package & NixOsModule
 ### ai-utils
 | Package Name | NOM | Flake | Rust | Descriptions |
-|:------------:|:---:|:-----:|:----:|:------------:|
+|:------------:|:---:|:-----:|:----:| ------------ |
 | [ollama](https://github.com/ollama/ollama)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/ol/ollama/package.nix)) | Yes | No | No | Get up and running with large language models locally |
 | [tabby](https://github.com/TabbyML/tabby)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/ta/tabby/package.nix)) | Yes | No | Yes | Self-hosted AI coding assistant |
 
 ### audio
 | Package Name | NOM | Flake | Rust | Descriptions |
-|:------------:|:---:|:-----:|:----:|:------------:|
+|:------------:|:---:|:-----:|:----:| ------------ |
 | [pipewire](https://gitlab.freedesktop.org/pipewire/pipewire)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/development/libraries/pipewire/default.nix)) | Yes | No | No | Server and user space API to deal with multimedia pipelines |
 
 ### databases
 | Package Name | NOM | Flake | Rust | Descriptions |
-|:------------:|:---:|:-----:|:----:|:------------:|
+|:------------:|:---:|:-----:|:----:| ------------ |
 | [influxdb](https://github.com/influxdata/influxdb)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/servers/nosql/influxdb/default.nix)) | Yes | No | Yes | Open-source distributed time series database |
 | [surrealdb](https://github.com/surrealdb/surrealdb)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/su/surrealdb/package.nix)) | Yes | PO | Yes | Scalable, distributed, collaborative, document-graph database, for the realtime web |
 
 ### desktop
 | Package Name | NOM | Flake | Rust | Descriptions |
-|:------------:|:---:|:-----:|:----:|:------------:|
+|:------------:|:---:|:-----:|:----:| ------------ |
 | [alsa-utils](https://www.alsa-project.org/wiki/Main_Page)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/al/alsa-utils/package.nix)) | No | No | No | ALSA, the Advanced Linux Sound Architecture utils |
 | [cosmic-applets](https://github.com/pop-os/cosmic-applets)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/co/cosmic-applets/package.nix)) | No | PO | Yes | Applets for the COSMIC Desktop Environment |
 | [cosmic-applibrary](https://github.com/pop-os/cosmic-applibrary)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/co/cosmic-applibrary/package.nix)) | No | PO | Yes | Application Template for the COSMIC Desktop Environment |
@@ -43,7 +43,7 @@ Flake section -> PO: Package Only, PN: Package & NixOsModule
 
 ### localization
 | Package Name | NOM | Flake | Rust | Descriptions |
-|:------------:|:---:|:-----:|:----:|:------------:|
+|:------------:|:---:|:-----:|:----:| ------------ |
 | [feather](https://github.com/feathericons/feather) | No | No | No |  Simply beautiful open-source icons |
 | [inter](https://github.com/rsms/inter)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/data/fonts/inter/default.nix)) | No | No | No | Typeface specially designed for user interfaces |
 | [nerdfonts](https://github.com/ryanoasis/nerd-fonts)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/data/fonts/nerdfonts/default.nix)) | No | No | No | Iconic font aggregator, collection, & patcher. 3,600+ icons, 50+ patched fonts |
@@ -51,7 +51,7 @@ Flake section -> PO: Package Only, PN: Package & NixOsModule
 
 ### misc
 | Package Name | NOM | Flake | Rust | Descriptions |
-|:------------:|:---:|:-----:|:----:|:------------:|
+|:------------:|:---:|:-----:|:----:| ------------ |
 | [android-tools](https://github.com/nmeum/android-tools)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/misc/android-tools/default.nix)) | Yes | No | No | Android SDK platform tools |
 | [envision](https://gitlab.com/gabmus/envision)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/en/envision/package.nix)) | Yes | No | Yes | UI for building, configuring and running Monado, the open source OpenXR runtime (with build environment) |
 | [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/filesystems/garage/default.nix)) | Yes | PO | Yes | S3-compatible object store for small self-hosted geo-distributed deployments |
@@ -63,7 +63,7 @@ Flake section -> PO: Package Only, PN: Package & NixOsModule
 
 ### network
 | Package Name | NOM | Flake | Rust | Descriptions |
-|:------------:|:---:|:-----:|:----:|:------------:|
+|:------------:|:---:|:-----:|:----:| ------------ |
 | [bandwhich](https://github.com/imsnif/bandwhich)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/networking/bandwhich/default.nix)) | Yes | No | Yes | CLI utility for displaying current network utilization |
 | [hickory-dns](https://github.com/hickory-dns/hickory-dns)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/servers/dns/trust-dns/default.nix)) | Yes | No | Yes | Rust based DNS client, server, and resolver |
 | [networkmanager](https://gitlab.freedesktop.org/NetworkManager/NetworkManager)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/networking/networkmanager/default.nix)) | Yes | No | No | Network configuration and management tool |
@@ -76,7 +76,7 @@ Flake section -> PO: Package Only, PN: Package & NixOsModule
 
 ### nix-utils
 | Package Name | NOM | Flake | Rust | Descriptions |
-|:------------:|:---:|:-----:|:----:|:------------:|
+|:------------:|:---:|:-----:|:----:| ------------ |
 | [nh](https://github.com/viperML/nh)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/nh/nh/package.nix)) | Yes | PN | Yes | Yet another nix cli helper |
 | [nix-ld-rs](https://github.com/nix-community/nix-ld-rs)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/ni/nix-ld-rs/package.nix)) | Yes | PO | Yes | Run unpatched dynamic binaries on NixOS (rust version) |
 | [nixseparatedebuginfod](https://github.com/symphorien/nixseparatedebuginfod)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/ni/nixseparatedebuginfod/package.nix)) | Yes | PN | Yes | Downloads and provides debug symbols and source code for nix derivations to gdb and other debuginfod-capable debuggers as needed |
@@ -84,13 +84,13 @@ Flake section -> PO: Package Only, PN: Package & NixOsModule
 
 ### observability
 | Package Name | NOM | Flake | Rust | Descriptions |
-|:------------:|:---:|:-----:|:----:|:------------:|
+|:------------:|:---:|:-----:|:----:| ------------ |
 | [below](https://github.com/facebookincubator/below)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/os-specific/linux/below/default.nix)) | Yes | No | Yes | Time traveling resource monitor for modern Linux systems |
 | [vector](https://github.com/vectordotdev/vector)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/misc/vector/default.nix)) | Yes | No | Yes | High-performance observability data pipeline |
 
 ### search
 | Package Name | NOM | Flake | Rust | Descriptions |
-|:------------:|:---:|:-----:|:----:|:------------:|
+|:------------:|:---:|:-----:|:----:| ------------ |
 | [meilisearch](https://github.com/meilisearch/meilisearch)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/servers/search/meilisearch/default.nix)) | Yes | No | Yes | Powerful, fast, and an easy to use search engine |
 | [qdrant](https://github.com/qdrant/qdrant)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/servers/search/qdrant/default.nix)) | Yes | No | Yes | Vector Search Engine for the next generation of AI applications |
 | [quickwit](https://github.com/quickwit-oss/quickwit)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/servers/search/quickwit/default.nix)) | Yes | No | Yes | Sub-second search & analytics engine on cloud storage |
@@ -98,12 +98,12 @@ Flake section -> PO: Package Only, PN: Package & NixOsModule
 
 ### security
 | Package Name | NOM | Flake | Rust | Descriptions |
-|:------------:|:---:|:-----:|:----:|:------------:|
+|:------------:|:---:|:-----:|:----:| ------------ |
 WIP
 
 ### shells
 | Package Name | NOM | Flake | Rust | Descriptions |
-|:------------:|:---:|:-----:|:----:|:------------:|
+|:------------:|:---:|:-----:|:----:| ------------ |
 | [bash](https://www.gnu.org/software/bash)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/shells/bash/5.nix)) | Yes | No | No | GNU Bourne-Again Shell, the de facto standard shell on Linux |
 | [blesh](https://github.com/akinomyoga/ble.sh)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/shells/bash/blesh/default.nix)) | Yes | No | No | Bash Line Editor -- a full-featured line editor written in pure Bash |
 | [fish](https://github.com/fish-shell/fish-shell)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/shells/fish/default.nix)) | Yes | No | Yes | Smart and user-friendly command line shell |
@@ -111,7 +111,7 @@ WIP
 
 ### virtualization
 | Package Name | NOM | Flake | Rust | Descriptions |
-|:------------:|:---:|:-----:|:----:|:------------:|
+|:------------:|:---:|:-----:|:----:| ------------ |
 | [cloud-hypervisor](https://github.com/cloud-hypervisor/cloud-hypervisor)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/virtualization/cloud-hypervisor/default.nix)) | No | No | Yes | Open source Virtual Machine Monitor (VMM) that runs on top of KVM |
 | [cntr](https://github.com/Mic92/cntr)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/virtualization/cntr/default.nix)) | No | PO | Yes | Container debugging tool based on FUSE |
 | [conmon-rs](https://github.com/containers/conmon-rs)([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/virtualization/conmon-rs/default.nix)) | No | No | Yes | OCI container runtime monitor written in Rust |
