@@ -1,0 +1,31 @@
+cursor = "|"
+
+[window]
+decorations = "Disabled"
+
+[renderer]
+performance = "High"
+backend = "Automatic"
+disable-unfocused-render = false
+
+[fonts]
+
+[fonts.regular]
+family = "Inconsolata Nerd Font"
+style = "Regular"
+weight = 400
+
+[fonts.bold]
+family = "Inconsolata Nerd Font"
+style = "Bold"
+weight = 800
+
+[fonts.italic]
+family = "Inconsolata Nerd Font"
+style = "Italic"
+weight = 400
+
+[fonts.bold-italic]
+family = "Inconsolata Nerd Font"
+style = "Bold Italic"
+weight = 800

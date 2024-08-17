@@ -1,0 +1,21 @@
+display-name = "Clément DOUIN"
+downloads-dir = "~/downloads"
+signature = "Cordialement,\nClément DOUIN"
+
+[accounts.proton]
+default = true
+email = "clement.douin@proton.me"
+
+backend = "imap"
+imap.host = "127.0.0.1"
+imap.port = 1143
+imap.encryption = false
+imap.login = "clement.douin@proton.me"
+imap.passwd.cmd = "pass show proton"
+
+message.send.backend = "smtp"
+smtp.host = "127.0.0.1"
+smtp.port = 1025
+smtp.encryption = false
+smtp.login = "clement.douin@proton.me"
+smtp.passwd.cmd = "pass show proton"

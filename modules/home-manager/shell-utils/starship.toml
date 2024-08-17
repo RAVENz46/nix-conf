@@ -1,0 +1,70 @@
+format = """
+[░▒▓](fg:#40A02B)\
+$os\
+$username\
+$shell\
+[░▒▓](bg:#40A02B fg:#179299)\
+$nix_shell\
+[░▒▓](bg:#179299 fg:#04A5E5)\
+$git_branch\
+$git_status\
+[░▒▓](bg:#04A5E5 fg:#209FB5)\
+$container\
+[░▒▓](bg:#209FB5 fg:#1E66F5)\
+$directory\
+[ ](fg:#1E66F5)\
+"""
+
+[os]
+style = "bg:#40A02B"
+format = "[ $name]($style)"
+disabled = true             # Disabled by default
+
+[username]
+show_always = true
+style_user = "bg:#40A02B"
+style_root = "bg:#40A02B"
+format = '[ 󱡮 $user]($style)'
+disabled = false
+
+[shell]
+style = "bg:#40A02B"
+bash_indicator = 'bash'
+fish_indicator = 'fish'
+nu_indicator = 'nush'
+powershell_indicator = 'pwsh'
+format = '[󰄏$indicator]($style)'
+disabled = false
+
+[nix_shell]
+symbol = "󱄅 "
+style = "bg:#179299"
+format = '[ $symbol$state( \($name\)) ]($style)'
+heuristic = true
+
+[git_branch]
+symbol = ""
+style = "bg:#04A5E5"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:#04A5E5"
+format = '[ $all_status$ahead_behind ]($style)'
+
+[container]
+symbol = "󰩘 "
+style = "bg:#209FB5"
+format = '[$symbol \[$name\]]($style)'
+
+[directory]
+style = "bg:#1E66F5"
+format = '[ $path ]($style)'
+truncation_length = 5
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"~" = "󰋜 "
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
