@@ -65,7 +65,7 @@ Flake section -> PO: Package Only, PN: Package & NixOsModule
 | Package Name | NOM | Flake | Rust | Descriptions |
 |:------------:|:---:|:-----:|:----:| ------------ |
 | [bandwhich](https://github.com/imsnif/bandwhich) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/networking/bandwhich/default.nix)) | Yes | No | Yes | CLI utility for displaying current network utilization |
-| [hickory-dns](https://github.com/hickory-dns/hickory-dns) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/servers/dns/trust-dns/default.nix)) | Yes | No | Yes | Rust based DNS client, server, and resolver |
+| [hickory-dns](https://github.com/hickory-dns/hickory-dns) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/hi/hickory-dns/package.nix)) | Yes | No | Yes | Rust based DNS client, server, and resolver |
 | [networkmanager](https://gitlab.freedesktop.org/NetworkManager/NetworkManager) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/networking/networkmanager/default.nix)) | Yes | No | No | Network configuration and management tool |
 | [nftables](https://netfilter.org/projects/nftables) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/os-specific/linux/nftables/default.nix)) | Yes | No | No | Project that aims to replace the existing {ip,ip6,arp,eb}tables framework |
 | [rosenpass](https://github.com/rosenpass/rosenpass) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/networking/rosenpass/default.nix)) | Yes | PO | Yes | Build post-quantum-secure VPNs with WireGuard |
