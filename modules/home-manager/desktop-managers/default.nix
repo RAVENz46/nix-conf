@@ -144,7 +144,8 @@ in
           settings = {
             binds = with config.lib.niri.actions; {
               "Ctrl+Alt+Q".action = quit;
-              "Super+A".action = spawn "anyrun";
+              #"Super+A".action = spawn "anyrun";
+              "Super+A".action = spawn "cosmic-launcher";
               "Super+Q".action = close-window;
               "Super+L".action = focus-column-left;
               "Super+H".action = focus-column-right;
