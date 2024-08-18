@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }:
 
@@ -115,26 +116,6 @@ in
 
     (mkIf (builtins.elem "niri" cfg.compositors) {
       programs = {
-        anyrun = {
-          enable = true;
-          #package = inputs.anyrun.packages.${pkgs.system}.anyrun-with-all-plugins;
-          config = {
-            plugins = [ ];
-            #x = { fraction = 0.5; };
-            #y = { fraction = 0.3; };
-            y.absolute = 15;
-            width = { fraction = 0.3; };
-            hideIcons = false;
-            #ignoreExclusiveZones = false;
-            #layer = "overlay";
-            #hidePluginInfo = false;
-            hidePluginInfo = true;
-            closeOnClick = true;
-            #showResultsImmediately = false;
-            #maxEntries = null;
-          };
-          extraCss = builtins.readFile ./anyrun.css;
-        };
         ironbar = {
           enable = true;
         };
@@ -216,11 +197,6 @@ in
       xdg.configFile."ironbar" = {
         source = "${./ironbar}";
         recursive = true;
-      };
-      nix.settings = {
-        builders-use-substitutes = true;
-        extra-substituters = [ "https://anyrun.cachix.org" ];
-        extra-trusted-public-keys = [ "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s=" ];
       };
     })
   ];

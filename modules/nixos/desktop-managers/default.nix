@@ -39,6 +39,10 @@ in
         sessionVariables = {
           NIXOS_OZONE_WL = "1";
         };
+        systemPackages = with pkgs; [
+          cosmic-launcher
+          pop-launcher
+        ];
       };
 
       hardware.graphics = {
@@ -60,9 +64,11 @@ in
           adwaita-icon-theme
           cosmic-edit
           cosmic-files
+          cosmic-launcher
           cosmic-term
           hicolor-icon-theme
           pop-icon-theme
+          pop-launcher
         ];
       };
 

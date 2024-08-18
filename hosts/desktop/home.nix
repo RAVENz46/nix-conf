@@ -324,7 +324,6 @@
     ]
     ++ (with inputs; [
       android.hmModules.android
-      anyrun.homeManagerModules.default
       catppuccin.homeManagerModules.catppuccin
       ironbar.homeManagerModules.default
       jerry.homeManagerModules.default
