@@ -9,8 +9,8 @@
 
 {
   home = {
-    username = "ravenz46";
-    homeDirectory = "/home/ravenz46";
+    username = lib.mkForce "ravenz46";
+    homeDirectory = lib.mkForce "/home/ravenz46";
     stateVersion = "24.11";
   };
   programs = {
