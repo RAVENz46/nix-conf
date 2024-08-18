@@ -69,7 +69,7 @@ Flake Section -> PO: PackageOnly, PH: Package & HomeManagerModule
 | [szyszka](https://github.com/qarmin/szyszka) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/misc/szyszka/default.nix)) | No | No | Yes | Simple but powerful and fast bulk file renamer |
 | [warp](https://gitlab.gnome.org/World/warp) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/networking/warp/default.nix)) | No | No | Yes | Fast and secure file transfer |
 
-### desktop
+### desktop-managers
 | Package Name | HMM | Flake | Rust | Descriptions |
 |:------------:|:---:|:-----:|:----:| ------------ |
 wip

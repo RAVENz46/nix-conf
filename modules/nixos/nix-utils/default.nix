@@ -35,11 +35,6 @@ in
     programs = {
       nh = {
         enable = notExcluded pkgs.nh;
-        flake = ../../.;
-        clean = {
-          enable = true;
-          extraArgs = "--keep 2";
-        };
       };
 
       nix-ld = {

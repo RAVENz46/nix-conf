@@ -109,6 +109,11 @@
       warp
     ];
   };
+  desktop-managers = {
+    enable = false;
+    excludePackages = with pkgs; [
+    ];
+  };
   git-utils-cli = {
     enable = false;
     excludePackages = with pkgs; [

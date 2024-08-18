@@ -17,7 +17,7 @@ Flake section -> PO: Package Only, PN: Package & NixOsModule
 | [influxdb](https://github.com/influxdata/influxdb) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/servers/nosql/influxdb/default.nix)) | Yes | No | Yes | Open-source distributed time series database |
 | [surrealdb](https://github.com/surrealdb/surrealdb) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/su/surrealdb/package.nix)) | Yes | PO | Yes | Scalable, distributed, collaborative, document-graph database, for the realtime web |
 
-### desktop
+### desktop-managers
 | Package Name | NOM | Flake | Rust | Descriptions |
 |:------------:|:---:|:-----:|:----:| ------------ |
 | [alsa-utils](https://www.alsa-project.org/wiki/Main_Page) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/al/alsa-utils/package.nix)) | No | No | No | ALSA, the Advanced Linux Sound Architecture utils |

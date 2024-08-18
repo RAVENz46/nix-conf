@@ -181,11 +181,11 @@
       homeManagerModules = import ./modules/home-manager;
 
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
+        desktop = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
           };
-          modules = [ ./hosts/nixos ];
+          modules = [ ./hosts/desktop ];
         };
         wsl = nixpkgs.lib.nixosSystem {
           specialArgs = {

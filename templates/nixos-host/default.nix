@@ -19,7 +19,7 @@
     ];
   };
   audio.enable = false;
-  desktop = {
+  desktop-managers = {
     compositors = [
       "cosmic"
       "niri"
@@ -158,7 +158,6 @@
   ];
 
   users.users = lib.genAttrs config.userList (f: {
-    name = "ravenz46";
     isNormalUser = true;
     packages = with pkgs; [ ];
   });
