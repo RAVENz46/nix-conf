@@ -1,4 +1,5 @@
 {
+  lib, 
   pkgs,
   inputs,
   outputs,
@@ -8,8 +9,8 @@
 
 {
   home = {
-    username = osConfig.users.users.user.name;
-    homeDirectory = "/home/${osConfig.users.users.user.name}";
+    username = "ravenz46";
+    homeDirectory = "/home/ravenz46";
     stateVersion = "24.11";
   };
   programs = {

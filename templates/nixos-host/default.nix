@@ -9,32 +9,8 @@
 }:
 
 {
-  imports =
-    [
-      (modulesPath + "/profiles/hardened.nix")
-      ./configuration.nix
-      ./disk-config.nix
-      ./hardware-configuration.nix
-    ]
-    ++ (with inputs; [
-      catppuccin.nixosModules.catppuccin
-      disko.nixosModules.default
-      home-manager.nixosModules.default
-      lanzaboote.nixosModules.lanzaboote
-      musnix.nixosModules.default
-      niri-flake.nixosModules.niri
-      nix-gaming.nixosModules.pipewireLowLatency
-      nix-gaming.nixosModules.platformOptimizations
-      nix-index-database.nixosModules.nix-index
-      nixos-cosmic.nixosModules.default
-      #nixvim.nixosModules.default
-      nur.nixosModules.nur
-      nyx.nixosModules.default
-    ])
-    ++ (builtins.attrValues outputs.nixosModules);
-
   networking.hostName = "";
-  userList = [ "user" ];
+  userList = [ "" ];
   ai-utils = {
     enable = false;
     excludePackages = with pkgs; [
@@ -187,5 +163,29 @@
     packages = with pkgs; [ ];
   });
 
-  system.stateVersion = "23.05"; # Don't touch it
+  system.stateVersion = "";
+
+  imports =
+    [
+      (modulesPath + "/profiles/hardened.nix")
+      ./configuration.nix
+      ./disk-config.nix
+      ./hardware-configuration.nix
+    ]
+    ++ (with inputs; [
+      catppuccin.nixosModules.catppuccin
+      disko.nixosModules.default
+      home-manager.nixosModules.default
+      lanzaboote.nixosModules.lanzaboote
+      musnix.nixosModules.default
+      niri-flake.nixosModules.niri
+      nix-gaming.nixosModules.pipewireLowLatency
+      nix-gaming.nixosModules.platformOptimizations
+      nix-index-database.nixosModules.nix-index
+      nixos-cosmic.nixosModules.default
+      #nixvim.nixosModules.default
+      nur.nixosModules.nur
+      nyx.nixosModules.default
+    ])
+    ++ (builtins.attrValues outputs.nixosModules);
 }

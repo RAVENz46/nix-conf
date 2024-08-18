@@ -10,8 +10,7 @@
 
 {
   networking.hostName = "nixos";
-  #userList = [ "ravenz46" ];
-  userList = [ "user" ];
+  userList = [ "ravenz46" ];
   ai-utils = {
     enable = false;
     excludePackages = with pkgs; [
@@ -141,7 +140,6 @@
   ];
 
   users.users = lib.genAttrs config.userList (f: {
-    name = "ravenz46";
     isNormalUser = true;
     packages = with pkgs; [ ];
   });

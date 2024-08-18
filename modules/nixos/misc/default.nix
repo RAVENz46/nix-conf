@@ -29,7 +29,7 @@ in
     };
 
     users.users = mkIf config.programs.adb.enable (
-      lib.genAttrs config.userList (f: {
+      genAttrs config.userList (f: {
         extraGroups = [ "adbusers" ];
       })
     );

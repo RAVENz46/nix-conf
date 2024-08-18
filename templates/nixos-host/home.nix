@@ -10,8 +10,8 @@
 
 {
   home = {
-    username = osConfig.users.users.user.name;
-    homeDirectory = "/home/${osConfig.users.users.user.name}";
+    username = "";
+    homeDirectory = "/home/";
     stateVersion = "24.05";
   };
   programs.home-manager.enable = true;
@@ -497,7 +497,6 @@
       catppuccin.homeManagerModules.catppuccin
       ironbar.homeManagerModules.default
       jerry.homeManagerModules.default
-      niri-flake.homeModules.niri
       nix-index-database.hmModules.nix-index
       nixvim.homeManagerModules.default
       nur.hmModules.nur

@@ -64,7 +64,7 @@ in
         tctiEnvironment.enable = true;
       };
     };
-    users.users = lib.genAttrs config.userList (f: {
+    users.users = genAttrs config.userList (f: {
       extraGroups = [
         "tss"
         "wheel"

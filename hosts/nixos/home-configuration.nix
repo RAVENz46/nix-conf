@@ -77,7 +77,7 @@
   programs = {
     git = {
       userName = "RAVENz46";
-      userEmail = "${builtins.readFile ./git-email.txt}";
+      #userEmail = "${builtins.readFile ./git-email.txt}";
     };
 
     sapling = {

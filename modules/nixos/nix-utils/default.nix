@@ -35,7 +35,7 @@ in
     programs = {
       nh = {
         enable = notExcluded pkgs.nh;
-        flake = /home/${config.users.users.user.name}/nix;
+        flake = ../../.;
         clean = {
           enable = true;
           extraArgs = "--keep 2";
