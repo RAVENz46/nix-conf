@@ -118,7 +118,7 @@ in
       programs = {
         anyrun = {
           enable = true;
-          package = inputs.anyrun.packages.${pkgs.system}.anyrun-with-all-plugins;
+          #package = inputs.anyrun.packages.${pkgs.system}.anyrun-with-all-plugins;
           config = {
             plugins = [ ];
             #x = { fraction = 0.5; };
@@ -144,7 +144,6 @@ in
           settings = {
             binds = with config.lib.niri.actions; {
               "Ctrl+Alt+Q".action = quit;
-              #"Super+A".action = spawn "anyrun";
               "Super+A".action = spawn "cosmic-launcher";
               "Super+Q".action = close-window;
               "Super+L".action = focus-column-left;
