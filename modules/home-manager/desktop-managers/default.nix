@@ -144,12 +144,12 @@ in
               "Ctrl+Alt+Q".action = quit;
               "Super+A".action = spawn "cosmic-launcher";
               "Super+Q".action = close-window;
-              "Super+L".action = focus-column-left;
-              "Super+H".action = focus-column-right;
+              "Super+H".action = focus-column-left;
+              "Super+L".action = focus-column-right;
               "Super+J".action = focus-window-or-workspace-down;
               "Super+K".action = focus-window-or-workspace-up;
-              "Super+Shift+L".action = move-column-left;
-              "Super+Shift+H".action = move-column-right;
+              "Super+Shift+H".action = move-column-left;
+              "Super+Shift+L".action = move-column-right;
               "Super+Shift+J".action = move-window-down-or-to-workspace-down;
               "Super+Shift+K".action = move-window-up-or-to-workspace-up;
               "Super+S".action = consume-window-into-column;
