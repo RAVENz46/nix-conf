@@ -45,6 +45,8 @@ in
         ];
       };
 
+      gtk.iconCache.enable = true;
+
       hardware.graphics = {
         enable = true;
       };

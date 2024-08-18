@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  inputs,
   ...
 }:
 
@@ -166,10 +165,8 @@ in
               "Ctrl+Alt+H".action = show-hotkey-overlay;
             };
             spawn-at-startup = [
-              #{ command = [ "${lib.getExe pkgs.ironbar}" ]; }
-              #{ command = [ "${lib.getExe pkgs.swww}" ]; }
               { command = [ "ironbar" ]; }
-              { command = [ "swww" ]; }
+              { command = [ "swww-daemon" ]; }
             ];
             input = {
               mouse = {
