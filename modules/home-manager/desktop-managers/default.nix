@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  inputs,
   ...
 }:
 
@@ -140,7 +139,6 @@ in
           enable = true;
         };
         niri = {
-          #enable = true;
           settings = {
             binds = with config.lib.niri.actions; {
               "Ctrl+Alt+Q".action = quit;

@@ -43,7 +43,6 @@ in
 
       hardware.graphics = {
         enable = true;
-        extraPackages = with pkgs; [ ];
       };
 
       services = {
@@ -58,15 +57,13 @@ in
     (mkIf (builtins.elem "cosmic" cfg.compositors) {
       environment = {
         cosmic.excludePackages = with pkgs; [
-          #adwaita-icon-theme
+          adwaita-icon-theme
           cosmic-edit
           cosmic-files
           cosmic-term
-          #hicolor-icon-theme
-          #pop-icon-theme
+          hicolor-icon-theme
+          pop-icon-theme
         ];
-
-        systemPackages = subtractLists cfg.excludePackages (with pkgs; [ ]);
       };
 
       security.rtkit.enable = mkForce false;
