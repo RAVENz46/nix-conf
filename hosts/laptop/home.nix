@@ -459,7 +459,7 @@
       zoha4
     ];
   };
-  text-editor-cli = {
+  text-editors-cli = {
     enable = true;
     excludePackage = with pkgs; [
       amp
@@ -467,7 +467,7 @@
       #neovim
     ];
   };
-  text-editor-gui = {
+  text-editors-gui = {
     enable = true;
     excludePackage = with pkgs; [
       #cosmic-edit

@@ -54,7 +54,7 @@
   };
   nix-utils = {
     enable = false;
-    excludedPackages = with pkgs; [
+    excludePackages = with pkgs; [
       nh
       nix-ld-rs
       nixseparatedebuginfod
