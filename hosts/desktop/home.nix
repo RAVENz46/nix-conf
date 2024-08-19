@@ -1,5 +1,5 @@
 {
-  lib, 
+  lib,
   pkgs,
   inputs,
   outputs,
@@ -9,7 +9,7 @@
 
 {
   home = {
-    username = lib.mkForce "ravenz46";
+    username = "ravenz46";
     homeDirectory = lib.mkForce "/home/ravenz46";
     stateVersion = "24.11";
   };
@@ -18,7 +18,6 @@
   };
   systemd.user.startServices = "sd-switch";
   isNixOS = true;
-  #catppuccin = { enable = true; flavor = "mocha"; accent = "teal"; };
   catppuccin = {
     enable = true;
     inherit (osConfig.catppuccin) flavor;

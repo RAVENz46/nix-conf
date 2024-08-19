@@ -22,6 +22,7 @@
       inputs.websurfx.packages.${system}.websurfx
       #voicevox
 
+      #espanso #hm module available
       #keypunch
       simplex-chat-desktop
       netop

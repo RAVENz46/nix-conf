@@ -24,4 +24,3 @@ Packages that do not meet these criteria will be removed.
 - [ ] Make firefox settings completely declarative
 - [ ] Make `nix flake show` work
 - [ ] Make template usable
-- [ ] Return error when excludePackages wrong (checkListOfEnum?)

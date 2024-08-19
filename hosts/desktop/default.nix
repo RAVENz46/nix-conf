@@ -10,8 +10,8 @@
 
 {
   networking.hostName = "desktop";
-  userList = [ "user" ];
-  #userList = [ "ravenz46" ];
+  userList = [ "ravenz46" ];
+
   ai-utils = {
     enable = false;
     excludePackages = with pkgs; [
@@ -143,8 +143,6 @@
   users.users = lib.genAttrs config.userList (f: {
     isNormalUser = true;
     packages = with pkgs; [ ];
-    
-    name = "ravenz46";
   });
 
   home-manager = {
@@ -153,7 +151,7 @@
     };
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.user = import ./home.nix;
+    users.ravenz46 = import ./home.nix;
   };
 
   system.stateVersion = "24.11";

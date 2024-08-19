@@ -11,6 +11,7 @@
 {
   networking.hostName = "";
   userList = [ "" ];
+
   ai-utils = {
     enable = false;
     excludePackages = with pkgs; [
@@ -161,6 +162,15 @@
     isNormalUser = true;
     packages = with pkgs; [ ];
   });
+
+  home-manager = {
+    extraSpecialArgs = {
+      inherit inputs outputs;
+    };
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users. = import ./home.nix;
+  };
 
   system.stateVersion = "";
 
