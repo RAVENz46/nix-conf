@@ -1,5 +1,4 @@
 {
-  lib,
   pkgs,
   inputs,
   outputs,
@@ -10,7 +9,7 @@
 {
   home = {
     username = "ravenz46";
-    homeDirectory = lib.mkForce "/home/ravenz46";
+    homeDirectory = "/home/ravenz46";
     stateVersion = "24.11";
   };
   programs = {
