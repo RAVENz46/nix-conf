@@ -40,9 +40,6 @@ in
       networkmanager = {
         enable = true;
       };
-      nftables = {
-        enable = true;
-      };
     };
 
     programs = {
