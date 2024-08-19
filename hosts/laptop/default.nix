@@ -48,7 +48,7 @@
       #sniffnet
       tailscale
       trippy
-      hickory-dns
+      #hickory-dns
       wstunnel
     ];
   };
