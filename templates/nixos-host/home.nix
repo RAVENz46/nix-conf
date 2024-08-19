@@ -461,7 +461,7 @@
   };
   text-editors-cli = {
     enable = false;
-    excludePackage = with pkgs; [
+    excludePackages = with pkgs; [
       amp
       helix
       neovim
@@ -469,7 +469,7 @@
   };
   text-editors-gui = {
     enable = false;
-    excludePackage = with pkgs; [
+    excludePackages = with pkgs; [
       cosmic-edit
       lapce
       inputs.lem.packages.${system}.lem-sdl2
