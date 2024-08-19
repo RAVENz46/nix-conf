@@ -27,12 +27,12 @@
   };
   localization.enable = true;
   misc = {
-    enable = false;
+    enable = true;
     excludePackages = with pkgs; [
       android-tools
       envision
       garage
-      kanata
+      #kanata
       lact
       mouse-actions
       rkvm
