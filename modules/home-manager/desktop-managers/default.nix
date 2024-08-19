@@ -31,7 +31,7 @@ in
   };
 
   config = mkMerge [
-    (mkIf (!(cfg.compositors == [ ])) {
+    (mkIf (cfg.compositors != [ ]) {
       home.pointerCursor = {
         name = "Ayabe";
         package = pkgs.ayabe-cursor;
@@ -63,9 +63,8 @@ in
       };
     })
 
-    (mkIf (builtins.elem "cosmic" cfg.compositors) {
-    })
-    
+    (mkIf (builtins.elem "cosmic" cfg.compositors) { })
+
     (mkIf (builtins.elem "gnome" cfg.compositors) {
       home.packages =
         (with pkgs; [
@@ -98,14 +97,9 @@ in
       # or run "dconf watch /" and change settings
       dconf.settings = { };
     })
-    
+
     (mkIf (builtins.elem "kde" cfg.compositors) {
-      home.packages =
-        (with pkgs; [
-          application-title-bar
-        ])
-        ++ (with pkgs.kdePackages; [
-        ]);
+      home.packages = (with pkgs; [ application-title-bar ]) ++ (with pkgs.kdePackages; [ ]);
 
       programs.plasma = {
         enable = true;
@@ -180,7 +174,7 @@ in
               };
             };
             cursor = {
-              size = config.home.pointerCursor.size;
+              inherit (config.home.pointerCursor) size;
               theme = config.home.pointerCursor.name;
             };
             layout = {

@@ -25,7 +25,9 @@ in
 
   config = mkIf cfg.enable {
     home.packages = subtractLists cfg.excludePackages (
-      with pkgs; [ inputs.nix-software-center.packages.${system}.default ] ++ optionals config.isNixOS [ inputs.nixos-conf-editor.packages.${system}.default ]
+      with pkgs;
+      [ inputs.nix-software-center.packages.${system}.default ]
+      ++ optionals config.isNixOS [ inputs.nixos-conf-editor.packages.${system}.default ]
     );
   };
 }

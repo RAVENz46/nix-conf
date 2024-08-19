@@ -22,7 +22,6 @@
   environment = {
     memoryAllocator.provider = lib.mkForce "libc";
   };
-  
 
   hardware.enableRedistributableFirmware = true;
 }

@@ -8,7 +8,7 @@ _:
     #dprint.enable = true;
     just.enable = true;
     #nickel.enable = true;
-    nixfmt-rfc-style.enable = true;
+    nixfmt.enable = true;
     #ruff.enable = true;
     statix.enable = true;
     stylua.enable = true;

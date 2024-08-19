@@ -95,9 +95,7 @@ in
 
     (mkIf (builtins.elem "niri" cfg.compositors) {
       environment = {
-        systemPackages = with pkgs; [
-          swww
-        ];
+        systemPackages = with pkgs; [ swww ];
       };
 
       programs = {

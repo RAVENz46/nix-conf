@@ -19,8 +19,8 @@
   isNixOS = true;
   catppuccin = {
     enable = true;
-    flavor = osConfig.catppuccin.flavor;
-    accent = osConfig.catppuccin.accent;
+    inherit (osConfig.catppuccin) flavor;
+    inherit (osConfig.catppuccin) accent;
   };
 
   ai-utils = {
@@ -34,7 +34,7 @@
     enable = false;
     excludePackages = with pkgs; [
       scrcpy
-      universal-android-debloater 
+      universal-android-debloater
     ];
   };
   animations = {
@@ -110,9 +110,11 @@
     ];
   };
   desktop-managers = {
-    compositors = [ "cosmic" "niri" ];
-    excludePackages = with pkgs; [
+    compositors = [
+      "cosmic"
+      "niri"
     ];
+    excludePackages = with pkgs; [ ];
   };
   git-utils-cli = {
     enable = true;
@@ -494,9 +496,7 @@
   };
 
   imports =
-    [
-      ./home-configuration.nix
-    ]
+    [ ./home-configuration.nix ]
     ++ (with inputs; [
       android.hmModules.android
       catppuccin.homeManagerModules.catppuccin

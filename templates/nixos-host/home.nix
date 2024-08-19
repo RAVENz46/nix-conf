@@ -34,7 +34,7 @@
     enable = false;
     excludePackages = with pkgs; [
       scrcpy
-      universal-android-debloater 
+      universal-android-debloater
     ];
   };
   animations = {
@@ -111,8 +111,7 @@
   };
   desktop-managers = {
     enable = false;
-    excludePackages = with pkgs; [
-    ];
+    excludePackages = with pkgs; [ ];
   };
   git-utils-cli = {
     enable = false;
@@ -494,9 +493,7 @@
   };
 
   imports =
-    [
-    ]
-    ++ (with inputs; [
+    (with inputs; [
       android.hmModules.android
       catppuccin.homeManagerModules.catppuccin
       ironbar.homeManagerModules.default

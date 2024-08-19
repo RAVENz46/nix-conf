@@ -169,7 +169,7 @@
     };
     useGlobalPkgs = true;
     useUserPackages = true;
-    users. = import ./home.nix;
+    users.CHANGEME = import ./home.nix;
   };
 
   system.stateVersion = "";

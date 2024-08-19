@@ -21,7 +21,10 @@
   };
   audio.enable = true;
   desktop-managers = {
-    compositors = [ "cosmic" "niri" ];
+    compositors = [
+      "cosmic"
+      "niri"
+    ];
     excludePackages = with pkgs; [ ];
   };
   localization.enable = true;

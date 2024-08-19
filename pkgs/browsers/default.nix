@@ -1,16 +1,17 @@
-{ lib
-, rustPlatform
-, fetchFromGitHub
-, pkg-config
-, wrapGAppsHook
-, atk
-, cairo
-, gdk-pixbuf
-, glib
-, gtk3
-, pango
-, stdenv
-, darwin
+{
+  lib,
+  rustPlatform,
+  fetchFromGitHub,
+  pkg-config,
+  wrapGAppsHook,
+  atk,
+  cairo,
+  gdk-pixbuf,
+  glib,
+  gtk3,
+  pango,
+  stdenv,
+  darwin,
 }:
 
 rustPlatform.buildRustPackage rec {
@@ -37,19 +38,21 @@ rustPlatform.buildRustPackage rec {
     wrapGAppsHook
   ];
 
-  buildInputs = [
-    atk
-    cairo
-    gdk-pixbuf
-    glib
-    gtk3
-    pango
-  ] ++ lib.optionals stdenv.isDarwin [
-    darwin.apple_sdk.frameworks.AppKit
-    darwin.apple_sdk.frameworks.CoreGraphics
-    darwin.apple_sdk.frameworks.CoreText
-    darwin.apple_sdk.frameworks.Foundation
-  ];
+  buildInputs =
+    [
+      atk
+      cairo
+      gdk-pixbuf
+      glib
+      gtk3
+      pango
+    ]
+    ++ lib.optionals stdenv.isDarwin [
+      darwin.apple_sdk.frameworks.AppKit
+      darwin.apple_sdk.frameworks.CoreGraphics
+      darwin.apple_sdk.frameworks.CoreText
+      darwin.apple_sdk.frameworks.Foundation
+    ];
 
   patches = [ ./max9.patch ];
 

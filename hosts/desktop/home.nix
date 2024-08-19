@@ -34,7 +34,7 @@
     enable = true;
     excludePackages = with pkgs; [
       scrcpy
-      universal-android-debloater 
+      universal-android-debloater
     ];
   };
   animations = {
@@ -79,9 +79,11 @@
     ];
   };
   desktop-managers = {
-    compositors = [ "cosmic" "niri" ];
-    excludePackages = with pkgs; [
+    compositors = [
+      "cosmic"
+      "niri"
     ];
+    excludePackages = with pkgs; [ ];
   };
   git-utils-cli = {
     enable = true;
@@ -276,7 +278,10 @@
   };
   shell-funs = {
     enable = true;
-    excludePackages = with pkgs; [ charasay terminal-typeracer ];
+    excludePackages = with pkgs; [
+      charasay
+      terminal-typeracer
+    ];
   };
   shell-utils = {
     enable = true;
@@ -317,9 +322,7 @@
   };
 
   imports =
-    [
-      ./home-configuration.nix
-    ]
+    [ ./home-configuration.nix ]
     ++ (with inputs; [
       android.hmModules.android
       catppuccin.homeManagerModules.catppuccin
