@@ -36,7 +36,6 @@ in
         extraGroups = [ "libvirtd" ];
       });
       virtualisation = {
-        #restrictNetwork = true;
         libvirtd = {
           enable = true;
           allowedBridges = [ "virbr0" ];
