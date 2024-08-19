@@ -32,9 +32,9 @@ Flake Section -> PO: PackageOnly, PH: Package & HomeManagerModule
 | [arti](https://gitlab.torproject.org/tpo/core/arti) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/security/arti/default.nix)) | No | No | Yes | An implementation of Tor in Rust |
 | [browdi](https://github.com/Nosterx/browdi) | No | No | Yes | Browser Chooser/Dispatcher/Selector |
 | [browsers](https://github.com/Browsers-software/browsers) | No | No | Yes | Open the right browser at the right time |
-| [firefox-devedition](https://www.mozilla.org/en-US/firefox/developer/) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/networking/browsers/firefox/packages.nix)) | Yes | Yes | No | No | A web browser built from Firefox source tree |
+| [firefox-devedition](https://www.mozilla.org/en-US/firefox/developer/) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/networking/browsers/firefox/packages.nix)) | Yes | No | No | A web browser built from Firefox source tree |
 | [floorp](https://github.com/Floorp-Projects/Floorp) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/networking/browsers/firefox/packages.nix)) | No | No | No | A fork of Firefox, focused on keeping the Open, Private and Sustainable Web alive, built in Japan |
-| [geopard](https://github.com/ranfdev/Geopard) | No | PO | Yes | Colorful, adaptive gemini browser |
+| [geopard](https://github.com/ranfdev/Geopard) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/ge/geopard/package.nix)) | No | PO | Yes | Colorful, adaptive gemini browser |
 | [ladybird](https://github.com/LadybirdBrowser/ladybird) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/networking/browsers/ladybird/default.nix)) | No | No | No | Browser using the SerenityOS LibWeb engine with a Qt or Cocoa GUI |
 | [librewolf](https://codeberg.org/librewolf) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/networking/browsers/firefox/packages.nix)) | Yes | No | No | A fork of Firefox, focused on privacy, security and freedom |
 | [mullvad-browser](https://gitlab.torproject.org/tpo/applications/mullvad-browser) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/networking/browsers/mullvad-browser/default.nix)) | No | No | No | Privacy-focused browser made in a collaboration between The Tor Project and Mullvad |
@@ -103,7 +103,7 @@ wip
 ### git-utils-gui
 | Package Name | HMM | Flake | Rust | Descriptions |
 |:------------:|:---:|:-----:|:----:| ------------ |
-| [github-desktop](https://github.com/desktop/desktop) | No | No | No | GUI for managing Git and GitHub. |
+| [github-desktop](https://github.com/desktop/desktop) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/gi/github-desktop/package.nix)) | No | No | No | GUI for managing Git and GitHub. |
 
 ### hex-utils-cli
 | Package Name | HMM | Flake | Rust | Descriptions |
@@ -183,7 +183,6 @@ wip
 | Package Name | HMM | Flake | Rust | Descriptions |
 |:------------:|:---:|:-----:|:----:| ------------ |
 | [contrast](https://gitlab.gnome.org/World/design/contrast) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/co/contrast/package.nix)) | No | No | Yes | Checks whether the contrast between two colors meet the WCAG requirements |
-| [cosmic-tasks](https://github.com/edfloreshz/tasks) | No | No | Yes | Simple task management application for the COSMIC desktop |
 | [emblem](https://gitlab.gnome.org/World/design/emblem) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/graphics/emblem/default.nix)) | No | No | Yes | Generate project icons and avatars from a symbolic icon |
 | [eyedropper](https://github.com/FineFindus/eyedropper) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/graphics/eyedropper/default.nix)) | No | No | Yes | Pick and format colors |
 | [fragments](https://gitlab.gnome.org/World/Fragments) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/fr/fragments/package.nix)) | No | No | Yes | Easy to use BitTorrent client for the GNOME desktop environment |
@@ -198,6 +197,7 @@ wip
 | [ruffle](https://github.com/ruffle-rs/ruffle) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/emulators/ruffle/default.nix)) | No | No | Yes | Adobe Flash Player emulator written in the Rust programming language |
 | [squeekboard](https://gitlab.gnome.org/World/Phosh/squeekboard) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/accessibility/squeekboard/default.nix)) | No | No | Yes | Virtual keyboard supporting Wayland |
 | [symbolic-preview](https://gitlab.gnome.org/World/design/symbolic-preview) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/graphics/symbolic-preview/default.nix)) | No | No | Yes | Symbolics made easy |
+| [tasks](https://github.com/edfloreshz/tasks) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/ta/tasks/package.nix)) | No | No | Yes | Simple task management application for the COSMIC desktop |
 | [textpieces](https://gitlab.com/liferooter/textpieces) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/te/textpieces/package.nix)) | No | PO | Yes | Swiss knife of text processing |
 
 ### multimedia-cli
@@ -392,7 +392,7 @@ wip
 | [watchexec](https://watchexec.github.io) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/misc/watchexec/default.nix)) | No | No | Yes | Executes commands in response to file modifications |
 | [xh](https://github.com/ducaale/xh) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/networking/xh/default.nix)) | No | No | Yes | Friendly and fast tool for sending HTTP requests |
 | [zellij](https://github.com/zellij-org/zellij) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/misc/zellij/default.nix)) | Yes | No | Yes | Terminal workspace with batteries included |
-| [zoxide](https://github.com/ajeetdsouza/zoxide) | Yes | No | Yes | Fast cd command that learns your habits |
+| [zoxide](https://github.com/ajeetdsouza/zoxide) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/misc/zoxide/default.nix)) | Yes | No | Yes | Fast cd command that learns your habits |
 
 ### terminals
 | Package Name | HMM | Flake | Rust | Descriptions |
@@ -412,9 +412,9 @@ wip
 ### text-editors-gui
 | Package Name | HMM | Flake | Rust | Descriptions |
 |:------------:|:---:|:-----:|:----:| ------------ |
-| [cosmic-edit](https://github.com/pop-os/cosmic-edit) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/co/cosmic-edit/package.nix)) | No | Yes | Yes | Text Editor for the COSMIC Desktop Environment |
+| [cosmic-edit](https://github.com/pop-os/cosmic-edit) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/co/cosmic-edit/package.nix)) | No | PO | Yes | Text Editor for the COSMIC Desktop Environment |
 | [lapce](https://github.com/lapce/lapce) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/editors/lapce/default.nix)) | No | No | Yes | Lightning-fast and Powerful Code Editor written in Rust |
-| [lem](https://github.com/lem-project/lem) | No | Yes | No | Common Lisp editor/IDE with high expansibility |
+| [lem](https://github.com/lem-project/lem) | No | PO | No | Common Lisp editor/IDE with high expansibility |
 | [zed-editor](https://github.com/zed-industries/zed) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/ze/zed-editor/package.nix)) | No | No | Yes | High-performance, multiplayer code editor from the creators of Atom and Tree-sitter |
 
 ### video-editors

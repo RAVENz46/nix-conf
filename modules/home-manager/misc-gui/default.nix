@@ -35,7 +35,6 @@ in
       ]
       ++ optionals stdenv.isLinux [
         contrast
-        cosmic-tasks
         eyedropper
         fragments
         gnome-decoder
@@ -44,6 +43,7 @@ in
         overskride
         popsicle
         squeekboard
+        tasks
         textpieces
       ]
     );

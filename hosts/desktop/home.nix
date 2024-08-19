@@ -177,7 +177,6 @@
     enable = true;
     excludePackages = with pkgs; [
       contrast
-      cosmic-tasks
       emblem
       eyedropper
       fragments
@@ -189,6 +188,7 @@
       ruffle
       squeekboard
       symbolic-preview
+      tasks
       textpieces
     ];
   };
