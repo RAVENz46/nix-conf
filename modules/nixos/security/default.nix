@@ -47,8 +47,6 @@ in
           };
         };
       };
-      #pam = {
-      #};
       #please = {
       #  enable = notExcluded pkgs.please;
       #};
@@ -77,8 +75,7 @@ in
         with pkgs;
         [
           apparmor-kernel-patches
-          policycoreutils
-          #selinux-sandbox
+          #policycoreutils
         ]
       );
     };
@@ -95,27 +92,25 @@ in
     systemd = {
       package = pkgs.systemd.override { withSelinux = true; };
       coredump.enable = false;
-      #shutdownRamfs.enable = false;
-      #oomd.enable = false;
     };
     boot = {
       #extraModulePackages = with config.boot.kernelPackages; [ lkrg ];
-      kernelParams = [ "security=selinux" ];
-      kernelPatches = [
-        {
-          name = "SELinux";
-          patch = null;
-          extraStructuredConfig = with kernel; {
-            DEFAULT_SECURITY_SELINUX = no;
-            SECURITY_SELINUX = yes;
-            SECURITY_SELINUX_AVC_STATS = yes;
-            SECURITY_SELINUX_BOOTPARAM = no;
-            #SECURITY_SELINUX_CHECKREQPROT_VALUE = freeform "0";
-            SECURITY_SELINUX_DEVELOP = yes;
-            #SECURITY_SELINUX_DISABLE = no;
-          };
-        }
-      ];
+      #kernelParams = [ "security=selinux" ];
+      #kernelPatches = [
+      #  {
+      #    name = "SELinux";
+      #    patch = null;
+      #    extraStructuredConfig = with kernel; {
+      #      DEFAULT_SECURITY_SELINUX = no;
+      #      SECURITY_SELINUX = yes;
+      #      SECURITY_SELINUX_AVC_STATS = yes;
+      #      SECURITY_SELINUX_BOOTPARAM = no;
+      #      SECURITY_SELINUX_CHECKREQPROT_VALUE = freeform "0";
+      #      SECURITY_SELINUX_DEVELOP = yes;
+      #      SECURITY_SELINUX_DISABLE = no;
+      #    };
+      #  }
+      #];
     };
   };
 }
