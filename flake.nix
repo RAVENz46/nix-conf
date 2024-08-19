@@ -183,6 +183,10 @@
           };
           modules = [ ./hosts/desktop ];
         };
+        laptop = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [ ./hosts/laptop ];
+        };
         wsl = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;

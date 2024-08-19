@@ -23,11 +23,14 @@
     memoryAllocator.provider = lib.mkForce "libc";
   };
 
-  hardware.nvidia = {
-    open = true;
-    nvidiaSettings = true;
-    modesetting.enable = true;
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
+  hardware = {
+    enableRedistributableFirmware = true;
+    nvidia = {
+      open = true;
+      nvidiaSettings = true;
+      modesetting.enable = true;
+      package = config.boot.kernelPackages.nvidiaPackages.beta;
+    };
   };
 
   services = {
