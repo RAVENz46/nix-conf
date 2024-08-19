@@ -59,6 +59,7 @@ in
             ${builtins.readFile "${pkgs.arkenfox-userjs}/user.js"}
             user_pref("browser.startup.page", 1);
             user_pref("browser.startup.homepage", "${pkgs.chevron}/index.html");
+            user_pref("privacy.resistFingerprinting.letterboxing", false);
           '';
           #extensions = with config.nur.repos.rycee.firefox-addons; [
           #  gesturefy
