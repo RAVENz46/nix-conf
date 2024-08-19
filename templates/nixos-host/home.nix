@@ -454,8 +454,6 @@
       rio
       wezterm
       cosmic-term
-      terms
-      zoha4
     ];
   };
   text-editors-cli = {
