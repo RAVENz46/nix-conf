@@ -78,7 +78,7 @@
     ];
   };
   security = {
-    enable = false;
+    enable = true;
     excludePackages = with pkgs; [ kanidm ];
   };
   shells.enable = true;
