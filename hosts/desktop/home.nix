@@ -91,8 +91,8 @@
       delta
       git-absorb
       git-branchless
-      gitu
-      gitui
+      #gitu
+      #gitui
       gql
       jujutsu
       onefetch

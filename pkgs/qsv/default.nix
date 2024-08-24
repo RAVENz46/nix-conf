@@ -7,11 +7,11 @@
 
 stdenv.mkDerivation rec {
   pname = "qsv";
-  version = "0.131.1";
+  version = "0.132.0";
 
   src = fetchzip {
     url = "https://github.com/jqnatividad/qsv/releases/download/${version}/qsv-${version}-x86_64-unknown-linux-gnu.zip";
-    hash = "sha256-YxkzCJI0xwsVw/rWEFtO7pt4uqgFfJ2uva968mH7wzw=";
+    hash = "sha256-bnCog7ilWO1qrd9hZaz3xShHOuWBfUnBuKbaSNqiB2Y=";
     stripRoot = false;
   };
 

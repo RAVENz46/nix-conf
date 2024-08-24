@@ -1,0 +1,188 @@
+/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/autohide_toolbox.css made available under Mozilla Public License v. 2.0
+See the above repository for updates as well as full license text. */
+
+:root{
+  --uc-autohide-toolbox-delay: 1s;
+  --uc-toolbox-rotation: 75deg;
+}
+
+:root[sizemode="maximized"]{
+  --uc-toolbox-rotation: 88.5deg;
+}
+
+@media  (-moz-platform: windows){
+  :root:not([lwtheme]) #navigator-toolbox{ background-color: -moz-dialog !important; }
+}
+
+:root[sizemode="fullscreen"],
+:root[sizemode="fullscreen"] #navigator-toolbox{ margin-top: 0 !important; }
+
+#navigator-toolbox{
+  position: fixed !important;
+  display: block;
+  background-color: var(--lwt-accent-color,black) !important;
+  transition: transform 82ms linear, opacity 82ms linear !important;
+  transition-delay: var(--uc-autohide-toolbox-delay) !important;
+  transform-origin: top;
+  transform: rotateX(var(--uc-toolbox-rotation));
+  opacity: 0;
+  line-height: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+#navigator-toolbox:hover,
+#navigator-toolbox:focus-within{
+  transition-delay: 33ms !important;
+  transform: rotateX(0);
+  opacity: 1;
+}
+
+#mainPopupSet:has(> #appMenu-popup:hover) ~ toolbox{
+  transition-delay: 33ms !important;
+  transform: rotateX(0);
+  opacity: 1;
+}
+
+#navigator-toolbox > *{ line-height: normal; pointer-events: auto }
+
+#navigator-toolbox,
+#navigator-toolbox > *{
+  width: 100vw;
+  -moz-appearance: none !important;
+}
+
+:root:not([sessionrestored]) #navigator-toolbox{ transform:none !important }
+
+:root[customizing] #navigator-toolbox{
+  position: relative !important;
+  transform: none !important;
+  opacity: 1 !important;
+}
+
+#navigator-toolbox[inFullscreen] > #PersonalToolbar,
+#PersonalToolbar[collapsed="true"]{ display: none }
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --accent-color: #1e1e2e;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --accent-color: #eff1f5;
+    }
+}
+
+#navigator-toolbox {
+    border-bottom: none !important;
+}
+
+#titlebar {
+    background: var(--accent-color) !important;
+}
+
+toolbar#nav-bar {
+    background: var(--accent-color) !important;
+    box-shadow: none !important;
+}
+
+#urlbar {
+    background: var(--accent-color) !important;
+}
+
+#urlbar-background {
+    background: var(--accent-color) !important;
+    border: none !important;
+}
+
+#urlbar-input-container {
+    border: none !important;
+}
+
+:root {
+    --uc-urlbar-min-width: 40vw;
+    --uc-urlbar-max-width: 40vw;
+
+    --uc-active-tab-width:   clamp(100px, 30vw, 300px);
+    --uc-inactive-tab-width: clamp(100px, 20vw, 200px);
+}
+
+@media (min-width: 1000px) {
+    #navigator-toolbox {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    :root[uidensity="compact"] #urlbar {
+        --urlbar-toolbar-height: 39.60px !important;
+    }
+
+    :root[uidensity="touch"] #urlbar {
+        --urlbar-toolbar-height: 49.00px !important;
+    }
+
+    #nav-bar {
+      order: 1;
+      width: var(--uc-urlbar-min-width);
+    }
+    
+    #nav-bar #urlbar-container { min-width: 0px !important; width: auto !important; }
+
+    #titlebar {
+      order: 2;
+      width: calc(100vw - var(--uc-urlbar-min-width) - 1px);
+    }
+
+    #PersonalToolbar {
+        order: 3;
+        width: 100%;
+    }
+
+    #navigator-toolbox:focus-within #nav-bar { width: var(--uc-urlbar-max-width); }
+    #navigator-toolbox:focus-within #titlebar { width: calc(100vw - var(--uc-urlbar-max-width) - 1px); }
+}
+
+#nav-bar {
+    box-shadow: none !important;
+}
+
+.titlebar-spacer {
+    display: none !important;
+}
+
+#urlbar-container {
+    min-width: initial !important;
+}
+
+.tabbrowser-tab[selected][fadein]:not([pinned]) { max-width: var(--uc-active-tab-width) !important; }
+.tabbrowser-tab[fadein]:not([selected]):not([pinned]) { max-width: var(--uc-inactive-tab-width) !important; }
+
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs])
+> #tabbrowser-arrowscrollbox
+> .tabbrowser-tab[first-visible-unpinned-tab] {
+    margin-inline-start: 0 !important;
+}
+
+#identity-box,
+#tracking-protection-icon-container,
+#page-action-buttons,
+#urlbar-go-button,
+#back-button,
+#forward-button,
+#alltabs-button,
+#PersonalToolbar #import-button > .toolbarbutton-text,
+.bookmark-item:not(:hover) > .toolbarbutton-text,
+.bookmark-item:hover > .toolbarbutton-icon,
+.tabbrowser-tab .tab-close-button,
+.tab-secondary-label,
+.titlebar-buttonbox-container {
+  display: none !important;
+}
+
+.tabbrowser-tab:not([pinned]):hover .tab-close-button{
+  display: flex !important;
+  align-items: center;
+}
