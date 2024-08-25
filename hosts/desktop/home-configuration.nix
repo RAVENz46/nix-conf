@@ -37,6 +37,7 @@
       #zluda
       #rustdesk
       #rustdesk-flutter
+      #srgn
     ];
 
     sessionPath = [
