@@ -24,3 +24,6 @@ Packages that do not meet these criteria will be removed.
 - [ ] Make firefox settings completely declarative
 - [ ] Make `nix flake show` work
 - [ ] Make template usable
+
+## Thanks to
+- https://github.com/MrOtherGuy/firefox-csshacks and https://github.com/EricMurphyxyz/userChrome.css : My librewolf config came from here
