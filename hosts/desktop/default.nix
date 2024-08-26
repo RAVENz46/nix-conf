@@ -47,7 +47,7 @@
       rosenpass
       rosenpass-tools
       tailscale
-      #hickory-dns
+      hickory-dns
       wstunnel
     ];
   };

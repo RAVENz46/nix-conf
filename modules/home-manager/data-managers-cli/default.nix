@@ -33,7 +33,7 @@ in
         dysk
         fclones
         felix-fm
-        #rustic
+        rustic
         tere
         termscp
       ]

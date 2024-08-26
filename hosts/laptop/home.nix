@@ -90,7 +90,7 @@
       fclones
       felix-fm
       joshuto
-      #rustic
+      rustic
       tere
       termscp
       xplr

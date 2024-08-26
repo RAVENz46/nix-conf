@@ -66,9 +66,9 @@ in
         openFirewall = true;
       };
 
-      #hickory-dns = {
-      #  enable = notExcluded pkgs.hickory-dns;
-      #};
+      hickory-dns = {
+        enable = notExcluded pkgs.hickory-dns;
+      };
 
       wstunnel = {
         enable = notExcluded pkgs.wstunnel;

@@ -45,10 +45,6 @@
       blender
     ];
   };
-  csv-utils-cli = {
-    enable = false;
-    excludePackages = with pkgs; [ ];
-  };
   browsers-gui = {
     enable = true;
     excludePackages = with pkgs; [
@@ -56,6 +52,10 @@
       ladybird
       nyxt
     ];
+  };
+  csv-utils-cli = {
+    enable = false;
+    excludePackages = with pkgs; [ ];
   };
   data-managers-cli = {
     enable = true;
@@ -67,7 +67,7 @@
       fclones
       felix-fm
       projectable
-      #rustic
+      rustic
       rust-traverse
     ];
   };
@@ -207,6 +207,7 @@
     enable = true;
     excludePackages = with pkgs; [
       fretboard
+      #glide-media-player
       mousai
       neothesia
       snapshot
