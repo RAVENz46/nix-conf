@@ -26,4 +26,4 @@ Packages that do not meet these criteria will be removed.
 - [ ] Make template usable
 
 ## Thanks to
-- https://github.com/MrOtherGuy/firefox-csshacks and https://github.com/EricMurphyxyz/userChrome.css : My librewolf config came from here
+- https://github.com/MrOtherGuy/firefox-csshacks https://github.com/EricMurphyxyz/userChrome.css https://github.com/cascadefox/cascade : My librewolf config came from here
