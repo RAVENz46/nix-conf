@@ -89,6 +89,7 @@
       conmon-rs
       crosvm
       firecracker
+      #gnome.gnome-boxes
       stratovirt
     ];
   };

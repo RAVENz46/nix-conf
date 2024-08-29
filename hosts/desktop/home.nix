@@ -169,6 +169,7 @@
       rqbit
       russ
       sic-image-cli
+      silicon
       tickrs
       toipe
     ];
@@ -210,7 +211,7 @@
       #glide-media-player
       mousai
       neothesia
-      inputs.pipeline.packages.${system}.default
+      #inputs.pipeline.packages.${system}.default
       snapshot
       songrec
     ];
