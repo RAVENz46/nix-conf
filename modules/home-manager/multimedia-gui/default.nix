@@ -32,7 +32,7 @@ in
         gnome-podcasts
         loupe
         metronome
-        inputs.pipeline.packages.${system}.default
+        #inputs.pipeline.packages.${system}.default
         snapshot
         switcheroo
       ]

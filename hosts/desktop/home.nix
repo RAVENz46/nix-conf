@@ -246,7 +246,7 @@
       havn
       kmon
       netscanner
-      #openobserve
+      openobserve
       sniffglue
       websocat
       zenith
