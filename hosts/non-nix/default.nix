@@ -11,27 +11,35 @@
     system-manager.allowAnyDistro = true;
 
     environment = {
-      etc = {
-      };
-      
-      pathsToLink = [
-      ];
+      etc =
+        {
+        };
 
-      sessionVariables = {
-      };
+      pathsToLink =
+        [
+        ];
 
-      systemPackages = (with pkgs; [
-        inputs.system-manager.packages.${system}.default
-      ]);
+      sessionVariables =
+        {
+        };
+
+      systemPackages = with pkgs;
+        [
+          inputs.system-manager.packages.${system}.default
+        ];
     };
 
     systemd = {
-      packages = with pkgs; [
-      ];
-      services = {
-      };
-      tmpfiles.rules = [
-      ];
+      packages =
+        with pkgs;
+        [
+        ];
+      services =
+        {
+        };
+      tmpfiles.rules =
+        [
+        ];
     };
   };
 }

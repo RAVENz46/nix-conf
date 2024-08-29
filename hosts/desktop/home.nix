@@ -210,6 +210,7 @@
       #glide-media-player
       mousai
       neothesia
+      inputs.pipeline.packages.${system}.default
       snapshot
       songrec
     ];
