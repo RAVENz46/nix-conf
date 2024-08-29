@@ -248,6 +248,7 @@
       sniffglue
       websocat
       zenith
+      #zenith-nvidia
     ];
   };
   resource-monitors-gui = {
