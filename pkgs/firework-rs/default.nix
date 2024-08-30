@@ -18,7 +18,7 @@ rustPlatform.buildRustPackage {
   cargoHash = "sha256-uthImhHDslGFxTglu0YwG4WXjM5cpWkgCalR8RSv6no=";
 
   meta = {
-    description = "A cross-platform ascii-art firework simulator in terminal";
+    description = "Cross-platform ascii-art firework simulator in terminal";
     homepage = "https://github.com/Wayoung7/firework-rs";
     changelog = "https://github.com/Wayoung7/firework-rs/blob/master/CHANGELOG.md";
     license = lib.licenses.mit;

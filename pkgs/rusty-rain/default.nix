@@ -24,7 +24,7 @@ rustPlatform.buildRustPackage rec {
   '';
 
   meta = {
-    description = "A cross platform matrix rain made with Rust";
+    description = "Cross platform matrix rain made with Rust";
     homepage = "https://github.com/cowboy8625/rusty-rain";
     changelog = "https://github.com/cowboy8625/rusty-rain/blob/${src.rev}/CHANGELOG.md";
     license = lib.licenses.asl20;
