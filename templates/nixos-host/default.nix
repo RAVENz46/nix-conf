@@ -95,7 +95,7 @@
       distrobuilder
       extra-container
       firecracker
-      gnome.gnome-boxes
+      gnome-boxes
       incus
       krun
       krunvm

@@ -78,7 +78,7 @@ in
           cloud-hypervisor
           crosvm
           firecracker
-          gnome.gnome-boxes
+          gnome-boxes
           krun
           krunvm
           quickemu
