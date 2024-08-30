@@ -58,6 +58,7 @@ rustPlatform.buildRustPackage rec {
     install -m 444 \
         -D extra/linux/dist/software.Browsers.template.desktop \
         -t $out/share/applications
+    mv $out/share/applications/software.Browsers.template.desktop $out/share/applications/software.Browsers.desktop
     substituteInPlace \
         $out/share/applications/software.Browsers.template.desktop \
         --replace 'Exec=€ExecCommand€' 'Exec=${pname} %u'
