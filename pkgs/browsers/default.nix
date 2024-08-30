@@ -54,24 +54,24 @@ rustPlatform.buildRustPackage rec {
       darwin.apple_sdk.frameworks.Foundation
     ];
 
-  patches = [ ./max9.patch ];
-
   postInstall = ''
-    mkdir -p $out/share/{applications,icons}
-    cp extra/linux/dist/software.Browsers.template.desktop $out/share/applications/software.Browsers.desktop
+    install -m 444 \
+        -D extra/linux/dist/software.Browsers.template.desktop \
+        -t $out/share/applications
     substituteInPlace \
-        $out/share/applications/software.Browsers.desktop \
+        $out/share/applications/software.Browsers.template.desktop \
         --replace 'Exec=€ExecCommand€' 'Exec=${pname} %u'
     cp -r resources $out
     for size in 16 32 128 256 512; do
-      mkdir -p $out/share/icons/hicolor/"$size"x"$size"/apps
-      cp resources/icons/"$size"x"$size"/software.Browsers.png $out/share/icons/hicolor/"$size"x"$size"/apps/software.Browsers.png
+      install -m 444 \
+          -D resources/icons/"$size"x"$size"/software.Browsers.png \
+          -t $out/share/icons/hicolor/"$size"x"$size"/apps
     done
   '';
 
   meta = {
     description = "Open the right browser at the right time";
-    homepage = "https://github.com/Browsers-software/browsers";
+    homepage = "https://browsers.software";
     changelog = "https://github.com/Browsers-software/browsers/blob/${src.rev}/CHANGELOG.md";
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ ravenz46 ];
