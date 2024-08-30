@@ -60,7 +60,7 @@ rustPlatform.buildRustPackage rec {
         -t $out/share/applications
     mv $out/share/applications/software.Browsers.template.desktop $out/share/applications/software.Browsers.desktop
     substituteInPlace \
-        $out/share/applications/software.Browsers.template.desktop \
+        $out/share/applications/software.Browsers.desktop \
         --replace 'Exec=€ExecCommand€' 'Exec=${pname} %u'
     cp -r resources $out
     for size in 16 32 128 256 512; do
