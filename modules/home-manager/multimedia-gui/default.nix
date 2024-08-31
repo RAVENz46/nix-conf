@@ -10,6 +10,7 @@ with lib;
 let
   cfg = config.multimedia-gui;
   notExcluded = pkg: !(builtins.elem pkg config.multimedia-gui.excludePackages);
+  inherit (inputs.pipeline.packages.${system}.default) pipeline;
 in
 {
   options = {
@@ -32,7 +33,7 @@ in
         gnome-podcasts
         loupe
         metronome
-        #inputs.pipeline.packages.${system}.default
+        pipeline
         snapshot
         switcheroo
       ]
