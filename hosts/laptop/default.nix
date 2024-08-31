@@ -53,9 +53,9 @@
     ];
   };
   nix-utils = {
-    enable = false;
+    enable = true;
     excludePackages = with pkgs; [
-      nh
+      #nh
       nix-ld-rs
       nixseparatedebuginfod
       nix-web
@@ -131,7 +131,7 @@
 
   services = {
     clipcat.enable = true;
-    system76-scheduler.enable = true;
+    #system76-scheduler.enable = true;
     #fstrim.enable = true;
     #kanidm = {
     #  enableClient = true;
