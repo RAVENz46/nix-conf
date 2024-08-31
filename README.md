@@ -22,6 +22,7 @@ Packages that do not meet these criteria will be removed.
 - [ ] Configure shell greeting
 - [ ] Make unpriviledge containers work
 - [ ] Make firefox settings completely declarative
+- [ ] Make flake package excludable
 - [ ] Make `nix flake show` work
 - [ ] Make template usable
 
