@@ -209,6 +209,7 @@
     excludePackages = with pkgs; [
       fretboard
       #glide-media-player
+      gnome-podcasts
       mousai
       neothesia
       #inputs.pipeline.packages.${system}.default
