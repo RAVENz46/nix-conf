@@ -88,7 +88,7 @@
   git-utils-cli = {
     enable = true;
     excludePackages = with pkgs; [
-      delta
+      #delta
       git-absorb
       git-branchless
       #gitu
