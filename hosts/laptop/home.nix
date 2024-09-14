@@ -232,7 +232,7 @@
       icon-library
       impression
       newsflash
-      overskride
+      #overskride
       popsicle
       qrtool
       ruffle
@@ -276,7 +276,7 @@
       #inputs.pipeline.packages.${system}.default
       pwvucontrol
       shortwave
-      snapshot
+      #snapshot
       songrec
       #switcheroo
     ];
