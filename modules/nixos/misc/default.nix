@@ -45,6 +45,8 @@ in
 
       mouse-actions = {
         enable = notExcluded pkgs.mouse-actions;
+        autorun = true;
+        package = pkgs.mouse-actions-gui;
       };
     };
 

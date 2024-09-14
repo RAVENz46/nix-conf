@@ -38,6 +38,7 @@
       #rustdesk
       #rustdesk-flutter
       #srgn
+      surfer
     ];
 
     sessionPath = [

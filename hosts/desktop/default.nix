@@ -29,14 +29,14 @@
   };
   localization.enable = true;
   misc = {
-    enable = false;
+    enable = true;
     excludePackages = with pkgs; [
       android-tools
       envision
       garage
       kanata
       lact
-      mouse-actions
+      #mouse-actions
       rkvm
       rustdesk-server
     ];
