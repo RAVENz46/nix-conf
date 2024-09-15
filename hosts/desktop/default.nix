@@ -90,6 +90,7 @@
       crosvm
       firecracker
       #gnome-boxes
+      quickgui
       stratovirt
     ];
   };
