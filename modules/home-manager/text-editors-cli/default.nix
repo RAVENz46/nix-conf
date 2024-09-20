@@ -294,6 +294,10 @@ in
             enable = true;
           };
 
+          nvim-surround = {
+            enable = true;
+          };
+
           nvim-tree = {
             enable = true;
           };
