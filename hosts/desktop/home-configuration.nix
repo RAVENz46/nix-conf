@@ -19,7 +19,7 @@
       kernel-hardening-checker
       killport # A command-line tool to easily kill processes running on a specified port
       #nym # Mixnet providing IP-level privacy
-      inputs.websurfx.packages.${system}.websurfx
+      #inputs.websurfx.packages.${system}.websurfx
       #voicevox
 
       #espanso #hm module available
@@ -39,6 +39,9 @@
       #rustdesk-flutter
       #srgn
       surfer
+      forecast
+      #gpauth
+      #gpclient
     ];
 
     sessionPath = [

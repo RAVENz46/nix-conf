@@ -33,7 +33,7 @@ in
         dvd-term
         dwt1-shell-color-scripts
         firework-rs
-        inputs.fortune-kind.packages.${system}.default
+        #inputs.fortune-kind.packages.${system}.default
         genact
         globe-cli
         krabby

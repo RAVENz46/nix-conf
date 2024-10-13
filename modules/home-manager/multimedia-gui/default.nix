@@ -72,7 +72,10 @@ in
     };
 
     xdg.configFile = mkIf config.programs.obs-studio.enable {
-      "obs-studio/themes".source = ./obs-studio/themes;
+      "obs-studio/themes" = {
+        recursive = true;
+        source = ./obs-studio/themes;
+      };
     };
   };
 }

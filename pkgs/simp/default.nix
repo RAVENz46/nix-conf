@@ -16,16 +16,16 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "simp";
-  version = "3.7.1";
+  version = "3.8.0";
 
   src = fetchFromGitHub {
     owner = "Kl4rry";
     repo = "simp";
     rev = "v${version}";
-    hash = "sha256-hA/VeMWCNgscUVTEn8TmA8ObFqD90hRn0S8inpgSXqE=";
+    hash = "sha256-D0Mf9JmBY25U2SwX1uRYAV7yEJjG421wEppueaKHPX0=";
   };
 
-  cargoHash = "sha256-kPi/KSL+8JG3MgG24JmSlphffKKl9gElucmtBqkX+ys=";
+  cargoHash = "sha256-lEOXu/dEMjeLW93gtncUPBQmAO1YtPH5quSZNcV4Wsg=";
 
   nativeBuildInputs = [
     pkg-config

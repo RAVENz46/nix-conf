@@ -81,7 +81,7 @@
   desktop-managers = {
     compositors = [
       "cosmic"
-      "niri"
+      #"niri"
     ];
     excludePackages = with pkgs; [ ];
   };

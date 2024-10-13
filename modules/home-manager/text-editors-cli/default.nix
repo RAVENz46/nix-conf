@@ -106,7 +106,7 @@ in
           }
         ];
 
-        extraPlugins = with pkgs.vimPlugins; [ render-markdown ];
+        extraPlugins = with pkgs.vimPlugins; [ render-markdown-nvim ];
 
         clipboard.providers.wl-copy = {
           enable = true;
@@ -256,19 +256,19 @@ in
               bashls = {
                 enable = true;
               };
-              lua-ls = {
+              lua_ls = {
                 enable = true;
               };
-              nil-ls = {
+              nil_ls = {
                 enable = true;
               };
               nushell = {
                 enable = true;
               };
-              ruff-lsp = {
+              ruff_lsp = {
                 enable = true;
               };
-              typos-lsp = {
+              typos_lsp = {
                 enable = true;
               };
             };
@@ -284,10 +284,14 @@ in
 
           lualine = {
             enable = true;
-            componentSeparators.left = "";
-            componentSeparators.right = "";
-            sectionSeparators.left = "";
-            sectionSeparators.right = "";
+            settings = {
+              options = {
+                component_separators.left = "";
+                component_separators.right = "";
+                section_separators.left = "";
+                section_separators.right = "";
+              };
+            };
           };
 
           nvim-colorizer = {
@@ -311,6 +315,10 @@ in
           };
 
           treesitter = {
+            enable = true;
+          };
+
+          web-devicons = {
             enable = true;
           };
 
