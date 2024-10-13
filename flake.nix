@@ -22,10 +22,6 @@
     #hardware.url = "github:nixos/nixos-hardware";
     catppuccin.url = "github:catppuccin/nix";
 
-    android = {
-      url = "github:tadfisher/android-nixpkgs";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
