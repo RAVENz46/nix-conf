@@ -294,6 +294,15 @@ in
             };
           };
 
+          #mini = {
+          #  enable = true;
+          #  mockDevIcons = true;
+          #  modules = {
+          #    icons = {
+          #    };
+          #  };
+          #};
+
           nvim-colorizer = {
             enable = true;
           };
