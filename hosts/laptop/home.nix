@@ -495,7 +495,6 @@
   imports =
     [ ./home-configuration.nix ]
     ++ (with inputs; [
-      android.hmModules.android
       catppuccin.homeManagerModules.catppuccin
       ironbar.homeManagerModules.default
       jerry.homeManagerModules.default
