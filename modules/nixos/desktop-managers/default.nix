@@ -63,7 +63,6 @@ in
         cosmic.excludePackages = with pkgs; [
           adwaita-icon-theme
           cosmic-edit
-          cosmic-files
           cosmic-launcher
           cosmic-term
           hicolor-icon-theme

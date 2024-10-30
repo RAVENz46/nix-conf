@@ -66,7 +66,7 @@ in
 
       eza = {
         enable = notExcluded pkgs.eza;
-        icons = true;
+        icons = "auto";
         extraOptions = [
           "--group-directories-first"
           "--header"

@@ -62,7 +62,6 @@ Flake Section -> PO: PackageOnly, PH: Package & HomeManagerModule
 | Package Name | HMM | Flake | Rust | Descriptions |
 |:------------:|:---:|:-----:|:----:| ------------ |
 | [celeste](https://github.com/hwittenborn/celeste) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/networking/sync/celeste/default.nix)) | No | No | Yes | GUI file synchronization client that can sync with any cloud provider |
-| [cosmic-files](https://github.com/pop-os/cosmic-files) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/co/cosmic-files/package.nix)) | No | No | Yes | File Manager for the COSMIC Desktop Environment |
 | [czkawka](https://github.com/qarmin/czkawka) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/cz/czkawka/package.nix)) | No | No | Yes | A simple, fast and easy to use app to remove unnecessary files from your computer |
 | [fm](https://github.com/euclio/fm) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/file-managers/fm/default.nix)) | No | PO | Yes | Small, general purpose file manager built with GTK4 |
 | [pika-backup](https://gitlab.gnome.org/World/pika-backup) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/backup/pika-backup/default.nix)) | No | No | Yes | Simple backups based on borg |

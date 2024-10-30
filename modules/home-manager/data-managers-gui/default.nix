@@ -33,7 +33,6 @@ in
         warp
       ]
       ++ optionals stdenv.isLinux [
-        cosmic-files
         pika-backup
       ]
     );

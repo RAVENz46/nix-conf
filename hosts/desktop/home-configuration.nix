@@ -29,7 +29,6 @@
       avml
       #pw-viz
       tasks
-      floorp
       nix-du
       rippkgs
       cached-nix-shell

@@ -62,7 +62,6 @@ in
             user_pref("privacy.resistFingerprinting.letterboxing", false);
           '';
           #extensions = with config.nur.repos.rycee.firefox-addons; [
-          #  gesturefy
           #  surfingkeys
           #];
           #userChrome = ''
@@ -74,18 +73,36 @@ in
         };
       };
 
-      #floorp = {
-      #  enable = notExcluded pkgs.floorp && pkgs.stdenv.isLinux;
-      #  profiles.default = {
-      #    extensions = with config.nur.repos.rycee.firefox-addons; [
-      #      gesturefy
-      #      #side-view
-      #      surfingkeys
-      #      tab-session-manager
-      #      web-archives
-      #    ];
-      #  };
-      #};
+      floorp = {
+        enable = notExcluded pkgs.floorp && pkgs.stdenv.isLinux;
+        policies = {
+          ExtensionSettings = {
+            "{acf82b50-48cf-4dd4-8059-5c949e754a65}" = {
+              install_url = "https://addons.mozilla.org/firefox/downloads/file/4330609/anori-1.20.0.xpi";
+              installation_mode = "normal_installed";
+            };
+          };
+        };
+        profiles.default = {
+          settings = {
+            #"browser.bookmarks.file" = "${./bookmarks.html}";
+            "browser.compactmode.show" = true;
+            #"browser.places.importBookmarksHTML" = true;
+            "browser.toolbars.bookmarks.showOtherBookmarks" = false;
+            "browser.urlbar.maxRichResults" = 0;
+            "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+            "ui.context_menus.after_mouseup" = true;
+          };
+          extraConfig = ''
+            ${builtins.readFile "${pkgs.arkenfox-userjs}/user.js"}
+          '';
+          extensions = with config.nur.repos.rycee.firefox-addons; [
+            surfingkeys
+            tab-session-manager
+            web-archives
+          ];
+        };
+      };
 
       librewolf = {
         enable = notExcluded pkgs.librewolf && pkgs.stdenv.isLinux;
@@ -111,6 +128,7 @@ in
         #    proton-pass
         #    proton-vpn
         #    refined-github
+        #    side-view
         #    surfingkeys
         #    ublock-origin
         #  ];
