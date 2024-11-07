@@ -126,11 +126,11 @@
     accent = "teal"; # red, pink, yellow, green, teal
   };
 
-  #hardware.system76.power-daemon.enable = true;
+  hardware.system76.power-daemon.enable = true;
 
   services = {
     clipcat.enable = true;
-    #system76-scheduler.enable = true;
+    system76-scheduler.enable = true;
     #fstrim.enable = true;
     #kanidm = {
     #  enableClient = true;
