@@ -69,6 +69,7 @@
       projectable
       rustic
       rust-traverse
+      termscp
     ];
   };
   data-managers-gui = {
