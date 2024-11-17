@@ -7,7 +7,7 @@
 
 {
   imports = [
-    inputs.nixos-wsl.nixosModules
+    inputs.nixos-wsl.nixosModules.default
   ];
 
   wsl = {

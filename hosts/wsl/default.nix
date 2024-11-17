@@ -179,15 +179,15 @@
     ]
     ++ (with inputs; [
       catppuccin.nixosModules.catppuccin
-      #disko.nixosModules.default
+      disko.nixosModules.default
       home-manager.nixosModules.default
-      #lanzaboote.nixosModules.lanzaboote
+      lanzaboote.nixosModules.lanzaboote
       musnix.nixosModules.default
-      #niri-flake.nixosModules.niri
+      niri-flake.nixosModules.niri
       nix-gaming.nixosModules.pipewireLowLatency
       nix-gaming.nixosModules.platformOptimizations
       nix-index-database.nixosModules.nix-index
-      #nixos-cosmic.nixosModules.default
+      nixos-cosmic.nixosModules.default
       #nixvim.nixosModules.default
       nur.nixosModules.nur
       nyx.nixosModules.default
