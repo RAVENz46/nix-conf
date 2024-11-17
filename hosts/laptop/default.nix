@@ -55,7 +55,6 @@
   nix-utils = {
     enable = true;
     excludePackages = with pkgs; [
-      #nh
       nix-ld-rs
       nixseparatedebuginfod
       nix-web
