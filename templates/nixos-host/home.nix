@@ -300,6 +300,7 @@
       fh
       flake-checker
       lorri
+      nh
       nix-direnv
       nix-doc
       nix-index
