@@ -1,5 +1,7 @@
 {
+  config,
   pkgs,
+  lib,
   inputs,
   outputs,
   osConfig,
@@ -13,137 +15,495 @@
     stateVersion = "24.11";
   };
   programs.home-manager.enable = true;
-  systemd.user.startServices = "sd-switch";
-
-  data-managers-tui.enable = true;
-  data-managers-tui.excludePackages = with pkgs; [
-    dua
-    dust
-    dysk
-    fclones
-    felix-fm
-    projectable
-    rust-traverse
-  ];
-  git-utils-tui.enable = true;
-  git-utils-tui.excludePackages = with pkgs; [
-    cocogitto
-    difftastic
-    gex
-    gfold
-    gimoji
-    git-agecrypt
-    git-branchless
-    git-cliff
-    git-dive
-    git-gr
-    git-ignore
-    git-instafix
-    git-interactive-rebase-tool
-    git-mit
-    git-nomad
-    gitnr
-    gitoxide
-    git-ps-rs
-    git-stack
-    git-together
-    gitu
-    git-upstream
-    git-workspace
-    gql
-    jujutsu
-    onefetch
-    stgit
-  ];
-  json-utils-tui.enable = false;
-  json-utils-tui.excludePackages = with pkgs; [
-    jaq
-    jless
-    jql
-    xq
-  ];
-  markdown-utils-tui.enable = false; # I have to write mdbook config
-  markdown-utils-tui.excludePackages = with pkgs; [
-    inlyne
-    mdbook
-    mdbook-admonish
-    mdbook-cmdrun
-    mdbook-emojicodes
-    mdbook-footnote
-    mdbook-graphviz
-    mdbook-i18n-helpers
-    mdbook-katex
-    mdbook-open-on-gh
-    mdbook-pagetoc
-    mdbook-pdf
-    mdbook-toc
-  ];
-  nix-utils-tui.enable = true;
-  nix-utils-tui.excludePackages = with pkgs; [
-    nix-your-shell
-    statix
-  ];
-  shell-utils.enable = true;
-  shell-utils.excludePackages = with pkgs; [
-    ast-grep
-    lsd
-    mcfly
-    pls
-    pueue
-    repgrep
-    ripgrep-all
-    topgrade
-    zellij
-  ];
-  text-editors-tui.enable = true;
-  text-editors-tui.excludePackages = with pkgs; [ ];
-  theme.enable = true;
+  #systemd.user.startServices = "sd-switch";
+  isNixOS = true;
   catppuccin = {
     enable = true;
-    flavor = "${osConfig.catppuccin.flavor}";
-    accent = "${osConfig.catppuccin.accent}";
+    inherit (osConfig.catppuccin) flavor;
+    inherit (osConfig.catppuccin) accent;
   };
 
-  home.sessionVariables = {
-    #DOCKER_HOST = unix://$XDG_RUNTIME_DIR/podman/podman.sock;
-    #ZELLIJ_AUTO_ATTACH = "true";
-    #ZELLIJ_AUTO_EXIT = "true";
+  ai-utils = {
+    enable = false;
+    excludePackages = with pkgs; [
+      aichat
+      oatmeal
+    ];
   };
-
-  home.sessionPath = [
-    #"$HOME/.local/bin:$PATH"
-  ];
-
-  home.shellAliases = {
-    locksw = "cp flake.lock backups/flake-(date +%d-%b-%R;).lock && nix flake update";
-    isitok = "sudo nix-channel --update && nix flake update && sudo nixos-rebuild dry-activate --flake .#${osConfig.networking.hostName}";
-    rolbak = "sudo nixos-rebuild --rollback switch --flake .#${osConfig.networking.hostName}";
-    nv = "nvim";
-    "..." = "cd ../..";
-    "...." = "cd ../../..";
-    fixit = "systemctl --user import-environment PATH && systemctl --user restart xdg-desktop-portal.service";
+  android-utils = {
+    enable = false;
+    excludePackages = with pkgs; [
+      scrcpy
+      universal-android-debloater
+    ];
   };
-
-  # add shell config for color-script here in the future
-
-  imports = [
-    # inputs.nix-colors.homeManagerModules.default
-    inputs.nixvim.homeManagerModules.nixvim
-    inputs.catppuccin.homeManagerModules.catppuccin
-    inputs.nix-index-database.hmModules.nix-index
-    inputs.nur.hmModules.nur
-  ] ++ (builtins.attrValues outputs.homeManagerModules);
-
-  nix.registry = { };
-
-  home.file = {
-    #"path/to/file".source = "${pkgs.package-name}/original/path";
+  animations = {
+    enable = false;
+    excludePackages = with pkgs; [
+      paraview
+      synfigstudio
+      blender
+    ];
   };
-
-  programs.direnv = {
+  browsers-cli = {
+    enable = false;
+    excludePackages = with pkgs; [
+      leetcode-cli
+      monolith
+      ncgopher
+      wiki-tui
+    ];
+  };
+  browsers-gui = {
+    enable = false;
+    excludePackages = with pkgs; [
+      arti
+      browdi
+      browsers
+      firefox-devedition
+      floorp
+      geopard
+      ladybird
+      librewolf
+      mullvad-browser
+      nyxt
+      ungoogled-chromium
+    ];
+  };
+  csv-utils-cli = {
+    enable = false;
+    excludePackages = with pkgs; [
+      csview
+      csvlens
+      qsv
+      tidy-viewer
+    ];
+  };
+  data-managers-cli = {
     enable = true;
-    config = { };
-    stdlib = "";
-    nix-direnv.enable = true;
+    excludePackages = with pkgs; [
+      broot
+      conserve
+      dua
+      dust
+      dysk
+      fclones
+      felix-fm
+      joshuto
+      rustic
+      tere
+      termscp
+      xplr
+      #yazi
+    ];
   };
+  data-managers-gui = {
+    enable = false;
+    excludePackages = with pkgs; [
+      celeste
+      cosmic-files
+      czkawka
+      fm
+      pika-backup
+      szyszka
+      warp
+    ];
+  };
+  desktop-managers = {
+    compositors = [
+      #"cosmic"
+      #"niri"
+    ];
+    excludePackages = with pkgs; [ ];
+  };
+  git-utils-cli = {
+    enable = true;
+    excludePackages = with pkgs; [
+      #delta
+      #gh
+      gh-dash
+      #git
+      git-absorb
+      git-branchless
+      git-interactive-rebase-tool
+      gitoxide
+      #gitu
+      #gitui
+      gql
+      jujutsu
+      onefetch
+      sapling
+    ];
+  };
+  git-utils-gui = {
+    enable = false;
+    excludePackages = with pkgs; [ github-desktop ];
+  };
+  hex-utils-cli = {
+    enable = false;
+    excludePackages = with pkgs; [
+      biodiff
+      heh
+      hexyl
+    ];
+  };
+  image-editors = {
+    enable = false;
+    excludePackages = with pkgs; [
+      darktable
+      digikam
+      gimp-with-plugins
+      oculante
+      rawtherapee
+      simp
+    ];
+  };
+  json-utils-cli = {
+    enable = false;
+    excludePackages = with pkgs; [
+      jless
+      jql
+    ];
+  };
+  log-utils-cli = {
+    enable = false;
+    excludePackages = with pkgs; [
+      angle-grinder
+      fblog
+      tailspin
+    ];
+  };
+  markdown-utils-cli = {
+    enable = true;
+    excludePackages = with pkgs; [
+      inlyne
+      #mdcat
+      md-tui
+    ];
+  };
+  messaging-cli = {
+    enable = false;
+    excludePackages = with pkgs; [
+      gurk-rs
+      halloy
+      himalaya
+      iamb
+      tiny
+    ];
+  };
+  messaging-gui = {
+    enable = false;
+    excludePackages = with pkgs; [
+      flare-signal
+      fractal
+      protonmail-bridge-gui
+      thunderbird
+    ];
+  };
+  misc-cli = {
+    enable = false;
+    excludePackages = with pkgs; [
+      asciinema
+      asciinema-agg
+      crowbook
+      gpg-tui
+      httm
+      hyperfine
+      oha
+      presenterm
+      rqbit
+      ruplacer
+      russ
+      sic-image-cli
+      silicon
+      speedtest-rs
+      tickrs
+      toipe
+    ];
+  };
+  misc-gui = {
+    enable = false;
+    excludePackages = with pkgs; [
+      contrast
+      emblem
+      eyedropper
+      fragments
+      gnome-decoder
+      gnome-solanum
+      icon-library
+      impression
+      newsflash
+      overskride
+      popsicle
+      qrtool
+      ruffle
+      squeekboard
+      symbolic-preview
+      tasks
+      textpieces
+    ];
+  };
+  multimedia-cli = {
+    enable = false;
+    excludePackages = with pkgs; [
+      ani-cli
+      inputs.jerry.packages.${system}.default
+      inputs.lobster.packages.${system}.default
+      mpv
+      rustplayer
+      scope-tui
+      termusic
+      tplay
+      twitch-tui
+      yaydl
+      ytermusic
+    ];
+  };
+  multimedia-gui = {
+    enable = false;
+    excludePackages = with pkgs; [
+      amberol
+      coppwr
+      fretboard
+      glide-media-player
+      gnome-podcasts
+      helvum
+      kooha
+      loupe
+      metronome
+      mousai
+      neothesia
+      obs-studio
+      inputs.pipeline.packages.${system}.default
+      pwvucontrol
+      shortwave
+      snapshot
+      songrec
+      switcheroo
+    ];
+  };
+  music-productions = {
+    enable = false;
+    excludePackages = with pkgs; [
+      ardour
+      lmms
+      lsp-plugins
+      muse
+      qtractor
+      yabridge
+      zrythm
+    ];
+  };
+  nix-utils-cli = {
+    enable = true;
+    excludePackages = with pkgs; [
+      #comma
+      devenv
+      #direnv
+      fh
+      flake-checker
+      lorri
+      #nh
+      #nix-direnv
+      nix-doc
+      nix-index
+      nix-init
+      nix-melt
+      nixpkgs-hammering
+      nixpkgs-lint-community
+      nix-web
+      nurl
+    ];
+  };
+  nix-utils-gui = {
+    enable = false;
+    excludePackages = with pkgs; [
+      inputs.nixos-conf-editor.packages.${system}.default
+      inputs.nix-software-center.packages.${system}.default
+    ];
+  };
+  office = {
+    enable = false;
+    excludePackages = with pkgs; [
+      libreoffice
+      onlyoffice-bin
+    ];
+  };
+  painters = {
+    enable = false;
+    excludePackages = with pkgs; [
+      inkscape-with-extensions
+      krita
+      mypaint
+      rnote
+    ];
+  };
+  resource-monitors-cli = {
+    enable = false;
+    excludePackages = with pkgs; [
+      bottom
+      havn
+      kmon
+      netscanner
+      openobserve
+      sniffglue
+      websocat
+      zenith
+      zenith-nvidia
+    ];
+  };
+  resource-monitors-gui = {
+    enable = false;
+    excludePackages = with pkgs; [
+      bustle
+      mission-center
+      process-viewer
+      resources
+      rustscan
+    ];
+  };
+  security-utils-cli = {
+    enable = false;
+    excludePackages = with pkgs; [
+      cotp
+      feroxbuster
+      fim-rs
+      legba
+      lynis
+      noseyparker
+      oo7
+      openvas-scanner
+      paper-age
+      pdfrip
+      ripsecrets
+      sbomnix
+      vulnix
+    ];
+  };
+  security-utils-gui = {
+    enable = false;
+    excludePackages = with pkgs; [
+      authenticator
+      binocle
+      gnome-obfuscate
+      key-rack
+      proton-pass
+    ];
+  };
+  shell-funs = {
+    enable = false;
+    excludePackages = with pkgs; [
+      charasay
+      chess-tui
+      cmd-wrapped
+      dvd-term
+      dwt1-shell-color-scripts
+      firework-rs
+      inputs.fortune-kind.packages.${system}.default
+      genact
+      globe-cli
+      krabby
+      macchina
+      minesweep-rs
+      pfetch-rs
+      pipes-rs
+      rusty-rain
+      terminaltexteffects
+      terminal-typeracer
+      ttyper
+    ];
+  };
+  shell-utils = {
+    enable = true;
+    excludePackages = with pkgs; [
+      ast-grep
+      #atuin
+      #bat
+      diffsitter
+      #eza
+      fd
+      #fish
+      fzf
+      gping
+      hurl
+      kalker
+      lsd
+      mcfly
+      mprocs
+      navi
+      nushell
+      ouch
+      procs
+      pueue
+      #ripgrep
+      ripgrep-all
+      sad
+      sd
+      shellharden
+      #starship
+      systeroid
+      #tealdeer
+      tokei
+      topgrade
+      watchexec
+      xh
+      zellij
+      #zoxide
+    ];
+  };
+  terminals = {
+    enable = false;
+    excludePackages = with pkgs; [
+      alacritty
+      rio
+      wezterm
+      cosmic-term
+    ];
+  };
+  text-editors-cli = {
+    enable = true;
+    excludePackages = with pkgs; [
+      amp
+      helix
+      #neovim
+    ];
+  };
+  text-editors-gui = {
+    enable = false;
+    excludePackages = with pkgs; [
+      cosmic-edit
+      lapce
+      inputs.lem.packages.${system}.lem-sdl2
+      zed-editor
+    ];
+  };
+  video-editors = {
+    enable = false;
+    excludePackages = with pkgs; [
+      flowblade
+      gyroflow
+      identity
+      kdePackages.kdenlive
+      natron
+      olive-editor
+      openshot-qt
+      pitivi
+      shotcut
+      video-trimmer
+      vidmerger
+    ];
+  };
+
+  imports =
+    (with inputs; [
+      catppuccin.homeManagerModules.catppuccin
+      ironbar.homeManagerModules.default
+      jerry.homeManagerModules.default
+      nix-index-database.hmModules.nix-index
+      nixvim.homeManagerModules.default
+      nur.hmModules.nur
+      nyx.homeManagerModules.default
+      plasma-manager.homeManagerModules.plasma-manager
+    ])
+    ++ (builtins.attrValues outputs.homeManagerModules);
 }

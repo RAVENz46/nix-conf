@@ -1,116 +1,165 @@
 {
   config,
-  lib,
   pkgs,
+  lib,
   inputs,
   outputs,
+  modulesPath,
   ...
 }:
 
 {
-  imports = [
-    ./nh.nix
-
-    inputs.catppuccin.nixosModules.catppuccin
-    inputs.nur.nixosModules.nur
-    inputs.home-manager.nixosModules.home-manager
-    inputs.nixos-wsl.nixosModules
-  ] ++ (builtins.attrValues outputs.nixosModules);
-
-  wsl = {
-    enable = true;
-    defaultUser = "user";
-    docker-desktop.enable = false;
-    startMenuLaunchers = true;
-    usbip = {
-      enable = true;
-      autoAttach = [ ];
-    };
-    useWindowsDriver = true;
-  };
-
-  users.users = lib.genAttrs config.userList (f: {
-    shell = pkgs.fish;
-  });
-
   networking.hostName = "wsl";
+  userList = [ "dagon" ];
 
-  environment.shells = with pkgs; [
-    bash
-    fish
-    nushell
-  ];
-
-  programs.bash = {
-    interactiveShellInit = ''
-      set -o vi
-    '';
-    blesh.enable = true;
-  };
-
-  programs.fish = {
-    enable = true;
-    interactiveShellInit = ''
-      fish_vi_key_bindings
-    '';
-  };
-
-  environment = {
-    defaultPackages = lib.mkForce [ ];
-    systemPackages = with pkgs; [
-      wslu
-      wsl-open
-      wsl-vpnkit
-      nushell
+  ai-utils = {
+    enable = false;
+    excludePackages = with pkgs; [
+      ollama
+      tabby
     ];
   };
-
+  audio.enable = true;
+  desktop-managers = {
+    compositors = [
+      #"cosmic"
+      #"niri"
+    ];
+    excludePackages = with pkgs; [ cosmic-greeter ];
+  };
+  localization.enable = true;
+  misc = {
+    enable = false;
+    excludePackages = with pkgs; [
+      android-tools
+      envision
+      garage
+      kanata
+      lact
+      mouse-actions
+      rkvm
+      rustdesk-server
+    ];
+  };
+  network = {
+    enable = true;
+    excludePackages = with pkgs; [
+      bandwhich
+      rosenpass
+      rosenpass-tools
+      sniffnet
+      tailscale
+      trippy
+      hickory-dns
+      wstunnel
+    ];
+  };
+  nix-utils = {
+    enable = false;
+    excludePackages = with pkgs; [
+      nix-ld-rs
+      nixseparatedebuginfod
+      nix-web
+    ];
+  };
+  observability = {
+    enable = false;
+    excludePackages = with pkgs; [
+      below
+      vector
+    ];
+  };
+  search = {
+    enable = false;
+    excludePackages = with pkgs; [
+      meilisearch
+      qdrant
+      quickwit
+      sonic-server
+    ];
+  };
   security = {
-    sudo.enable = false;
-    sudo-rs = {
-      enable = true;
-      execWheelOnly = true;
-    };
+    enable = true;
+    excludePackages = with pkgs; [ kanidm ];
+  };
+  shells.enable = true;
+  virtualization = {
+    hypervisor = ""; # kvm or xen
+    container.enable = false;
+    excludePackages = with pkgs; [
+      cloud-hypervisor
+      cntr
+      conmon-rs
+      crosvm
+      distrobuilder
+      extra-container
+      firecracker
+      gnome-boxes
+      incus
+      krun
+      krunvm
+      lxc
+      quickemu
+      quickgui
+      stratovirt
+      swtpm
+      virt-manager
+    ];
   };
 
   nixpkgs.overlays = builtins.attrValues outputs.overlays;
 
   nix = {
-    package = pkgs.nixFlakes;
+    nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+    registry.nixpkgs.flake = inputs.nixpkgs;
     settings = {
+      auto-optimise-store = true;
       experimental-features = [
         "nix-command"
         "flakes"
       ];
-      auto-optimise-store = true;
     };
-    registry = lib.mapAttrs (_: value: { flake = value; }) inputs;
-    nixPath = [ "nixpkgs=${inputs.nixpkgs.outPath}" ];
-  };
-
-  documentation = {
-    enable = false;
-    doc.enable = false;
-    man.enable = false;
-    dev.enable = false;
-    nixos.enable = false;
-    info.enable = false;
   };
 
   catppuccin = {
     enable = true;
     flavor = "mocha";
-    accent = "teal";
+    accent = "green"; # red, pink, yellow, green, teal
   };
 
-  fonts = {
-    packages = with pkgs; [ nerdfonts ];
+  #hardware.system76.power-daemon.enable = true;
+
+  services = {
+    clipcat.enable = true;
+    #system76-scheduler.enable = true;
+    #fstrim.enable = true;
+    kanidm = {
+      #enableClient = true;
+      #enableServer = true;
+    };
+    #rkvm = {
+    #  server = {
+    #    enable = true;
+    #  };
+    #  cliant = {
+    #    enable = true;
+    #  };
+    #};
   };
 
-  programs.nh = {
-    enable = true;
-    flake = /home/${config.wsl.defaultUser}/nix;
-  };
+  environment.systemPackages = with pkgs; [
+    wl-clipboard-rs
+    uutils-coreutils-noprefix
+    (catppuccin-papirus-folders.override {
+      inherit (config.catppuccin) flavor;
+      inherit (config.catppuccin) accent;
+    })
+  ];
+
+  users.users = lib.genAttrs config.userList (f: {
+    isNormalUser = true;
+    packages = with pkgs; [ ];
+  });
 
   home-manager = {
     extraSpecialArgs = {
@@ -118,8 +167,30 @@
     };
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.user = import ./home.nix;
+    users.dagon = import ./home.nix;
   };
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  system.stateVersion = "24.05";
+
+  system.stateVersion = "24.11";
+
+  imports =
+    [
+      #(modulesPath + "/profiles/hardened.nix")
+      ./configuration.nix
+    ]
+    ++ (with inputs; [
+      catppuccin.nixosModules.catppuccin
+      #disko.nixosModules.default
+      home-manager.nixosModules.default
+      #lanzaboote.nixosModules.lanzaboote
+      musnix.nixosModules.default
+      #niri-flake.nixosModules.niri
+      nix-gaming.nixosModules.pipewireLowLatency
+      nix-gaming.nixosModules.platformOptimizations
+      nix-index-database.nixosModules.nix-index
+      #nixos-cosmic.nixosModules.default
+      #nixvim.nixosModules.default
+      nur.nixosModules.nur
+      nyx.nixosModules.default
+    ])
+    ++ (builtins.attrValues outputs.nixosModules);
 }

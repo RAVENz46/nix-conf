@@ -110,7 +110,12 @@
     ];
   };
   desktop-managers = {
-    enable = false;
+    compositors = [
+      "cosmic"
+      "gnome"
+      "kde"
+      "niri"
+    ];
     excludePackages = with pkgs; [ ];
   };
   git-utils-cli = {
@@ -492,8 +497,8 @@
   };
 
   imports =
-    (with inputs; [
-      android.hmModules.android
+    [ ./home-configuration.nix ]
+    ++ (with inputs; [
       catppuccin.homeManagerModules.catppuccin
       ironbar.homeManagerModules.default
       jerry.homeManagerModules.default

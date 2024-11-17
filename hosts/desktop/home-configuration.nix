@@ -70,7 +70,6 @@
       #darwin-rebuild switch --flake .#${config.networking.hostName}
       #nix-on-droid switch --flake .
       #home-manager switch --flake .username
-      fixit = "systemctl --user import-environment PATH && systemctl --user restart xdg-desktop-portal.service";
     };
   };
 
