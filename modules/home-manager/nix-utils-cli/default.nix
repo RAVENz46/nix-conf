@@ -48,6 +48,11 @@ in
         #'';
         nix-direnv.enable = notExcluded pkgs.nix-direnv && config.programs.direnv.enable;
       };
+
+      nh = {
+        enable = notExcluded pkgs.nh;
+      };
+
       nix-index.enable = notExcluded pkgs.nix-index && !config.programs.command-not-found.enable;
       nix-index-database.comma.enable = notExcluded pkgs.comma && config.programs.nix-index.enable;
     };

@@ -256,6 +256,7 @@ wip
 | [fh](https://github.com/DeterminateSystems/fh) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/nix/fh/default.nix)) | No | PO | Yes | The official FlakeHub CLI |
 | [flake-checker](https://github.com/DeterminateSystems/flake-checker) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/fl/flake-checker/package.nix)) | No | PO | Yes | Health checks for your Nix flakes |
 | [lorri](https://github.com/nix-community/lorri) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/misc/lorri/default.nix)) | Yes | No | Yes | Your project's nix-env |
+| [nh](https://github.com/viperML/nh) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/nh/nh/package.nix)) | Yes | PO | Yes | Yet another nix cli helper |
 | [nix-direnv](https://github.com/nix-community/nix-direnv) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/ni/nix-direnv/package.nix)) | Yes | PO | No | Fast, persistent use_nix implementation for direnv |
 | [nix-doc](https://github.com/lf-/nix-doc) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/package-management/nix-doc/default.nix)) | No | PO | Yes | An interactive Nix documentation tool |
 | [nix-index](https://github.com/nix-community/nix-index-database) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/package-management/nix-index/default.nix)) | No | PO | Yes | A files database for nixpkgs |

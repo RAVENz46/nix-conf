@@ -9,6 +9,7 @@
 with lib;
 let
   cfg = config.text-editors-gui;
+  notExcluded = pkg: !(builtins.elem pkg config.text-editors-gui.excludePackages);
 in
 {
   options = {
@@ -28,10 +29,27 @@ in
       with pkgs;
       [
         lapce
-        zed-editor
       ]
       ++ optionals stdenv.isLinux [ cosmic-edit ]
       ++ optionals (stdenv.system == "x86_64-linux") [ inputs.lem.packages.${system}.lem-sdl2 ]
     );
+
+    programs = {
+      zed-editor = {
+        enable = notExcluded pkgs.zed-editor;
+        extensions = [ "catppuccin" "nix" ];
+        userKeymaps = {};
+        userSettings = {
+          theme = "Catppuccin Mocha";
+          telemetry = {
+            diagnostics = false;
+            metrics = false;
+          };
+          vim_mode = true;
+          ui_font_size = 16;
+          buffer_font_size = 16;
+        };
+      };
+    };
   };
 }

@@ -33,10 +33,6 @@ in
     };
 
     programs = {
-      nh = {
-        enable = notExcluded pkgs.nh;
-      };
-
       nix-ld = {
         enable = notExcluded pkgs.nix-ld-rs;
         package = pkgs.nix-ld-rs;

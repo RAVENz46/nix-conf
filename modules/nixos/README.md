@@ -78,7 +78,6 @@ Flake section -> PO: Package Only, PN: Package & NixOsModule
 ### nix-utils
 | Package Name | NOM | Flake | Rust | Descriptions |
 |:------------:|:---:|:-----:|:----:| ------------ |
-| [nh](https://github.com/viperML/nh) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/nh/nh/package.nix)) | Yes | PN | Yes | Yet another nix cli helper |
 | [nix-ld-rs](https://github.com/nix-community/nix-ld-rs) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/ni/nix-ld-rs/package.nix)) | Yes | PO | Yes | Run unpatched dynamic binaries on NixOS (rust version) |
 | [nixseparatedebuginfod](https://github.com/symphorien/nixseparatedebuginfod) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/ni/nixseparatedebuginfod/package.nix)) | Yes | PN | Yes | Downloads and provides debug symbols and source code for nix derivations to gdb and other debuginfod-capable debuggers as needed |
 | [nix-web](https://codeberg.org/gorgon/gorgon/src/branch/main/nix-web) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/ni/nix-web/package.nix)) | No | No | Yes | Web interface for the Nix store |
