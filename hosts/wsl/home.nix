@@ -15,7 +15,7 @@
     stateVersion = "24.11";
   };
   programs.home-manager.enable = true;
-  #systemd.user.startServices = "sd-switch";
+  systemd.user.startServices = "sd-switch";
   isNixOS = true;
   catppuccin = {
     enable = true;

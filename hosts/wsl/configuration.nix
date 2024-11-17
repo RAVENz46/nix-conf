@@ -31,5 +31,14 @@
     ];
   };
 
+  security = {
+    tpm2 = {
+      enable = lib.mkForce false;
+      abrmd.enable = lib.mkForce false;
+      pkcs11.enable = lib.mkForce false;
+      tctiEnvironment.enable = lib.mkForce false;
+    };
+  };
+
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 }

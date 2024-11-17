@@ -41,6 +41,15 @@
       forecast
       #gpauth
       #gpclient
+      #stardust-xr-kiara
+      #stardust-xr-server
+      #stardust-xr-gravity
+      #stardust-xr-phobetor
+      #stardust-xr-magnetar
+      #stardust-xr-flatland
+      #stardust-xr-protostar
+      #stardust-xr-sphereland
+      #stardust-xr-atomosphere
     ];
 
     sessionPath = [
@@ -52,6 +61,7 @@
       #ZELLIJ_AUTO_EXIT = "true";
       #WEBKIT_DISABLE_DMABUF_RENDERER = 1;
       #WEBKIT_DISABLE_COMPOSITING_MODE = 1;
+      COSMIC_DATA_CONTROL_ENABLED = 1;
     };
 
     shellAliases = {
