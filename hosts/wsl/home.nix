@@ -12,7 +12,7 @@
   home = {
     username = "dagon";
     homeDirectory = "/home/dagon";
-    stateVersion = "24.11";
+    stateVersion = "25.05";
   };
   programs.home-manager.enable = true;
   systemd.user.startServices = "sd-switch";

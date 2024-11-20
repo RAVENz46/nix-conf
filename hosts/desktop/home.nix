@@ -10,7 +10,7 @@
   home = {
     username = "ravenz46";
     homeDirectory = "/home/ravenz46";
-    stateVersion = "24.11";
+    stateVersion = "25.05";
   };
   programs = {
     home-manager.enable = true;

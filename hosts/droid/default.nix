@@ -29,7 +29,7 @@
 
   environment.etcBackupExtension = ".bak";
 
-  system.stateVersion = "24.11";
+  system.stateVersion = "25.05";
 
   nix = {
     extraOptions = ''
