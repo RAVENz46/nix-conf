@@ -106,6 +106,14 @@ in
 
       librewolf = {
         enable = notExcluded pkgs.librewolf && pkgs.stdenv.isLinux;
+        policies = {
+          ExtensionSettings = {
+            "{166411f2-402a-4bca-a3da-38b795ec8007}" = {
+              install_url = "https://addons.mozilla.org/firefox/downloads/file/4300211/renewed_tab-1.19.0.xpi";
+              installation_mode = "normal_installed";
+            };
+          };
+        };
         settings = {
           "browser.bookmarks.restore_default_bookmarks" = false;
           "browser.compactmode.show" = true;
@@ -120,19 +128,17 @@ in
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
           "ui.context_menus.after_mouseup" = true;
         };
-        #profiles.default = {
-        #  extensions = with config.nur.repos.rycee.firefox-addons; [
-        #    buster-captcha-solver
-        #    gesturefy
-        #    gitako-github-file-tree
-        #    proton-pass
-        #    proton-vpn
-        #    refined-github
-        #    side-view
-        #    surfingkeys
-        #    ublock-origin
-        #  ];
-        #};
+        profiles.default = {
+          extensions = with config.nur.repos.rycee.firefox-addons; [
+            buster-captcha-solver
+            gitako-github-file-tree
+            proton-pass
+            proton-vpn
+            refined-github
+            surfingkeys
+            ublock-origin
+          ];
+        };
       };
 
       #mullvad-browser = {
