@@ -7,7 +7,7 @@
 
 {
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_6_11_hardened;
     kernelParams = [ "intel_iommu=on" ];
     supportedFilesystems = [ "bcachefs" ];
     lanzaboote = {
@@ -37,7 +37,10 @@
     xserver.videoDrivers = [ "nvidia" ];
   };
 
-  security.allowSimultaneousMultithreading = true;
+  security = {
+    allowSimultaneousMultithreading = true;
+    unprivilegedUsernsClone = true;
+  };
 
   programs.steam.platformOptimizations.enable = true;
 
