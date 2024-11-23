@@ -70,12 +70,5 @@ in
         replaygain = "off";
       };
     };
-
-    xdg.configFile = mkIf config.programs.obs-studio.enable {
-      "obs-studio/themes" = {
-        recursive = true;
-        source = ./obs-studio/themes;
-      };
-    };
   };
 }
