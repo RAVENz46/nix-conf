@@ -78,8 +78,7 @@ in
         policies = {
           ExtensionSettings = {
             "{acf82b50-48cf-4dd4-8059-5c949e754a65}" = {
-              install_url = "https://addons.mozilla.org/firefox/downloads/file/4330609/anori-1.20.0.xpi";
-              installation_mode = "normal_installed";
+              installation_mode = "allowed";
             };
           };
         };
@@ -109,8 +108,7 @@ in
         policies = {
           ExtensionSettings = {
             "{166411f2-402a-4bca-a3da-38b795ec8007}" = {
-              install_url = "https://addons.mozilla.org/firefox/downloads/file/4300211/renewed_tab-1.19.0.xpi";
-              installation_mode = "normal_installed";
+              installation_mode = "allowed";
             };
           };
         };
@@ -136,8 +134,8 @@ in
             proton-vpn
             refined-github
             surfingkeys
-            ublock-origin
           ];
+          userChrome = builtins.readFile ./librewolf/userChrome.css;
         };
       };
 
@@ -145,12 +143,9 @@ in
       #  enable = notExcluded pkgs.mullvad-browser && (pkgs.stdenv.system == "x86_64-linux");
       #  profiles.default = {
       #    userChrome = ''
-      #      ${./oju2.png}
       #      ${builtins.readFile ./userChrome.css}
       #    '';
-      #    userContent = ''
-      #      ${builtins.readFile ./userContent.css}
-      #    '';
+      #    userContent = builtins.readFile {./mullvad-browser}/userContent.css;
       #  };
       #};
     };
