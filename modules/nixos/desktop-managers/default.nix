@@ -55,6 +55,9 @@ in
           mouse.accelProfile = "flat";
           touchpad.accelProfile = "flat";
         };
+        udisks2 = {
+          enable = true;
+        };
       };
     })
 
