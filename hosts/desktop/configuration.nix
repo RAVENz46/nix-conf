@@ -9,7 +9,7 @@
   boot = {
     kernelPackages = pkgs.linuxPackages_6_11_hardened;
     kernelParams = [ "intel_iommu=on" ];
-    supportedFilesystems = [ "bcachefs" ];
+    supportedFilesystems = [ "bcachefs" "exfat" ];
     lanzaboote = {
       enable = true;
       pkiBundle = "/etc/secureboot";
