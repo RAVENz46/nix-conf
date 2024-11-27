@@ -10,7 +10,10 @@
     #kernelPackages = pkgs.linuxPackages_latest;
     kernelPackages = pkgs.linuxPackages_6_11_hardened;
     kernelParams = [ "intel_iommu=on" ];
-    supportedFilesystems = [ "bcachefs" "exfat" ];
+    supportedFilesystems = [
+      "bcachefs"
+      "exfat"
+    ];
     loader.systemd-boot.enable = lib.mkForce false;
     lanzaboote = {
       enable = true;

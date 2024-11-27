@@ -36,7 +36,7 @@
       garage
       kanata
       lact
-      matrix-conduit 
+      matrix-conduit
       #mouse-actions
       rkvm
       rustdesk-server

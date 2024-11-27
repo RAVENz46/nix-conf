@@ -37,8 +37,11 @@ in
     programs = {
       zed-editor = {
         enable = notExcluded pkgs.zed-editor;
-        extensions = [ "catppuccin" "nix" ];
-        userKeymaps = {};
+        extensions = [
+          "catppuccin"
+          "nix"
+        ];
+        userKeymaps = { };
         userSettings = {
           theme = "Catppuccin Mocha";
           telemetry = {

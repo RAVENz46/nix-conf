@@ -23,10 +23,9 @@
         {
         };
 
-      systemPackages = with pkgs;
-        [
-          inputs.system-manager.packages.${system}.default
-        ];
+      systemPackages = with pkgs; [
+        inputs.system-manager.packages.${system}.default
+      ];
     };
 
     systemd = {
