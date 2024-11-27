@@ -35,7 +35,7 @@ in
 
     programs = {
       thunderbird = {
-        enable = notExcluded pkgs.thunderbird && pkgs.stdenv.isLinux;
+        enable = notExcluded pkgs.thunderbird;
         profiles = { };
       };
     };

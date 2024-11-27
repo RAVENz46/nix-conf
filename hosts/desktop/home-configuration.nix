@@ -34,6 +34,7 @@
       cached-nix-shell
       #mistral-rs
       #zluda
+      #rogcat
       #rustdesk
       #rustdesk-flutter
       #srgn

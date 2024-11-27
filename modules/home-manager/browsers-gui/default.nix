@@ -43,7 +43,7 @@ in
       };
 
       firefox = {
-        enable = notExcluded pkgs.firefox-devedition && pkgs.stdenv.isLinux;
+        enable = notExcluded pkgs.firefox-devedition;
         package = pkgs.firefox-devedition;
         profiles.dev-edition-default = {
           settings = {
@@ -74,7 +74,7 @@ in
       };
 
       floorp = {
-        enable = notExcluded pkgs.floorp && pkgs.stdenv.isLinux;
+        enable = notExcluded pkgs.floorp;
         policies = {
           ExtensionSettings = {
             "{acf82b50-48cf-4dd4-8059-5c949e754a65}" = {
@@ -104,7 +104,7 @@ in
       };
 
       librewolf = {
-        enable = notExcluded pkgs.librewolf && pkgs.stdenv.isLinux;
+        enable = notExcluded pkgs.librewolf;
         policies = {
           ExtensionSettings = {
             "{166411f2-402a-4bca-a3da-38b795ec8007}" = {
