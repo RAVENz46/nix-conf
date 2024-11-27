@@ -81,6 +81,10 @@ in
         };
       };
 
+      matrix-conduit = {
+        enable = notExcluded pkgs.matrix-conduit;
+      };
+
       rkvm = {
         enable = notExcluded pkgs.rkvm;
       };
