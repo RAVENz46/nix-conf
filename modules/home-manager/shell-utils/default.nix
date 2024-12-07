@@ -94,10 +94,6 @@ in
         };
       };
 
-      fzf = {
-        enable = notExcluded pkgs.fzf;
-      };
-
       lsd = {
         enable = notExcluded pkgs.lsd;
         enableAliases = notExcluded pkgs.lsd;
@@ -105,7 +101,6 @@ in
 
       mcfly = {
         enable = notExcluded pkgs.mcfly;
-        fzf.enable = notExcluded pkgs.fzf;
         fuzzySearchFactor = 0;
         keyScheme = "vim";
       };
@@ -122,6 +117,10 @@ in
       ripgrep = {
         enable = notExcluded pkgs.ripgrep;
         arguments = [ ];
+      };
+
+      skim = {
+        enable = notExcluded pkgs.skim;
       };
 
       starship = {

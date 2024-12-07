@@ -422,7 +422,6 @@
       #eza
       fd
       #fish
-      #fzf
       #gping
       hurl
       kalker
@@ -439,6 +438,7 @@
       sad
       sd
       shellharden
+      #skim
       #starship
       systeroid
       #tealdeer

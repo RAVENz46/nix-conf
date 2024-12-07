@@ -367,7 +367,6 @@ wip
 | [eza](https://github.com/eza-community/eza) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/ez/eza/package.nix)) | Yes | PO | Yes | Modern, maintained replacement for ls |
 | [fd](https://github.com/sharkdp/fd) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/misc/fd/default.nix)) | No | No | Yes | Simple, fast and user-friendly alternative to find |
 | [fish](https://github.com/fish-shell/fish-shell) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/shells/fish/default.nix)) | Yes | No | Yes | Smart and user-friendly command line shell |
-| [fzf](https://github.com/junegunn/fzf) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/fz/fzf/package.nix)) | Yes | No | No | Command-line fuzzy finder written in Go |
 | [gping](https://github.com/orf/gping) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/networking/gping/default.nix)) | No | No | Yes | Ping, but with a graph |
 | [hurl](https://github.com/Orange-OpenSource/hurl) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/hu/hurl/package.nix)) | No | No | Yes | Command line tool that performs HTTP requests defined in a simple plain text format |
 | [kalker](https://github.com/PaddiM8/kalker) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/misc/kalker/default.nix)) | No | PO | Yes | Command line calculator |
@@ -384,6 +383,7 @@ wip
 | [sad](https://github.com/ms-jpq/sad) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/text/sad/default.nix)) | No | No | Yes | CLI tool to search and replace |
 | [sd](https://github.com/chmln/sd) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/text/sd/default.nix)) | No | No | Yes | Intuitive find & replace CLI (sed alternative) |
 | [shellharden](https://github.com/anordal/shellharden) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/development/tools/shellharden/default.nix)) | No | No | Yes | Corrective bash syntax highlighter |
+| [skim](https://github.com/skim-rs/skim) ([nixpkgs](Command-line fuzzy finder written in Rust)) | Yes | No | Yes | Command-line fuzzy finder written in Rust | 
 | [starship](https://github.com/starship/starship) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/misc/starship/default.nix)) | Yes | No | Yes | Minimal, blazing fast, and extremely customizable prompt for any shell |
 | [systeroid](https://github.com/orhun/systeroid) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/system/systeroid/default.nix)) | No | No | Yes | More powerful alternative to sysctl(8) with a terminal user interface |
 | [tealdeer](https://github.com/dbrgn/tealdeer) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/misc/tealdeer/default.nix)) | Yes | No | Yes | Very fast implementation of tldr in Rust |
