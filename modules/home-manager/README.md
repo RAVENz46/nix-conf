@@ -16,7 +16,7 @@ Flake Section -> PO: PackageOnly, PH: Package & HomeManagerModule
 |:------------:|:---:|:-----:|:----:| ------------ |
 | [blender](https://projects.blender.org/blender/blender) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/misc/blender/default.nix)) | No | No | No | 3D Creation/Animation/Publishing System |
 | [paraview](https://gitlab.kitware.com/paraview/paraview) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/graphics/paraview/default.nix)) | No | No | No | 3D Data analysis and visualization application |
-| [synfigstudio](https://github.com/synfig/synfig) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/graphics/synfigstudio/default.nix)) | No | No | No | A 2D animation program |
+| [synfigstudio](https://github.com/synfig/synfig) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/graphics/synfigstudio/default.nix)) | No | No | No | 2D animation program |
 
 ### browsers-cli
 | Package Name | HMM | Flake | Rust | Descriptions |
@@ -29,17 +29,17 @@ Flake Section -> PO: PackageOnly, PH: Package & HomeManagerModule
 ### browsers-gui
 | Package Name | HMM | Flake | Rust | Descriptions |
 |:------------:|:---:|:-----:|:----:| ------------ |
-| [arti](https://gitlab.torproject.org/tpo/core/arti) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/security/arti/default.nix)) | No | No | Yes | An implementation of Tor in Rust |
+| [arti](https://gitlab.torproject.org/tpo/core/arti) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/security/arti/default.nix)) | No | No | Yes | Implementation of Tor in Rust |
 | [browdi](https://github.com/Nosterx/browdi) | No | No | Yes | Browser Chooser/Dispatcher/Selector |
 | [browsers](https://github.com/Browsers-software/browsers) | No | No | Yes | Open the right browser at the right time |
-| [firefox-devedition](https://www.mozilla.org/en-US/firefox/developer/) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/networking/browsers/firefox/packages.nix)) | Yes | No | No | A web browser built from Firefox source tree |
-| [floorp](https://github.com/Floorp-Projects/Floorp) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/networking/browsers/firefox/packages.nix)) | No | No | No | A fork of Firefox, focused on keeping the Open, Private and Sustainable Web alive, built in Japan |
+| [firefox-devedition](https://www.mozilla.org/en-US/firefox/developer/) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/networking/browsers/firefox/packages.nix)) | Yes | No | No | Web browser built from Firefox source tree |
+| [floorp](https://github.com/Floorp-Projects/Floorp) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/networking/browsers/firefox/packages.nix)) | No | No | No | Fork of Firefox, focused on keeping the Open, Private and Sustainable Web alive, built in Japan |
 | [geopard](https://github.com/ranfdev/Geopard) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/ge/geopard/package.nix)) | No | PO | Yes | Colorful, adaptive gemini browser |
 | [ladybird](https://github.com/LadybirdBrowser/ladybird) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/networking/browsers/ladybird/default.nix)) | No | No | No | Browser using the SerenityOS LibWeb engine with a Qt or Cocoa GUI |
-| [librewolf](https://codeberg.org/librewolf) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/networking/browsers/firefox/packages.nix)) | Yes | No | No | A fork of Firefox, focused on privacy, security and freedom |
+| [librewolf](https://codeberg.org/librewolf) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/networking/browsers/firefox/packages.nix)) | Yes | No | No | Fork of Firefox, focused on privacy, security and freedom |
 | [mullvad-browser](https://gitlab.torproject.org/tpo/applications/mullvad-browser) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/networking/browsers/mullvad-browser/default.nix)) | No | No | No | Privacy-focused browser made in a collaboration between The Tor Project and Mullvad |
 | [nyxt](https://github.com/atlas-engineer/nyxt) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/networking/browsers/nyxt/default.nix)) | No | No | No | Infinitely extensible web-browser (with Lisp development files using WebKitGTK platform port) |
-| [ungoogled-chromium](https://github.com/ungoogled-software/ungoogled-chromium) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/networking/browsers/chromium/browser.nix)) | Yes | No | No | An open source web browser from Google, with dependencies on Google web services removed |
+| [ungoogled-chromium](https://github.com/ungoogled-software/ungoogled-chromium) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/networking/browsers/chromium/browser.nix)) | Yes | No | No | Open source web browser from Google, with dependencies on Google web services removed |
 
 ### data-managers-cli
 | Package Name | HMM | Flake | Rust | Descriptions |
@@ -62,7 +62,7 @@ Flake Section -> PO: PackageOnly, PH: Package & HomeManagerModule
 | Package Name | HMM | Flake | Rust | Descriptions |
 |:------------:|:---:|:-----:|:----:| ------------ |
 | [celeste](https://github.com/hwittenborn/celeste) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/networking/sync/celeste/default.nix)) | No | No | Yes | GUI file synchronization client that can sync with any cloud provider |
-| [czkawka](https://github.com/qarmin/czkawka) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/cz/czkawka/package.nix)) | No | No | Yes | A simple, fast and easy to use app to remove unnecessary files from your computer |
+| [czkawka](https://github.com/qarmin/czkawka) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/cz/czkawka/package.nix)) | No | No | Yes | Simple, fast and easy to use app to remove unnecessary files from your computer |
 | [fm](https://github.com/euclio/fm) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/file-managers/fm/default.nix)) | No | PO | Yes | Small, general purpose file manager built with GTK4 |
 | [pika-backup](https://gitlab.gnome.org/World/pika-backup) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/backup/pika-backup/default.nix)) | No | No | Yes | Simple backups based on borg |
 | [szyszka](https://github.com/qarmin/szyszka) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/misc/szyszka/default.nix)) | No | No | Yes | Simple but powerful and fast bulk file renamer |
@@ -84,18 +84,18 @@ wip
 ### git-utils-cli (stars>1k)
 | Package Name | HMM | Flake | Rust | Descriptions |
 |:------------:|:---:|:-----:|:----:| ------------ |
-| [delta](https://github.com/dandavison/delta) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/version-management/delta/default.nix)) | Yes | No | Yes | A syntax-highlighting pager for git |
+| [delta](https://github.com/dandavison/delta) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/version-management/delta/default.nix)) | Yes | No | Yes | Syntax-highlighting pager for git |
 | [gh](https://github.com/cli/cli) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/version-management/gh/default.nix)) | Yes | No | No | GitHub CLI tool |
 | [gh-dash](https://github.com/dlvhdr/gh-dash) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/misc/gh-dash/default.nix)) | Yes | No | No | Github Cli extension to display a dashboard with pull requests and issues |
 | [git](https://github.com/git/git) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/version-management/git/default.nix)) | Yes | No | No | Distributed version control system |
 | [git-absorb](https://github.com/tummychow/git-absorb) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/version-management/git-absorb/default.nix)) | No | No | Yes | git commit --fixup, but automatic |
-| [git-branchless](https://github.com/arxanas/git-branchless) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/version-management/git-branchless/default.nix)) | No | PO | Yes | A suite of tools to help you visualize, navigate, manipulate, and repair your commit history |
+| [git-branchless](https://github.com/arxanas/git-branchless) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/version-management/git-branchless/default.nix)) | No | PO | Yes | Suite of tools to help you visualize, navigate, manipulate, and repair your commit history |
 | [git-interactive-rebase-tool](https://github.com/MitMaro/git-interactive-rebase-tool) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/version-management/git-interactive-rebase-tool/default.nix)) | No | No | Yes | Native cross platform full feature terminal based sequence editor for git interactive rebase |
-| [gitoxide](https://github.com/Byron/gitoxide) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/version-management/gitoxide/default.nix)) | No | No | Yes | A command-line application for interacting with git repositories |
-| [gitu](https://github.com/altsem/gitu) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/gi/gitu/package.nix)) | No | PO | Yes | A TUI Git client inspired by Magit |
+| [gitoxide](https://github.com/Byron/gitoxide) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/version-management/gitoxide/default.nix)) | No | No | Yes | Command-line application for interacting with git repositories |
+| [gitu](https://github.com/altsem/gitu) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/gi/gitu/package.nix)) | No | PO | Yes | TUI Git client inspired by Magit |
 | [gitui](https://github.com/extrawurst/gitui) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/gi/gitui/package.nix)) | Yes | No | Yes | Blazing fast terminal-ui for Git written in Rust |
-| [gql](https://github.com/AmrDeveloper/GQL) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/version-management/gql/default.nix)) | No | No | Yes | A SQL like query language to perform queries on .git files |
-| [jujutsu](https://github.com/martinvonz/jj) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/version-management/jujutsu/default.nix)) | Yes | PO | Yes | A Git-compatible DVCS that is both simple and powerful |
+| [gql](https://github.com/AmrDeveloper/GQL) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/version-management/gql/default.nix)) | No | No | Yes | SQL like query language to perform queries on .git files |
+| [jujutsu](https://github.com/martinvonz/jj) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/version-management/jujutsu/default.nix)) | Yes | PO | Yes | Git-compatible DVCS that is both simple and powerful |
 | [onefetch](https://github.com/o2sh/onefetch) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/misc/onefetch/default.nix)) | No | No | Yes | Git repository summary on your terminal |
 | [sapling](https://github.com/facebook/sapling) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/version-management/sapling/default.nix)) | Yes | No | Yes | Scalable, User-Friendly Source Control System |
 
@@ -108,8 +108,8 @@ wip
 | Package Name | HMM | Flake | Rust | Descriptions |
 |:------------:|:---:|:-----:|:----:| ------------ |
 | [biodiff](https://github.com/8051Enthusiast/biodiff) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/development/tools/biodiff/default.nix)) | No | No | Yes | Hex diff viewer using alignment algorithms from biology |
-| [heh](https://github.com/ndd7xv/heh) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/editors/heh/default.nix)) | No | No | Yes | A cross-platform terminal UI used for modifying file data in hex or ASCII |
-| [hexyl](https://github.com/sharkdp/hexyl) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/misc/hexyl/default.nix)) | No | No | Yes | A command-line hex viewer |
+| [heh](https://github.com/ndd7xv/heh) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/editors/heh/default.nix)) | No | No | Yes | Cross-platform terminal UI used for modifying file data in hex or ASCII |
+| [hexyl](https://github.com/sharkdp/hexyl) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/misc/hexyl/default.nix)) | No | No | Yes | Command-line hex viewer |
 
 ### image-editors
 | Package Name | HMM | Flake | Rust | Descriptions |
@@ -119,13 +119,13 @@ wip
 | [gimp](https://www.gimp.org) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/graphics/gimp/default.nix)) | No | No | No | The GNU Image Manipulation Program |
 | [oculante](https://github.com/woelper/oculante) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/graphics/oculante/default.nix)) | No | No | Yes | Minimalistic crossplatform image viewer written in Rust |
 | [rawtherapee](http://www.rawtherapee.com) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/graphics/rawtherapee/default.nix)) | No | No | No | RAW converter and digital photo processing software |
-| [simp](https://github.com/Kl4rry/simp) | No | No | Yes | A fast and simple GPU-accelerated image manipulation program |
+| [simp](https://github.com/Kl4rry/simp) | No | No | Yes | Fast and simple GPU-accelerated image manipulation program |
 
 ### json-utils-cli
 | Package Name | HMM | Flake | Rust | Descriptions |
 |:------------:|:---:|:-----:|:----:| ------------ |
-| [jless](https://github.com/PaulJuliusMartinez/jless) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/development/tools/jless/default.nix)) | No | No | Yes | A command-line pager for JSON data |
-| [jql](https://github.com/yamafaktory/jql) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/development/tools/jql/default.nix)) | No | No | Yes | A JSON Query Language CLI tool built with Rust |
+| [jless](https://github.com/PaulJuliusMartinez/jless) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/development/tools/jless/default.nix)) | No | No | Yes | Command-line pager for JSON data |
+| [jql](https://github.com/yamafaktory/jql) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/development/tools/jql/default.nix)) | No | No | Yes | JSON Query Language CLI tool built with Rust |
 
 ### log-utils-cli
 | Package Name | HMM | Flake | Rust | Descriptions |
@@ -137,7 +137,7 @@ wip
 ### markdown-utils-cli
 | Package Name | HMM | Flake | Rust | Descriptions |
 |:------------:|:---:|:-----:|:----:| ------------ |
-| [inlyne](https://github.com/Inlyne-Project/inlyne) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/misc/inlyne/default.nix)) | No | No | Yes | A GPU powered browserless markdown viewer |
+| [inlyne](https://github.com/Inlyne-Project/inlyne) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/misc/inlyne/default.nix)) | No | No | Yes | GPU powered browserless markdown viewer |
 | [mdcat](https://github.com/swsnr/mdcat) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/text/mdcat/default.nix)) | No | No | Yes | cat for markdown |
 | [md-tui](https://github.com/henriklovhaug/md-tui) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/md/md-tui/package.nix)) | No | PO | Yes | Markdown renderer in the terminal |
 
@@ -258,20 +258,20 @@ wip
 | [lorri](https://github.com/nix-community/lorri) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/misc/lorri/default.nix)) | Yes | No | Yes | Your project's nix-env |
 | [nh](https://github.com/viperML/nh) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/nh/nh/package.nix)) | Yes | PO | Yes | Yet another nix cli helper |
 | [nix-direnv](https://github.com/nix-community/nix-direnv) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/ni/nix-direnv/package.nix)) | Yes | PO | No | Fast, persistent use_nix implementation for direnv |
-| [nix-doc](https://github.com/lf-/nix-doc) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/package-management/nix-doc/default.nix)) | No | PO | Yes | An interactive Nix documentation tool |
-| [nix-index](https://github.com/nix-community/nix-index-database) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/package-management/nix-index/default.nix)) | No | PO | Yes | A files database for nixpkgs |
+| [nix-doc](https://github.com/lf-/nix-doc) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/package-management/nix-doc/default.nix)) | No | PO | Yes | Interactive Nix documentation tool |
+| [nix-index](https://github.com/nix-community/nix-index-database) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/package-management/nix-index/default.nix)) | No | PO | Yes | Files database for nixpkgs |
 | [nix-init](https://github.com/nix-community/nix-init) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/nix/nix-init/default.nix)) | No | PO | Yes | Command line tool to generate Nix packages from URLs |
-| [nix-melt](https://github.com/nix-community/nix-melt) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/nix/nix-melt/default.nix)) | No | PO | Yes | A ranger-like flake.lock viewer |
-| [nixpkgs-hammering](https://github.com/jtojnar/nixpkgs-hammering) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/nix/nixpkgs-hammering/default.nix)) | No | PO | Yes | A set of nit-picky rules that aim to point out and explain common mistakes in nixpkgs package pull requests|
-| [nixpkgs-lint-community](https://github.com/nix-community/nixpkgs-lint) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/nix/nixpkgs-lint/default.nix)) | No | PO | Yes | A fast semantic linter for Nix using tree-sitter |
+| [nix-melt](https://github.com/nix-community/nix-melt) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/nix/nix-melt/default.nix)) | No | PO | Yes | Ranger-like flake.lock viewer |
+| [nixpkgs-hammering](https://github.com/jtojnar/nixpkgs-hammering) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/nix/nixpkgs-hammering/default.nix)) | No | PO | Yes | Set of nit-picky rules that aim to point out and explain common mistakes in nixpkgs package pull requests|
+| [nixpkgs-lint-community](https://github.com/nix-community/nixpkgs-lint) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/nix/nixpkgs-lint/default.nix)) | No | PO | Yes | Fast semantic linter for Nix using tree-sitter |
 | [nix-web](https://codeberg.org/gorgon/gorgon/src/branch/main/nix-web) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/ni/nix-web/package.nix)) | No | No | Yes | Web interface for the Nix store |
 | [nurl](https://github.com/nix-community/nurl) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/misc/nurl/default.nix)) | No | PO | Yes | Command-line tool to generate Nix fetcher calls from repository URLs |
 
 ### nix-utils-gui
 | Package Name | HMM | Flake | Rust | Descriptions |
 |:------------:|:---:|:-----:|:----:| ------------ |
-| [nixos-conf-editor](https://github.com/snowfallorg/nixos-conf-editor) | No | PO | Yes | A libadwaita/gtk4 app for editing NixOS configurations |
-| [nix-software-center](https://github.com/snowfallorg/nix-software-center) | No | PO | Yes |A simple gtk4/libadwaita software center to easily install and manage nix packages |
+| [nixos-conf-editor](https://github.com/snowfallorg/nixos-conf-editor) | No | PO | Yes | Libadwaita/gtk4 app for editing NixOS configurations |
+| [nix-software-center](https://github.com/snowfallorg/nix-software-center) | No | PO | Yes | Simple gtk4/libadwaita software center to easily install and manage nix packages |
 
 ### office
 | Package Name | HMM | Flake | Rust | Descriptions |
@@ -283,8 +283,8 @@ wip
 | Package Name | HMM | Flake | Rust | Descriptions |
 |:------------:|:---:|:-----:|:----:| ------------ |
 | [inkscape](https://gitlab.com/inkscape/inkscape) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/graphics/inkscape/default.nix)) | No | No | No | Vector graphics editor |
-| [krita](https://invent.kde.org/graphics/krita) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/graphics/krita/generic.nix)) | No | No | No | A free and open source painting application |
-| [mypaint](https://github.com/mypaint/mypaint) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/graphics/mypaint/default.nix)) | No | No | No | A graphics application for digital painters |
+| [krita](https://invent.kde.org/graphics/krita) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/graphics/krita/generic.nix)) | No | No | No | Free and open source painting application |
+| [mypaint](https://github.com/mypaint/mypaint) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/graphics/mypaint/default.nix)) | No | No | No | Graphics application for digital painters |
 | [rnote](https://github.com/flxzt/rnote) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/graphics/rnote/default.nix)) | No | No | Yes | Simple drawing application to create handwritten notes |
 
 ### resource-monitors-cli
