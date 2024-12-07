@@ -131,10 +131,6 @@
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    websurfx = {
-      url = "github:neon-mmd/websurfx";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     #firefox-gnome-theme = { url = "github:rafaelmardojai/firefox-gnome-theme"; flake = false; };
   };

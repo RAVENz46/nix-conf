@@ -15,12 +15,14 @@
     packages = with pkgs; [
       bcachefs-tools # Tool for managing bcachefs filesystems
       #glicol-cli # Cross-platform music live coding in terminal
-      #gupax
       kernel-hardening-checker
       killport # A command-line tool to easily kill processes running on a specified port
       #nym # Mixnet providing IP-level privacy
-      #inputs.websurfx.packages.${system}.websurfx
+      #websurfx
       #voicevox
+      stract
+      #amdgpu_top
+      nix-inspect
 
       #espanso #hm module available
       #keypunch
