@@ -504,7 +504,7 @@
       jerry.homeManagerModules.default
       nix-index-database.hmModules.nix-index
       nixvim.homeManagerModules.default
-      nur.hmModules.nur
+      #nur.modules.home-manager.default
       nyx.homeManagerModules.default
       plasma-manager.homeManagerModules.plasma-manager
     ])

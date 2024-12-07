@@ -13,37 +13,17 @@
     };
 
     packages = with pkgs; [
+      # These should install system-wide
       bcachefs-tools # Tool for managing bcachefs filesystems
-      #glicol-cli # Cross-platform music live coding in terminal
       kernel-hardening-checker
       killport # A command-line tool to easily kill processes running on a specified port
+      avml
       #nym # Mixnet providing IP-level privacy
       #websurfx
-      #voicevox
-      stract
+      #stract
       #amdgpu_top
-      nix-inspect
-
-      #espanso #hm module available
-      #keypunch
-      simplex-chat-desktop
-      netop
-      avml
-      #pw-viz
-      tasks
-      nix-du
-      rippkgs
-      cached-nix-shell
       #mistral-rs
       #zluda
-      #rogcat
-      #rustdesk
-      #rustdesk-flutter
-      #srgn
-      surfer
-      forecast
-      #gpauth
-      #gpclient
       #stardust-xr-kiara
       #stardust-xr-server
       #stardust-xr-gravity
@@ -53,6 +33,28 @@
       #stardust-xr-protostar
       #stardust-xr-sphereland
       #stardust-xr-atomosphere
+      #gpauth
+      #gpclient
+
+      #espanso #hm module available
+      cosmic-player
+      #glicol-cli # Cross-platform music live coding in terminal
+      #keypunch
+      simplex-chat-desktop
+      #pw-viz
+      netop
+      #rogcat
+      tasks
+      nix-du
+      rippkgs
+      cached-nix-shell
+      #rustdesk
+      #rustdesk-flutter
+      #srgn
+      surfer
+      forecast
+      nix-inspect
+      #voicevox
     ];
 
     sessionPath = [

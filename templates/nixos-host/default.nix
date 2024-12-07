@@ -192,7 +192,7 @@
       nix-index-database.nixosModules.nix-index
       nixos-cosmic.nixosModules.default
       #nixvim.nixosModules.default
-      nur.nixosModules.nur
+      nur.modules.nixos.default
       nyx.nixosModules.default
     ])
     ++ (builtins.attrValues outputs.nixosModules);

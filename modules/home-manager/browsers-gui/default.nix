@@ -61,7 +61,7 @@ in
             user_pref("browser.startup.homepage", "${pkgs.chevron}/index.html");
             user_pref("privacy.resistFingerprinting.letterboxing", false);
           '';
-          #extensions = with config.nur.repos.rycee.firefox-addons; [
+          #extensions = with pkgs.nur.repos.rycee.firefox-addons; [
           #  surfingkeys
           #];
           #userChrome = ''
@@ -95,7 +95,7 @@ in
           extraConfig = ''
             ${builtins.readFile "${pkgs.arkenfox-userjs}/user.js"}
           '';
-          extensions = with config.nur.repos.rycee.firefox-addons; [
+          extensions = with pkgs.nur.repos.rycee.firefox-addons; [
             surfingkeys
             tab-session-manager
             web-archives
@@ -127,7 +127,7 @@ in
           "ui.context_menus.after_mouseup" = true;
         };
         profiles.default = {
-          extensions = with config.nur.repos.rycee.firefox-addons; [
+          extensions = with pkgs.nur.repos.rycee.firefox-addons; [
             buster-captcha-solver
             gitako-github-file-tree
             proton-pass
