@@ -315,6 +315,10 @@ in
             enable = true;
           };
 
+          orgmode = {
+            enable = true;
+          };
+
           sniprun = {
             enable = true;
           };
