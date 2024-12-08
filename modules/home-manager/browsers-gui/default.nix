@@ -135,7 +135,13 @@ in
             refined-github
             surfingkeys
           ];
-          userChrome = builtins.readFile ./librewolf/userChrome.css;
+          userChrome = ''
+            ${builtins.readFile ./librewolf/autohide_toolbox.css}
+            ${builtins.readFile ./librewolf/navbar_tabs_oneliner_menu_buttons_on_right.css}
+            ${builtins.readFile ./librewolf/tab_close_button_always_on_hover.css}
+            ${builtins.readFile ./librewolf/urlbar_info_icons_on_hover.css}
+            ${builtins.readFile ./librewolf/userChrome.css}
+          '';
         };
       };
 
