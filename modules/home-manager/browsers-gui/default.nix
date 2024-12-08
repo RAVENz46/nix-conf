@@ -124,7 +124,6 @@ in
           "browser.newtabpage.activity-stream.showSearch" = false;
           "browser.startup.homepage_override.extensionControlled" = true;
           "browser.startup.homepage_override.privateAllowed" = true;
-          "browser.tabs.hoverPreview.showThumbnails" = false;
           "browser.toolbars.bookmarks.showOtherBookmarks" = false;
           "browser.toolbars.bookmarks.visibility" = "never";
           "browser.urlbar.maxRichResults" = 0;
@@ -138,7 +137,7 @@ in
           "general.autoScroll" = true;
           "middlemouse.paste" = false;
           "network.dns.disableIPv6" = true;
-          "network.trr.mode" = 3; # Required for proton-vpn
+          #"network.trr.mode" = 3; # Required for proton-vpn???
           "privacy.clearOnShutdown.cookies" = false; # Make manage exceptions work, but reduce privacy.
           "privacy.resistFingerprinting.autoDeclineNoUserInputCanvasPrompts" = true;
           #"privacy.resistFingerprinting.letterboxing" = true;
