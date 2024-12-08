@@ -1,8 +1,9 @@
-#back-button,
-#forward-button,
-#alltabs-button,
 .bookmark-item:not(:hover) > .toolbarbutton-text,
 .bookmark-item:hover > .toolbarbutton-icon,
-.titlebar-buttonbox-container {
+.titlebar-buttonbox-container,
+#alltabs-button,
+#back-button,
+#forward-button,
+#identity-box.extensionPage{
   display: none !important;
 }
