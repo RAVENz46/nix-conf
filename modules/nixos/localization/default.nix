@@ -42,8 +42,7 @@ in
         noto-fonts-color-emoji
         noto-fonts-emoji-blob-bin
         noto-fonts-monochrome-emoji
-        nerdfonts
-      ];
+      ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
     };
   };
 }
