@@ -135,7 +135,7 @@ in
           "browser.urlbar.suggest.topsite" = false;
           "general.autoScroll" = true;
           "middlemouse.paste" = false;
-          "network.http.referer.XOriginPolicy" = 2;
+          "permissions.default.shortcuts" = 2;
           "privacy.clearOnShutdown.cookies" = false; # Make manage exceptions work, but reduce privacy.
           "privacy.resistFingerprinting.autoDeclineNoUserInputCanvasPrompts" = true;
           #"privacy.resistFingerprinting.letterboxing" = true;
