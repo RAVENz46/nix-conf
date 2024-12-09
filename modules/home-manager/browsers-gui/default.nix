@@ -53,7 +53,6 @@ in
             "browser.toolbars.bookmarks.showOtherBookmarks" = false;
             "browser.urlbar.maxRichResults" = 0;
             "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-            "ui.context_menus.after_mouseup" = true;
           };
           extraConfig = ''
             ${builtins.readFile "${pkgs.arkenfox-userjs}/user.js"}
@@ -95,7 +94,6 @@ in
             "browser.toolbars.bookmarks.showOtherBookmarks" = false;
             "browser.urlbar.maxRichResults" = 0;
             "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-            "ui.context_menus.after_mouseup" = true;
           };
           extraConfig = ''
             ${builtins.readFile "${pkgs.arkenfox-userjs}/user.js"}
@@ -119,6 +117,7 @@ in
         };
         settings = {
           "browser.bookmarks.restore_default_bookmarks" = false;
+          "browser.chrome.toolbar_tips" = false;
           "browser.compactmode.show" = true;
           "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" = false;
           "browser.newtabpage.activity-stream.showSearch" = false;
@@ -136,17 +135,15 @@ in
           "browser.urlbar.suggest.topsite" = false;
           "general.autoScroll" = true;
           "middlemouse.paste" = false;
-          "network.dns.disableIPv6" = true;
-          #"network.trr.mode" = 3; # Required for proton-vpn???
+          "network.http.referer.XOriginPolicy" = 2;
           "privacy.clearOnShutdown.cookies" = false; # Make manage exceptions work, but reduce privacy.
           "privacy.resistFingerprinting.autoDeclineNoUserInputCanvasPrompts" = true;
           #"privacy.resistFingerprinting.letterboxing" = true;
-          "security.OCSP.require" = false; # Required for proton-vpn
+          "security.OCSP.require" = false; # Will be disable
           "security.ssl.require_safe_negotiation" = false; # Will be disable.
           "signon.firefoxRelay.feature" = "disabled";
           "signon.generation.enabled" = false;
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-          "ui.context_menus.after_mouseup" = true;
         };
         profiles.default = {
           extensions = with pkgs.nur.repos.rycee.firefox-addons; [
