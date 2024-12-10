@@ -31,9 +31,7 @@ disabled = false
 style = "bg:#40A02B"
 bash_indicator = 'bash'
 fish_indicator = 'fish'
-nu_indicator = 'nush'
-powershell_indicator = 'pwsh'
-format = '[󰄏$indicator]($style)'
+format = '[󰄏 $indicator]($style)'
 disabled = false
 
 [nix_shell]
