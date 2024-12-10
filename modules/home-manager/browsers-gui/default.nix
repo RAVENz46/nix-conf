@@ -136,7 +136,8 @@ in
           "general.autoScroll" = true;
           "middlemouse.paste" = false;
           "permissions.default.shortcuts" = 2;
-          "privacy.clearOnShutdown.cookies" = false; # Make manage exceptions work, but reduce privacy.
+          "privacy.clearOnShutdown_v2.historyFormDataAndDownloads" = true;
+          "privacy.clearOnShutdown_v2.siteSettings" = true;
           "privacy.resistFingerprinting.autoDeclineNoUserInputCanvasPrompts" = true;
           #"privacy.resistFingerprinting.letterboxing" = true;
           "security.OCSP.require" = false; # Will be disable
