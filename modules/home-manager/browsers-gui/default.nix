@@ -126,13 +126,16 @@ in
           "browser.toolbars.bookmarks.showOtherBookmarks" = false;
           "browser.toolbars.bookmarks.visibility" = "never";
           "browser.urlbar.maxRichResults" = 0;
+          "browser.urlbar.shortcuts.bookmarks" = false;
+          "browser.urlbar.shortcuts.history" = false;
+          "browser.urlbar.shortcuts.tabs" = false;
           "browser.urlbar.showSearchSuggestionsFirst" = false;
           "browser.urlbar.suggest.bookmark" = false;
           "browser.urlbar.suggest.engines" = false;
           "browser.urlbar.suggest.history" = false;
           "browser.urlbar.suggest.openpage" = false;
           "browser.urlbar.suggest.recentsearches" = false;
-          "browser.urlbar.suggest.topsite" = false;
+          "browser.urlbar.suggest.topsites" = false;
           "general.autoScroll" = true;
           "middlemouse.paste" = false;
           "permissions.default.shortcuts" = 2;
