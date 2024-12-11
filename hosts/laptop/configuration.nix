@@ -7,9 +7,16 @@
 
 {
   boot = {
-    #kernelPackages = pkgs.linuxPackages_latest;
     kernelPackages = pkgs.linuxPackages_6_11_hardened;
     kernelParams = [ "intel_iommu=on" ];
+    plymouth = {
+      enable = true;
+      themePackages = with pkgs; [
+        (adi1090x-plymouth-themes.override {
+          selected_themes = [ "circuit" ];
+        })
+      ];
+    };
     supportedFilesystems = [
       "bcachefs"
       "exfat"
