@@ -54,7 +54,6 @@
       surfer
       forecast
       nix-inspect
-      #voicevox
     ];
 
     sessionPath = [

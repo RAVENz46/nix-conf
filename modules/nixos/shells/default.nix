@@ -28,7 +28,7 @@ in
         ion
         nushell
       ];
-      systemPackages = with pkgs; [ 
+      systemPackages = with pkgs; [
         ion
         nushell
       ];

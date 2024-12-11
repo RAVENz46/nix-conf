@@ -12,17 +12,14 @@
 
     #https://github.com/nix-community/home-manager/pull/5355
     environment = {
-      etc =
-        {
-        };
+      etc = {
+      };
 
-      pathsToLink =
-        [
-        ];
+      pathsToLink = [
+      ];
 
-      sessionVariables =
-        {
-        };
+      sessionVariables = {
+      };
 
       systemPackages = with pkgs; [
         inputs.system-manager.packages.${system}.default
@@ -30,16 +27,12 @@
     };
 
     systemd = {
-      packages =
-        with pkgs;
-        [
-        ];
-      services =
-        {
-        };
-      tmpfiles.rules =
-        [
-        ];
+      packages = with pkgs; [
+      ];
+      services = {
+      };
+      tmpfiles.rules = [
+      ];
     };
   };
 }

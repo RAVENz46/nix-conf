@@ -30,10 +30,6 @@
       url = "github:cafkafk/fortune-kind";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    #git-hooks = {
-    #  url = "github:cachix/git-hooks.nix";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -119,6 +115,10 @@
       url = "github:nix-community/plasma-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    pre-commit = {
+      url = "github:cachix/git-hooks.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     system-manager = {
       url = "github:numtide/system-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -139,6 +139,7 @@
       nix-on-droid,
       system-manager,
       home-manager,
+      pre-commit,
       treefmt-nix,
       systems,
       ...
@@ -146,8 +147,6 @@
     let
       inherit (self) outputs;
       eachSystem = f: nixpkgs.lib.genAttrs (import systems) (system: f nixpkgs.legacyPackages.${system});
-      # I wanna use it cleaner way
-      #pre-commit-hooks = eachSystem (pkgs: pre-commit-hooks.lib.${pkgs.system}.run { src = ./.; } // hooks);
       treefmtEval = eachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./nix/treefmt.nix);
     in
     {
@@ -156,14 +155,14 @@
       apps = eachSystem (pkgs: import ./pkgs { inherit pkgs; });
       formatter = eachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
       checks = eachSystem (pkgs: {
-        #pre-commit-check = import ./pre-commit-hooks.nix { inherit pkgs; };
+        pre-commit = import ./nix/pre-commit.nix { inherit pkgs pre-commit; };
         treefmt = treefmtEval.${pkgs.system}.config.build.check self;
       });
       devShells = eachSystem (pkgs: {
         default = import ./nix/shell.nix { inherit pkgs; };
       });
       overlays = import ./overlays;
-      templates = import ./templates;
+      #templates = import ./templates;
       nixosModules = import ./modules/nixos;
       homeManagerModules = import ./modules/home-manager;
 
