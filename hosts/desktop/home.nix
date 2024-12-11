@@ -50,7 +50,6 @@
     excludePackages = with pkgs; [
       arti
       ladybird
-      nyxt
     ];
   };
   csv-utils-cli = {

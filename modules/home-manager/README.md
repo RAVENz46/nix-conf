@@ -38,7 +38,6 @@ Flake Section -> PO: PackageOnly, PH: Package & HomeManagerModule
 | [ladybird](https://github.com/LadybirdBrowser/ladybird) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/networking/browsers/ladybird/default.nix)) | No | No | No | Browser using the SerenityOS LibWeb engine with a Qt or Cocoa GUI |
 | [librewolf](https://codeberg.org/librewolf) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/networking/browsers/firefox/packages.nix)) | Yes | No | No | Fork of Firefox, focused on privacy, security and freedom |
 | [mullvad-browser](https://gitlab.torproject.org/tpo/applications/mullvad-browser) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/networking/browsers/mullvad-browser/default.nix)) | No | No | No | Privacy-focused browser made in a collaboration between The Tor Project and Mullvad |
-| [nyxt](https://github.com/atlas-engineer/nyxt) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/networking/browsers/nyxt/default.nix)) | No | No | No | Infinitely extensible web-browser (with Lisp development files using WebKitGTK platform port) |
 | [ungoogled-chromium](https://github.com/ungoogled-software/ungoogled-chromium) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/networking/browsers/chromium/browser.nix)) | Yes | No | No | Open source web browser from Google, with dependencies on Google web services removed |
 
 ### data-managers-cli
@@ -415,7 +414,6 @@ wip
 |:------------:|:---:|:-----:|:----:| ------------ |
 | [cosmic-edit](https://github.com/pop-os/cosmic-edit) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/co/cosmic-edit/package.nix)) | No | PO | Yes | Text Editor for the COSMIC Desktop Environment |
 | [lapce](https://github.com/lapce/lapce) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/editors/lapce/default.nix)) | No | No | Yes | Lightning-fast and Powerful Code Editor written in Rust |
-| [lem](https://github.com/lem-project/lem) | No | PO | No | Common Lisp editor/IDE with high expansibility |
 | [zed-editor](https://github.com/zed-industries/zed) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/ze/zed-editor/package.nix)) | No | No | Yes | High-performance, multiplayer code editor from the creators of Atom and Tree-sitter |
 
 ### video-editors

@@ -10,6 +10,7 @@
 
     system-manager.allowAnyDistro = true;
 
+    #https://github.com/nix-community/home-manager/pull/5355
     environment = {
       etc =
         {

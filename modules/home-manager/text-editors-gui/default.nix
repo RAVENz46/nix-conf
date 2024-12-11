@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  inputs,
   ...
 }:
 
@@ -31,7 +30,6 @@ in
         lapce
       ]
       ++ optionals stdenv.isLinux [ cosmic-edit ]
-      ++ optionals (stdenv.system == "x86_64-linux") [ inputs.lem.packages.${system}.lem-sdl2 ]
     );
 
     programs = {

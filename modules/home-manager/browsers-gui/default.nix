@@ -31,7 +31,6 @@ in
         browdi
         browsers
         ladybird
-        nyxt
       ]
       ++ optionals stdenv.isLinux [ geopard ]
     );

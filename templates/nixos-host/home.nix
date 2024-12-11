@@ -66,7 +66,6 @@
       ladybird
       librewolf
       mullvad-browser
-      nyxt
       ungoogled-chromium
     ];
   };
@@ -476,7 +475,6 @@
     excludePackages = with pkgs; [
       cosmic-edit
       lapce
-      inputs.lem.packages.${system}.lem-sdl2
       zed-editor
     ];
   };

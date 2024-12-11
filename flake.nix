@@ -50,10 +50,6 @@
       url = "github:nix-community/lanzaboote/v0.4.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    lem = {
-      url = "github:dariof4/lem-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     lobster = {
       url = "github:justchokingaround/lobster";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -156,13 +152,16 @@
     in
     {
       packages = eachSystem (pkgs: import ./pkgs { inherit pkgs; });
+      legacyPackages = eachSystem (pkgs: import ./pkgs { inherit pkgs; });
       apps = eachSystem (pkgs: import ./pkgs { inherit pkgs; });
       formatter = eachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
       checks = eachSystem (pkgs: {
         #pre-commit-check = import ./pre-commit-hooks.nix { inherit pkgs; };
         treefmt = treefmtEval.${pkgs.system}.config.build.check self;
       });
-      devShells = eachSystem (pkgs: import ./nix/shell.nix { inherit pkgs; });
+      devShells = eachSystem (pkgs: {
+        default = import ./nix/shell.nix { inherit pkgs; };
+      });
       overlays = import ./overlays;
       templates = import ./templates;
       nixosModules = import ./modules/nixos;
