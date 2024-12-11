@@ -25,9 +25,13 @@ in
       shells = with pkgs; [
         bash
         fish
+        ion
         nushell
       ];
-      systemPackages = with pkgs; [ nushell ];
+      systemPackages = with pkgs; [ 
+        ion
+        nushell
+      ];
     };
 
     programs = {

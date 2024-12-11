@@ -94,6 +94,10 @@ in
         };
       };
 
+      ion = {
+        enable = notExcluded pkgs.ion;
+      };
+
       lsd = {
         enable = notExcluded pkgs.lsd;
         enableAliases = notExcluded pkgs.lsd;

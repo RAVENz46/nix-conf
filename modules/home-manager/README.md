@@ -369,6 +369,7 @@ wip
 | [fish](https://github.com/fish-shell/fish-shell) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/shells/fish/default.nix)) | Yes | No | Yes | Smart and user-friendly command line shell |
 | [gping](https://github.com/orf/gping) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/networking/gping/default.nix)) | No | No | Yes | Ping, but with a graph |
 | [hurl](https://github.com/Orange-OpenSource/hurl) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/hu/hurl/package.nix)) | No | No | Yes | Command line tool that performs HTTP requests defined in a simple plain text format |
+| [ion](https://gitlab.redox-os.org/redox-os/ion) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/io/ion/package.nix)) | Yes | No | Yes | Modern system shell with simple (and powerful) syntax |
 | [kalker](https://github.com/PaddiM8/kalker) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/misc/kalker/default.nix)) | No | PO | Yes | Command line calculator |
 | [lsd](https://github.com/lsd-rs/lsd) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/misc/lsd/default.nix)) | Yes | No | Yes | The next gen ls command |
 | [mcfly](https://github.com/cantino/mcfly) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/misc/mcfly/default.nix)) | Yes | No | Yes | Upgraded ctrl-r where history results make sense for what you're working on right now |

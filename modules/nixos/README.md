@@ -108,6 +108,7 @@ WIP
 | [bash](https://www.gnu.org/software/bash) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/shells/bash/5.nix)) | Yes | No | No | GNU Bourne-Again Shell, the de facto standard shell on Linux |
 | [blesh](https://github.com/akinomyoga/ble.sh) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/shells/bash/blesh/default.nix)) | Yes | No | No | Bash Line Editor -- a full-featured line editor written in pure Bash |
 | [fish](https://github.com/fish-shell/fish-shell) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/shells/fish/default.nix)) | Yes | No | Yes | Smart and user-friendly command line shell |
+| [ion](https://gitlab.redox-os.org/redox-os/ion) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/io/ion/package.nix)) | No | No | Yes | Modern system shell with simple (and powerful) syntax |
 | [nushell](https://github.com/nushell/nushell) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/shells/nushell/default.nix)) | No | No | Yes | Modern shell written in Rust |
 
 ### virtualization

@@ -425,6 +425,7 @@
       #fish
       gping
       hurl
+      ion
       kalker
       lsd
       mcfly
