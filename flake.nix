@@ -123,7 +123,7 @@
       url = "github:numtide/system-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    treefmt-nix = {
+    treefmt = {
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -140,23 +140,22 @@
       system-manager,
       home-manager,
       pre-commit,
-      treefmt-nix,
+      treefmt,
       systems,
       ...
     }@inputs:
     let
       inherit (self) outputs;
       eachSystem = f: nixpkgs.lib.genAttrs (import systems) (system: f nixpkgs.legacyPackages.${system});
-      treefmtEval = eachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./nix/treefmt.nix);
+      treefmtEval = eachSystem (pkgs: treefmt.lib.evalModule pkgs ./nix/treefmt.nix);
     in
     {
       packages = eachSystem (pkgs: import ./pkgs { inherit pkgs; });
       legacyPackages = eachSystem (pkgs: import ./pkgs { inherit pkgs; });
-      apps = eachSystem (pkgs: import ./pkgs { inherit pkgs; });
       formatter = eachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
       checks = eachSystem (pkgs: {
         pre-commit = import ./nix/pre-commit.nix { inherit pkgs pre-commit; };
-        treefmt = treefmtEval.${pkgs.system}.config.build.check self;
+        formatting = treefmtEval.${pkgs.system}.config.build.check self;
       });
       devShells = eachSystem (pkgs: {
         default = import ./nix/shell.nix { inherit pkgs; };

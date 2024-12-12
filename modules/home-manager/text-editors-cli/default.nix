@@ -303,7 +303,7 @@ in
           #  };
           #};
 
-          nvim-colorizer = {
+          colorizer = {
             enable = true;
           };
 
