@@ -158,6 +158,7 @@ in
           "browser.compactmode.show" = true;
           "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" = false;
           "browser.newtabpage.activity-stream.showSearch" = false;
+          "browser.places.importBookmarksHTML" = true;
           "browser.startup.homepage_override.extensionControlled" = true;
           "browser.startup.homepage_override.privateAllowed" = true;
           "browser.toolbars.bookmarks.showOtherBookmarks" = false;
