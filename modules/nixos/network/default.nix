@@ -32,9 +32,6 @@ in
 
     networking = {
       firewall = {
-        enable = true;
-        #allowedTCPPorts = [ ... ];
-        #allowedUDPPorts = [ ... ];
         trustedInterfaces = mkIf (notExcluded pkgs.tailscale) [ "tailscale0" ];
       };
       networkmanager = {
