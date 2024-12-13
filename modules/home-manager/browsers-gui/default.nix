@@ -76,7 +76,8 @@ in
         policies = {
           ExtensionSettings = {
             "{acf82b50-48cf-4dd4-8059-5c949e754a65}" = {
-              installation_mode = "allowed";
+              install_url = "https://addons.mozilla.org/firefox/downloads/file/4373143/latest.xpi";
+              installation_mode = "normal_installed";
             };
           };
         };
@@ -110,7 +111,8 @@ in
         policies = {
           ExtensionSettings = {
             "{166411f2-402a-4bca-a3da-38b795ec8007}" = {
-              installation_mode = "allowed";
+              install_url = "https://addons.mozilla.org/firefox/downloads/file/4300211/latest.xpi";
+              installation_mode = "normal_installed";
             };
           };
         };

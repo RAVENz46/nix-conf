@@ -8,9 +8,9 @@
 {
   boot = {
     kernelPackages = pkgs.linuxPackages_6_11_hardened;
-    kernelParams = [ "intel_iommu=on" ];
     plymouth = {
       enable = true;
+      catppuccin.enable = false;
       themePackages = with pkgs; [
         (adi1090x-plymouth-themes.override {
           selected_themes = [ "circuit" ];
@@ -49,7 +49,6 @@
   };
 
   security = {
-    allowSimultaneousMultithreading = true;
     unprivilegedUsernsClone = true;
   };
 
