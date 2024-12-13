@@ -8,7 +8,6 @@
 
     packages = with pkgs; [
       simplex-chat-desktop
-      floorp
       nix-du
     ];
 

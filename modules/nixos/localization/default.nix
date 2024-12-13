@@ -33,6 +33,7 @@ in
     };
 
     fonts = {
+      fontconfig.cache32Bit = true;
       packages =
         with pkgs;
         [

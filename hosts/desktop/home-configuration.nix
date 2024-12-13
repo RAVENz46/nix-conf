@@ -37,6 +37,8 @@
       #gpclient
 
       #espanso #hm module available
+      #deltachat-desktop
+      #nekoray
       cosmic-player
       #glicol-cli # Cross-platform music live coding in terminal
       #keypunch
@@ -96,6 +98,20 @@
     git = {
       userName = "RAVENz46";
       #userEmail = "${builtins.readFile ./git-email.txt}";
+    };
+
+    librewolf = {
+      settings = {
+        "extensions.activeThemeID" = "{f4363cd3-9ba9-453d-b2b2-66e6e1bafe73}";
+      };
+      policies = {
+        ExtensionSettings = {
+          "{f4363cd3-9ba9-453d-b2b2-66e6e1bafe73}" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/file/3989640/latest.xpi";
+            installation_mode = "normal_installed";
+          };
+        };
+      };
     };
 
     sapling = {

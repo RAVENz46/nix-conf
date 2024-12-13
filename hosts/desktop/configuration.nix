@@ -37,6 +37,10 @@
 
   hardware = {
     enableRedistributableFirmware = true;
+    graphics = {
+      extraPackages = with pkgs; [ intel-media-sdk ];
+      extraPackages32 = with pkgs; [ intel-media-sdk ];
+    };
     nvidia = {
       open = true;
       nvidiaSettings = true;

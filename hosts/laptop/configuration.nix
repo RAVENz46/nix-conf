@@ -35,7 +35,13 @@
     memoryAllocator.provider = lib.mkForce "libc";
   };
 
-  hardware.enableRedistributableFirmware = true;
+  hardware = {
+    enableRedistributableFirmware = true;
+    graphics = {
+      extraPackages = with pkgs; [ vpl-gpu-rt ];
+      extraPackages32 = with pkgs; [ vpl-gpu-rt ];
+    };
+  };
 
   security = {
     unprivilegedUsernsClone = true;

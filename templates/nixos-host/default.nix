@@ -181,6 +181,7 @@
       ./hardware-configuration.nix
     ]
     ++ (with inputs; [
+      "${nix-mineral}/nix-mineral.nix"
       catppuccin.nixosModules.catppuccin
       disko.nixosModules.default
       home-manager.nixosModules.default

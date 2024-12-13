@@ -202,7 +202,7 @@ wip
 | Package Name | HMM | Flake | Rust | Descriptions |
 |:------------:|:---:|:-----:|:----:| ------------ |
 | [ani-cli](https://github.com/pystardust/ani-cli) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/video/ani-cli/default.nix)) | No | No | No | Cli tool to browse and play anime |
-| [jerry](https://github.com/justchokingaround/jerry) | No | PO | No | Watch anime with automatic anilist syncing and other cool stuff |
+| [jerry](https://github.com/justchokingaround/jerry) | No | PH | No | Watch anime with automatic anilist syncing and other cool stuff |
 | [lobster](https://github.com/justchokingaround/lobster) | No | PO | No | mmm lobster |
 | [mpv](https://github.com/mpv-player/mpv) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/applications/video/mpv/wrapper.nix)) | Yes | No | No | General-purpose media player, fork of MPlayer and mplayer2 |
 | [rustplayer](https://github.com/Kingtous/RustPlayer) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/ru/rustplayer/package.nix)) | No | No | Yes | Local audio player and network m3u8 radio player using a terminal interface |

@@ -48,7 +48,6 @@ in
           settings = {
             #"browser.bookmarks.file" = "${./bookmarks.html}";
             "browser.compactmode.show" = true;
-            #"browser.places.importBookmarksHTML" = true;
             "browser.toolbars.bookmarks.showOtherBookmarks" = false;
             "browser.urlbar.maxRichResults" = 0;
             "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
@@ -75,19 +74,34 @@ in
         enable = notExcluded pkgs.floorp;
         policies = {
           ExtensionSettings = {
+            "*" = {
+              installation_mode = "blocked";
+            };
             "{acf82b50-48cf-4dd4-8059-5c949e754a65}" = {
               install_url = "https://addons.mozilla.org/firefox/downloads/file/4373143/latest.xpi";
+              installation_mode = "normal_installed";
+            };
+            "{a8332c60-5b6d-41ee-bfc8-e9bb331d34ad}" = {
+              install_url = "https://addons.mozilla.org/firefox/downloads/file/4394007/latest.xpi";
+              installation_mode = "normal_installed";
+            };
+            "Tab-Session-Manager@sienori" = {
+              install_url = "https://addons.mozilla.org/firefox/downloads/file/4298614/latest.xpi";
+              installation_mode = "normal_installed";
+            };
+            "{d07ccf11-c0cd-4938-a265-2a4d6ad01189}" = {
+              install_url = "https://addons.mozilla.org/firefox/downloads/file/4361316/latest.xpi";
               installation_mode = "normal_installed";
             };
           };
         };
         profiles.default = {
           settings = {
-            #"browser.bookmarks.file" = "${./bookmarks.html}";
+            "browser.bookmarks.file" = "${./bookmarks.html}";
             "browser.compactmode.show" = true;
             "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" = false;
             "browser.newtabpage.activity-stream.showSearch" = false;
-            #"browser.places.importBookmarksHTML" = true;
+            "browser.places.importBookmarksHTML" = true;
             "browser.startup.homepage_override.extensionControlled" = true;
             "browser.startup.homepage_override.privateAllowed" = true;
             "browser.tabs.hoverPreview.showThumbnails" = false;
@@ -98,11 +112,6 @@ in
           extraConfig = ''
             ${builtins.readFile "${pkgs.arkenfox-userjs}/user.js"}
           '';
-          extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-            surfingkeys
-            tab-session-manager
-            web-archives
-          ];
         };
       };
 
@@ -110,14 +119,41 @@ in
         enable = notExcluded pkgs.librewolf;
         policies = {
           ExtensionSettings = {
+            #"*" = {
+            #  installation_mode = "blocked";
+            #};
+            "{e58d3966-3d76-4cd9-8552-1582fbc800c1}" = {
+              install_url = "https://addons.mozilla.org/firefox/downloads/file/4297951/latest.xpi";
+              installation_mode = "normal_installed";
+            };
+            "{983bd86b-9d6f-4394-92b8-63d844c4ce4c}" = {
+              install_url = "https://addons.mozilla.org/firefox/downloads/file/4315380/latest.xpi";
+              installation_mode = "normal_installed";
+            };
+            "78272b6fa58f4a1abaac99321d503a20@proton.me" = {
+              install_url = "https://addons.mozilla.org/firefox/downloads/file/4393918/latest.xpi";
+              installation_mode = "normal_installed";
+            };
+            "vpn@proton.ch" = {
+              install_url = "https://addons.mozilla.org/firefox/downloads/file/4370777/latest.xpi";
+              installation_mode = "normal_installed";
+            };
+            "{a4c4eda4-fb84-4a84-b4a1-f7c1cbf2a1ad}" = {
+              install_url = "https://addons.mozilla.org/firefox/downloads/file/4402789/latest.xpi";
+              installation_mode = "normal_installed";
+            };
             "{166411f2-402a-4bca-a3da-38b795ec8007}" = {
               install_url = "https://addons.mozilla.org/firefox/downloads/file/4300211/latest.xpi";
+              installation_mode = "normal_installed";
+            };
+            "{a8332c60-5b6d-41ee-bfc8-e9bb331d34ad}" = {
+              install_url = "https://addons.mozilla.org/firefox/downloads/file/4394007/latest.xpi";
               installation_mode = "normal_installed";
             };
           };
         };
         settings = {
-          "browser.bookmarks.restore_default_bookmarks" = false;
+          "browser.bookmarks.file" = "${./bookmarks.html}";
           "browser.chrome.toolbar_tips" = false;
           "browser.compactmode.show" = true;
           "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" = false;
@@ -151,14 +187,6 @@ in
           "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         };
         profiles.default = {
-          extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-            buster-captcha-solver
-            gitako-github-file-tree
-            proton-pass
-            proton-vpn
-            refined-github
-            surfingkeys
-          ];
           userChrome = ''
             ${builtins.readFile ./librewolf/autohide_toolbox.css}
             ${builtins.readFile ./librewolf/navbar_tabs_oneliner_menu_buttons_on_right.css}

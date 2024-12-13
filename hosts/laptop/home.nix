@@ -61,7 +61,7 @@
       browdi
       #browsers
       #firefox-devedition
-      floorp
+      #floorp
       geopard
       ladybird
       #librewolf
