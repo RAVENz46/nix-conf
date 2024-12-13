@@ -11,6 +11,7 @@
     plymouth = {
       enable = true;
       catppuccin.enable = false;
+      theme = "circuit";
       themePackages = with pkgs; [
         (adi1090x-plymouth-themes.override {
           selected_themes = [ "circuit" ];
