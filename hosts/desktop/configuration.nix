@@ -8,16 +8,6 @@
 {
   boot = {
     kernelPackages = pkgs.linuxPackages_6_11_hardened;
-    plymouth = {
-      enable = true;
-      catppuccin.enable = false;
-      theme = "circuit";
-      themePackages = with pkgs; [
-        (adi1090x-plymouth-themes.override {
-          selected_themes = [ "circuit" ];
-        })
-      ];
-    };
     supportedFilesystems = [
       "bcachefs"
       "exfat"

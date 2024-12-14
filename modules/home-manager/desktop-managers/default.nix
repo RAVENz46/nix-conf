@@ -44,7 +44,7 @@ in
       gtk = {
         enable = true;
         theme = {
-          name = "Catppuccin-GTK-${mkUpper config.catppuccin.accent}-Dark";
+          name = "Catppuccin-GTK-${mkUpper config.catppuccin.accent}-Dark-Compact";
           package = pkgs.magnetic-catppuccin-gtk.override {
             accent = [ "${config.catppuccin.accent}" ];
             size = "compact";

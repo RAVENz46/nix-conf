@@ -35,6 +35,29 @@ in
     })
 
     (mkIf (cfg.compositors != [ ]) {
+      boot = {
+        plymouth = {
+          enable = true;
+          catppuccin.enable = false;
+          logo = ./plymouth.png;
+          theme = "circuit";
+          themePackages = with pkgs; [
+            (adi1090x-plymouth-themes.override {
+              selected_themes = [ config.boot.plymouth.theme ];
+            })
+            (runCommand "add-logos"
+              {
+                inherit (config.boot.plymouth) logo;
+                inherit (config.boot.plymouth) theme;
+              }
+              ''
+                mkdir -p $out/share/plymouth/themes/$theme
+                ln -s $logo $out/share/plymouth/themes/$theme/header-image.png
+              ''
+            )
+          ];
+        };
+      };
       environment = {
         sessionVariables = {
           NIXOS_OZONE_WL = "1";
