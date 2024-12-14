@@ -44,29 +44,36 @@ in
       firefox = {
         enable = notExcluded pkgs.firefox-devedition;
         package = pkgs.firefox-devedition;
-        profiles.dev-edition-default = {
-          settings = {
-            #"browser.bookmarks.file" = "${./bookmarks.html}";
-            "browser.compactmode.show" = true;
-            "browser.toolbars.bookmarks.showOtherBookmarks" = false;
-            "browser.urlbar.maxRichResults" = 0;
-            "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+        policies = {
+          "*" = {
+            installation_mode = "blocked";
           };
-          extraConfig = ''
-            ${builtins.readFile "${pkgs.arkenfox-userjs}/user.js"}
-            user_pref("browser.startup.page", 1);
-            user_pref("browser.startup.homepage", "${pkgs.chevron}/index.html");
-            user_pref("privacy.resistFingerprinting.letterboxing", false);
-          '';
-          #extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-          #  surfingkeys
-          #];
-          #userChrome = ''
-          #  ${builtins.readFile ./userChrome.css}
-          #'';
-          #userContent = ''
-          #  ${builtins.readFile ./userContent.css}
-          #'';
+          "{a8332c60-5b6d-41ee-bfc8-e9bb331d34ad}" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/file/4394007/latest.xpi";
+            installation_mode = "normal_installed";
+          };
+        };
+        profiles = {
+          dev-edition-default = {
+            extraConfig = ''
+              ${builtins.readFile "${pkgs.arkenfox-userjs}/user.js"}
+              user_pref("browser.startup.page", 1);
+              user_pref("browser.startup.homepage", "${pkgs.chevron}/index.html");
+              user_pref("privacy.resistFingerprinting.letterboxing", false);
+            '';
+            settings = {
+              "browser.compactmode.show" = true;
+              "browser.toolbars.bookmarks.showOtherBookmarks" = false;
+              "browser.urlbar.maxRichResults" = 0;
+              "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+            };
+            #userChrome = ''
+            #  ${builtins.readFile ./userChrome.css}
+            #'';
+            #userContent = ''
+            #  ${builtins.readFile ./userContent.css}
+            #'';
+          };
         };
       };
 
@@ -95,23 +102,24 @@ in
             };
           };
         };
-        profiles.default = {
-          settings = {
-            "browser.bookmarks.file" = "${./bookmarks.html}";
-            "browser.compactmode.show" = true;
-            "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" = false;
-            "browser.newtabpage.activity-stream.showSearch" = false;
-            "browser.places.importBookmarksHTML" = true;
-            "browser.startup.homepage_override.extensionControlled" = true;
-            "browser.startup.homepage_override.privateAllowed" = true;
-            "browser.tabs.hoverPreview.showThumbnails" = false;
-            "browser.toolbars.bookmarks.showOtherBookmarks" = false;
-            "browser.urlbar.maxRichResults" = 0;
-            "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+        profiles = {
+          default = {
+            bookmarks = importJSON ./bookmarks.json;
+            extraConfig = ''
+              ${builtins.readFile "${pkgs.arkenfox-userjs}/user.js"}
+            '';
+            settings = {
+              "browser.compactmode.show" = true;
+              "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" = false;
+              "browser.newtabpage.activity-stream.showSearch" = false;
+              "browser.startup.homepage_override.extensionControlled" = true;
+              "browser.startup.homepage_override.privateAllowed" = true;
+              "browser.tabs.hoverPreview.showThumbnails" = false;
+              "browser.toolbars.bookmarks.showOtherBookmarks" = false;
+              "browser.urlbar.maxRichResults" = 0;
+              "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+            };
           };
-          extraConfig = ''
-            ${builtins.readFile "${pkgs.arkenfox-userjs}/user.js"}
-          '';
         };
       };
 
@@ -152,50 +160,51 @@ in
             };
           };
         };
-        settings = {
-          "browser.bookmarks.file" = "${./bookmarks.html}";
-          "browser.chrome.toolbar_tips" = false;
-          "browser.compactmode.show" = true;
-          "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" = false;
-          "browser.newtabpage.activity-stream.showSearch" = false;
-          "browser.places.importBookmarksHTML" = true;
-          "browser.startup.homepage_override.extensionControlled" = true;
-          "browser.startup.homepage_override.privateAllowed" = true;
-          "browser.toolbars.bookmarks.showOtherBookmarks" = false;
-          "browser.toolbars.bookmarks.visibility" = "never";
-          "browser.urlbar.maxRichResults" = 0;
-          "browser.urlbar.shortcuts.bookmarks" = false;
-          "browser.urlbar.shortcuts.history" = false;
-          "browser.urlbar.shortcuts.tabs" = false;
-          "browser.urlbar.showSearchSuggestionsFirst" = false;
-          "browser.urlbar.suggest.bookmark" = false;
-          "browser.urlbar.suggest.engines" = false;
-          "browser.urlbar.suggest.history" = false;
-          "browser.urlbar.suggest.openpage" = false;
-          "browser.urlbar.suggest.recentsearches" = false;
-          "browser.urlbar.suggest.topsites" = false;
-          "general.autoScroll" = true;
-          "middlemouse.paste" = false;
-          "permissions.default.shortcuts" = 2;
-          "privacy.clearOnShutdown_v2.historyFormDataAndDownloads" = true;
-          "privacy.clearOnShutdown_v2.siteSettings" = true;
-          "privacy.resistFingerprinting.autoDeclineNoUserInputCanvasPrompts" = true;
-          #"privacy.resistFingerprinting.letterboxing" = true;
-          "security.OCSP.require" = false; # Will be disable
-          "security.ssl.require_safe_negotiation" = false; # Will be disable.
-          "signon.firefoxRelay.feature" = "disabled";
-          "signon.generation.enabled" = false;
-          "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-        };
-        profiles.default = {
-          userChrome = ''
-            ${builtins.readFile ./librewolf/autohide_toolbox.css}
-            ${builtins.readFile ./librewolf/navbar_tabs_oneliner_menu_buttons_on_right.css}
-            ${builtins.readFile ./librewolf/page_action_buttons_on_hover.css}
-            ${builtins.readFile ./librewolf/tab_close_button_always_on_hover.css}
-            ${builtins.readFile ./librewolf/urlbar_info_icons_on_hover.css}
-            ${builtins.readFile ./librewolf/userChrome.css}
-          '';
+        profiles = {
+          default = {
+            bookmarks = importJSON ./bookmarks.json;
+            settings = {
+              "browser.chrome.toolbar_tips" = false;
+              "browser.compactmode.show" = true;
+              "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" = false;
+              "browser.newtabpage.activity-stream.showSearch" = false;
+              "browser.startup.homepage_override.extensionControlled" = true;
+              "browser.startup.homepage_override.privateAllowed" = true;
+              "browser.toolbars.bookmarks.showOtherBookmarks" = false;
+              "browser.toolbars.bookmarks.visibility" = "never";
+              "browser.urlbar.maxRichResults" = 0;
+              "browser.urlbar.shortcuts.bookmarks" = false;
+              "browser.urlbar.shortcuts.history" = false;
+              "browser.urlbar.shortcuts.tabs" = false;
+              "browser.urlbar.showSearchSuggestionsFirst" = false;
+              "browser.urlbar.suggest.bookmark" = false;
+              "browser.urlbar.suggest.engines" = false;
+              "browser.urlbar.suggest.history" = false;
+              "browser.urlbar.suggest.openpage" = false;
+              "browser.urlbar.suggest.recentsearches" = false;
+              "browser.urlbar.suggest.topsites" = false;
+              "general.autoScroll" = true;
+              "middlemouse.paste" = false;
+              "permissions.default.shortcuts" = 2;
+              "privacy.clearOnShutdown_v2.historyFormDataAndDownloads" = true;
+              "privacy.clearOnShutdown_v2.siteSettings" = true;
+              "privacy.resistFingerprinting.autoDeclineNoUserInputCanvasPrompts" = true;
+              #"privacy.resistFingerprinting.letterboxing" = true;
+              "security.OCSP.require" = false; # Will be disable
+              "security.ssl.require_safe_negotiation" = false; # Will be disable.
+              "signon.firefoxRelay.feature" = "disabled";
+              "signon.generation.enabled" = false;
+              "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+            };
+            userChrome = ''
+              ${builtins.readFile ./librewolf/autohide_toolbox.css}
+              ${builtins.readFile ./librewolf/navbar_tabs_oneliner_menu_buttons_on_right.css}
+              ${builtins.readFile ./librewolf/page_action_buttons_on_hover.css}
+              ${builtins.readFile ./librewolf/tab_close_button_always_on_hover.css}
+              ${builtins.readFile ./librewolf/urlbar_info_icons_on_hover.css}
+              ${builtins.readFile ./librewolf/userChrome.css}
+            '';
+          };
         };
       };
 

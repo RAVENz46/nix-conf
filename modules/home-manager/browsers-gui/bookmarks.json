@@ -1,0 +1,489 @@
+[
+  {
+    "toolbar": true,
+    "name": "Bookmarks Toolbar",
+    "bookmarks": [
+      {
+        "url": "https://www.nicovideo.jp/",
+        "name": "niconico"
+      },
+      {
+        "url": "https://animestore.docomo.ne.jp/",
+        "name": "dアニメ"
+      },
+      {
+        "url": "https://github.com/",
+        "name": "GitHub"
+      },
+      {
+        "url": "https://gitlab.com/",
+        "name": "GitLab"
+      },
+      {
+        "name": "🚲",
+        "bookmarks": [
+          {
+            "url": "https://www.cateye.com/jp/",
+            "name": "CATEYE"
+          },
+          {
+            "url": "https://www.garmin.co.jp/",
+            "name": "Garmin"
+          },
+          {
+            "url": "https://www.diatechproducts.com/lezyne/",
+            "name": "LEZYNE"
+          },
+          {
+            "url": "https://us.bmc-switzerland.com/",
+            "name": "BMC"
+          },
+          {
+            "url": "https://www.derosa.jp/",
+            "name": "DE ROSA"
+          }
+        ]
+      },
+      {
+        "name": "🎵",
+        "bookmarks": [
+          {
+            "url": "https://sonicwire.com/",
+            "name": "SONICWIRE"
+          },
+          {
+            "url": "https://www.minet.jp/",
+            "name": "Media Integration"
+          },
+          {
+            "url": "https://www.pluginboutique.com/",
+            "name": "Pluginboutique"
+          },
+          {
+            "url": "https://www.steinberg.net/",
+            "name": "Steinberg"
+          },
+          {
+            "url": "https://www.bitwig.com/",
+            "name": "Bitwig"
+          },
+          {
+            "url": "https://www.waves.com/",
+            "name": "Waves Audio"
+          },
+          {
+            "url": "https://www.izotope.jp/jp/",
+            "name": "iZotope Japan"
+          },
+          {
+            "url": "https://www.soundhouse.co.jp/",
+            "name": "サウンドハウス"
+          },
+          {
+            "url": "https://mossgrabers.de/",
+            "name": "Jürgen Moßgraber"
+          }
+        ]
+      },
+      {
+        "name": "🎮",
+        "bookmarks": [
+          {
+            "url": "https://alterware.dev/",
+            "name": "AlterWare"
+          },
+          {
+            "url": "https://www.blizzard.com/",
+            "name": "Blizzard"
+          },
+          {
+            "url": "https://www.ea.com/",
+            "name": "Electronic Arts"
+          },
+          {
+            "url": "https://www.epicgames.com/",
+            "name": "Epic Games"
+          },
+          {
+            "url": "https://northstar.tf/",
+            "name": "Northstar"
+          },
+          {
+            "url": "https://store.steampowered.com/",
+            "name": "Steam"
+          },
+          {
+            "url": "https://www.ubisoft.com/",
+            "name": "Ubisoft"
+          },
+          {
+            "url": "https://plutonium.pw/",
+            "name": "Plutonium"
+          },
+          {
+            "name": "Emulator",
+            "bookmarks": [
+              {
+                "url": "https://sukebei.nyaa.si/",
+                "name": "Sukebei"
+              },
+              {
+                "url": "https://r-roms.github.io/",
+                "name": "Megathread"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "🕹️",
+        "bookmarks": [
+          {
+            "url": "https://www.aims-jp.net/",
+            "name": "エイムス"
+          },
+          {
+            "url": "https://shop.hak5.org/",
+            "name": "Hak5"
+          },
+          {
+            "url": "https://flipperzero.one/",
+            "name": "Flipper Zero"
+          },
+          {
+            "url": "https://yushakobo.jp/",
+            "name": "遊舎工房"
+          }
+        ]
+      },
+      {
+        "name": "🔫",
+        "bookmarks": [
+          {
+            "url": "https://sportsgun.net/",
+            "name": "SPORTS GUN"
+          },
+          {
+            "url": "https://frontlines.jp/",
+            "name": "FRONTLINE"
+          },
+          {
+            "url": "https://pk-outlet.com/",
+            "name": "PKウェーブ"
+          },
+          {
+            "url": "https://tamurasoubi.co.jp/",
+            "name": "田村装備開発"
+          },
+          {
+            "url": "https://www.jdc.ne.jp/",
+            "name": "日本デジコム"
+          },
+          {
+            "url": "https://www.shokin.co.jp/",
+            "name": "昭和金属工業"
+          },
+          {
+            "url": "https://shoka-stick.jp/",
+            "name": "SHOKA STICK"
+          },
+          {
+            "url": "https://www.lumica.co.jp/",
+            "name": "ルミカ"
+          }
+        ]
+      },
+      {
+        "name": "🐎",
+        "bookmarks": [
+          {
+            "url": "https://www.jra.go.jp/",
+            "name": "JRA"
+          },
+          {
+            "url": "https://www.clubjranet.jra.go.jp/",
+            "name": "Club JRA-Net"
+          },
+          {
+            "url": "https://jra-van.jp/",
+            "name": "JRA-VAN"
+          },
+          {
+            "url": "https://sp.gch.jp/",
+            "name": "グリーンチャンネル"
+          },
+          {
+            "url": "https://paddock-ai.jra-van.jp/",
+            "name": "パドックアイ"
+          },
+          {
+            "url": "https://www.netkeiba.com/",
+            "name": "netkeiba.com"
+          },
+          {
+            "url": "https://www.smartrc.jp/",
+            "name": "SmartRc"
+          },
+          {
+            "url": "https://shop.prc.jp/",
+            "name": "ターフィー通販"
+          }
+        ]
+      },
+      {
+        "name": "🫏",
+        "bookmarks": [
+          {
+            "url": "https://www.spat4.jp/keiba/",
+            "name": "SPAT4 投票"
+          },
+          {
+            "url": "https://www.spat4pp.jp/",
+            "name": "SPAT4 ポイント"
+          },
+          {
+            "url": "https://keiba.rakuten.co.jp/",
+            "name": "楽天競馬"
+          },
+          {
+            "url": "https://www.keiba.go.jp/index.html",
+            "name": "地方競馬情報"
+          },
+          {
+            "url": "https://saikyo.k-ba.com/",
+            "name": "最強の法則"
+          }
+        ]
+      },
+      {
+        "name": "🛡️",
+        "bookmarks": [
+          {
+            "url": "https://adguard.com/",
+            "name": "AdGuard"
+          },
+          {
+            "url": "https://www.paypal.com/",
+            "name": "PayPal"
+          },
+          {
+            "url": "https://www.namecheap.com/",
+            "name": "namecheap"
+          },
+          {
+            "url": "https://mullvad.net/",
+            "name": "Mullvad VPN"
+          },
+          {
+            "url": "https://windscribe.com/",
+            "name": "Windscribe"
+          },
+          {
+            "url": "https://www.ivpn.net/",
+            "name": "IVPN"
+          },
+          {
+            "url": "https://safing.io/",
+            "name": "Safing"
+          },
+          {
+            "url": "https://account.proton.me/",
+            "name": "Proton"
+          },
+          {
+            "url": "https://app.simplelogin.io/",
+            "name": "SimpleLogin"
+          },
+          {
+            "url": "https://tuta.com/",
+            "name": "Tuta"
+          },
+          {
+            "url": "https://inboxkitten.com/",
+            "name": "inboxkitten"
+          },
+          {
+            "url": "https://justatemp.com/",
+            "name": "Just a Temp"
+          },
+          {
+            "url": "https://mysudo.com/",
+            "name": "MySudo"
+          },
+          {
+            "url": "https://jmp.chat/",
+            "name": "JMP"
+          },
+          {
+            "url": "https://privacy.com/",
+            "name": "Privacy"
+          },
+          {
+            "url": "https://tailscale.com/",
+            "name": "Tailscale"
+          }
+        ]
+      },
+      {
+        "name": "🐧",
+        "bookmarks": [
+          {
+            "url": "https://nixos.org/",
+            "name": "Nix & NixOS"
+          },
+          {
+            "url": "https://nur.nix-community.org/",
+            "name": "NUR search"
+          },
+          {
+            "url": "https://home-manager-options.extranix.com/",
+            "name": "HMSearch"
+          },
+          {
+            "url": "https://lazamar.co.uk/nix-versions/",
+            "name": "NixOld search"
+          },
+          {
+            "url": "https://noogle.dev/",
+            "name": "Noogle"
+          },
+          {
+            "url": "https://wiki.nixos.org/wiki/",
+            "name": "Official Wiki"
+          },
+          {
+            "url": "https://nixos.wiki/wiki/",
+            "name": "User Wiki"
+          },
+          {
+            "url": "https://nix.dev/",
+            "name": "nix.dev"
+          },
+          {
+            "url": "https://nixos-and-flakes.thiscute.world/",
+            "name": "Book"
+          },
+          {
+            "url": "https://www.nixhub.io/",
+            "name": "Nixhub.io"
+          },
+          {
+            "url": "https://flakehub.com/",
+            "name": "FlakeHub"
+          },
+          {
+            "url": "https://mynixos.com/",
+            "name": "MyNixOS"
+          },
+          {
+            "url": "https://nixpk.gs/pr-tracker.html",
+            "name": "PR-tracker"
+          },
+          {
+            "url": "https://bolt.tvix.dev/",
+            "name": "Tvixbolt"
+          },
+          {
+            "url": "https://spectrum-os.org/",
+            "name": "Spectrum"
+          },
+          {
+            "url": "https://guix.gnu.org/",
+            "name": "GNU Guix"
+          },
+          {
+            "url": "https://repology.org/",
+            "name": "Repology"
+          }
+        ]
+      },
+      {
+        "name": "🛠️",
+        "bookmarks": [
+          {
+            "url": "https://cadmium-co.github.io/CADmium/",
+            "name": "CADmium"
+          },
+          {
+            "url": "https://editor.graphite.rs/",
+            "name": "Graphite"
+          },
+          {
+            "url": "https://www.visioncortex.org/vtracer/",
+            "name": "VTracer"
+          },
+          {
+            "url": "https://archive.org/",
+            "name": "Archive"
+          },
+          {
+            "url": "https://web-check.xyz/",
+            "name": "Web Check"
+          }
+        ]
+      },
+      {
+        "name": "🏬",
+        "bookmarks": [
+          {
+            "url": "https://www.amazon.co.jp/",
+            "name": "Amazon"
+          },
+          {
+            "url": "https://www.rakuten.co.jp/",
+            "name": "Rakuten"
+          },
+          {
+            "url": "https://www.somes.co.jp/",
+            "name": "ソメスサドル"
+          },
+          {
+            "url": "https://nuigurumi-hospital.jp/",
+            "name": "ぬいぐるみ病院"
+          },
+          {
+            "url": "http://www.coelang.tufs.ac.jp/mt/",
+            "name": "言語モジュール"
+          },
+          {
+            "url": "https://mail.smt.docomo.ne.jp/mail/",
+            "name": "ドコモメール"
+          },
+          {
+            "name": "Education",
+            "bookmarks": [
+              {
+                "url": "https://www.overleaf.com/project",
+                "name": "Overleaf"
+              },
+              {
+                "url": "https://virginia.jimu.kyutech.ac.jp/",
+                "name": "LiveCampus"
+              },
+              {
+                "url": "https://ict-t.el.kyutech.ac.jp/",
+                "name": "Moodle"
+              },
+              {
+                "url": "https://auth.chatwork.com/",
+                "name": "Chatwork"
+              },
+              {
+                "url": "https://www.microsoft365.com/",
+                "name": "Microsoft 365"
+              },
+              {
+                "url": "https://tourofrust.com/00_ja.html",
+                "name": "Rust ツアー"
+              },
+              {
+                "url": "https://zenn.dev/mebiusbox/books/22d4c1ed9b0003",
+                "name": "Rust入門"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
