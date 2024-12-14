@@ -33,8 +33,10 @@ in
   config = mkMerge [
     (mkIf (cfg.compositors != [ ]) {
       home.pointerCursor = {
-        name = "Ayabe";
-        package = pkgs.ayabe-cursor;
+        #name = "ayabe";
+        #package = pkgs.ayabe-cursor;
+        name = "shinon";
+        package = pkgs.shinon-cursor;
         size = 64; # 24 32 48 64 available
         gtk.enable = true;
       };

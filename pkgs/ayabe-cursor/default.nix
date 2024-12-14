@@ -8,7 +8,7 @@ stdenvNoCC.mkDerivation {
 
   installPhase = ''
     mkdir -p $out/share/icons
-    mv Ayabe $out/share/icons
+    mv ayabe $out/share/icons
   '';
 
   meta = {
