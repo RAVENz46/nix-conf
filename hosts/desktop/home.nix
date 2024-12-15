@@ -337,6 +337,7 @@
       #nur.modules.home-manager.default
       nyx.homeManagerModules.default
       plasma-manager.homeManagerModules.plasma-manager
+      ragenix.homeManagerModules.default
     ])
     ++ (builtins.attrValues outputs.homeManagerModules);
 }

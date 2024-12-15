@@ -45,16 +45,10 @@ in
             (adi1090x-plymouth-themes.override {
               selected_themes = [ config.boot.plymouth.theme ];
             })
-            (runCommand "add-logos"
-              {
-                inherit (config.boot.plymouth) logo;
-                inherit (config.boot.plymouth) theme;
-              }
-              ''
-                mkdir -p $out/share/plymouth/themes/$theme
-                ln -s $logo $out/share/plymouth/themes/$theme/header-image.png
-              ''
-            )
+            (runCommand "add-logos" { inherit (config.boot.plymouth) logo theme; } ''
+              mkdir -p $out/share/plymouth/themes/$theme
+              ln -s $logo $out/share/plymouth/themes/$theme/header-image.png
+            '')
           ];
         };
       };

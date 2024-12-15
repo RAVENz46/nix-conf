@@ -119,6 +119,10 @@
       url = "github:cachix/git-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ragenix = {
+      url = "github:yaxitech/ragenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     system-manager = {
       url = "github:numtide/system-manager";
       inputs.nixpkgs.follows = "nixpkgs";
