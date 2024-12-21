@@ -272,7 +272,7 @@
       mousai
       neothesia
       obs-studio
-      #inputs.pipeline.packages.${system}.default
+      #pipeline
       pwvucontrol
       shortwave
       #snapshot

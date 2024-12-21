@@ -38,7 +38,6 @@ in
       boot = {
         plymouth = {
           enable = true;
-          catppuccin.enable = false;
           logo = ./plymouth.png;
           theme = "circuit";
           themePackages = with pkgs; [
@@ -52,6 +51,13 @@ in
           ];
         };
       };
+
+      catppuccin = {
+        plymouth = {
+          enable = false;
+        };
+      };
+
       environment = {
         sessionVariables = {
           NIXOS_OZONE_WL = "1";

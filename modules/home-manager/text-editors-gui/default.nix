@@ -36,12 +36,10 @@ in
       zed-editor = {
         enable = notExcluded pkgs.zed-editor;
         extensions = [
-          "catppuccin"
           "nix"
         ];
         userKeymaps = { };
         userSettings = {
-          theme = "Catppuccin Mocha";
           telemetry = {
             diagnostics = false;
             metrics = false;

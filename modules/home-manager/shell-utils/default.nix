@@ -24,6 +24,12 @@ in
   };
 
   config = mkIf cfg.enable {
+    catppuccin = {
+      starship = {
+        enable = false;
+      };
+    };
+
     home.packages = subtractLists cfg.excludePackages (
       with pkgs;
       [
@@ -129,7 +135,6 @@ in
 
       starship = {
         enable = notExcluded pkgs.starship;
-        catppuccin.enable = false;
         settings = importTOML ./starship.toml;
       };
 

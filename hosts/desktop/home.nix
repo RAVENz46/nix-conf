@@ -212,7 +212,7 @@
       gnome-podcasts
       mousai
       neothesia
-      #inputs.pipeline.packages.${system}.default
+      #pipeline
       snapshot
       songrec
     ];

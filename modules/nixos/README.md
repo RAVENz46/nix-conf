@@ -54,6 +54,7 @@ Flake section -> PO: Package Only, PN: Package & NixOsModule
 | Package Name | NOM | Flake | Rust | Descriptions |
 |:------------:|:---:|:-----:|:----:| ------------ |
 | [android-tools](https://github.com/nmeum/android-tools) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/misc/android-tools/default.nix)) | Yes | No | No | Android SDK platform tools |
+| [conduwuit](https://github.com/girlbossceo/conduwuit) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/co/conduwuit/package.nix)) | Yes | PO | Yes | Matrix homeserver written in Rust, forked from conduit |
 | [envision](https://gitlab.com/gabmus/envision) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/by-name/en/envision/package.nix)) | Yes | No | Yes | UI for building, configuring and running Monado, the open source OpenXR runtime (with build environment) |
 | [garage](https://git.deuxfleurs.fr/Deuxfleurs/garage) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/filesystems/garage/default.nix)) | Yes | PO | Yes | S3-compatible object store for small self-hosted geo-distributed deployments |
 | [kanata](https://github.com/jtroo/kanata) ([nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/system/kanata/default.nix)) | Yes | No | Yes | Tool to improve keyboard comfort and usability with advanced customization |

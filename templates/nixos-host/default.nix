@@ -32,6 +32,7 @@
     enable = false;
     excludePackages = with pkgs; [
       android-tools
+      conduwuit
       envision
       garage
       kanata

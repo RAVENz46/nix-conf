@@ -94,7 +94,7 @@ in
       coredump.enable = false;
     };
     boot = {
-      #extraModulePackages = with config.boot.kernelPackages; [ lkrg ];
+      extraModulePackages = with config.boot.kernelPackages; [ lkrg ];
       #kernelParams = [ "security=selinux" ];
       #kernelPatches = [
       #  {

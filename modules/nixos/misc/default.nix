@@ -51,6 +51,11 @@ in
     };
 
     services = {
+      conduwuit = {
+        enable = notExcluded pkgs.conduwuit;
+        settings = { };
+      };
+
       garage = {
         enable = notExcluded pkgs.garage;
         settings = { };

@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  inputs,
   ...
 }:
 
@@ -32,7 +31,7 @@ in
         gnome-podcasts
         loupe
         metronome
-        inputs.pipeline.packages.${system}.default
+        pipeline
         snapshot
         switcheroo
       ]
