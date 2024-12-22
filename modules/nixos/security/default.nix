@@ -36,9 +36,8 @@ in
     security = {
       apparmor = {
         policies = {
-          "sudo-rs" = {
-            enforce = false;
-            enable = false;
+          sudo-rs = {
+            state = "enforce";
             profile = ''
               ${pkgs.sudo-rs}/bin/sudo {
                 file /** rwlkUx,
