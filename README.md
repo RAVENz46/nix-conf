@@ -19,7 +19,7 @@ Packages that do not meet these criteria will be removed.
 - [ ] Configure macchina
 - [ ] Configure pfetch-rs
 - [ ] Configure shell greeting
-- [ ] Make unpriviledge containers work
+- [ ] Configure apparmor
 - [ ] Make firefox settings completely declarative
 - [ ] Make flake package excludable
 - [ ] Make `nix flake show` work
