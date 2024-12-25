@@ -56,6 +56,9 @@
       surfer
       forecast
       nix-inspect
+      #viu
+      manga-tui
+      papers
     ];
 
     sessionPath = [

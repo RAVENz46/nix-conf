@@ -27,7 +27,7 @@ in
       with pkgs;
       [
         celeste
-        czkawka
+        czkawka-full
         fm
         szyszka
         warp

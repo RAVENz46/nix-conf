@@ -101,7 +101,7 @@
     excludePackages = with pkgs; [
       #celeste
       #cosmic-files
-      czkawka
+      czkawka-full
       fm
       pika-backup
       szyszka
