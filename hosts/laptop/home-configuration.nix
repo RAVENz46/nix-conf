@@ -52,6 +52,20 @@
       userName = "RAVENz46";
       #userEmail = "${builtins.readFile ./git-email.txt}";
     };
+
+    librewolf = {
+      settings = {
+        "extensions.activeThemeID" = "{76aabc99-c1a8-4c1e-832b-d4f2941d5a7a}";
+      };
+      policies = {
+        ExtensionSettings = {
+          "{76aabc99-c1a8-4c1e-832b-d4f2941d5a7a}" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/file/3990325/latest.xpi";
+            installation_mode = "normal_installed";
+          };
+        };
+      };
+    };
   };
 
   xdg = {
