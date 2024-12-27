@@ -56,9 +56,9 @@ in
     programs = {
       atuin = {
         enable = notExcluded pkgs.atuin;
+        daemon.enable = true;
         settings = {
-          sync_frequency = "30m";
-          search_mode = "fuzzy";
+          search_mode = "skim";
         };
       };
 
@@ -112,7 +112,6 @@ in
       mcfly = {
         enable = notExcluded pkgs.mcfly;
         fuzzySearchFactor = 0;
-        keyScheme = "vim";
       };
 
       navi = {
