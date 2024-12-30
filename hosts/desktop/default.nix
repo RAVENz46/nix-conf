@@ -137,6 +137,10 @@
     accent = "green"; # red, pink, yellow, green, teal
   };
 
+  nix-mineral = {
+    enable = true;
+  };
+
   environment.systemPackages = with pkgs; [
     wl-clipboard-rs
     uutils-coreutils-noprefix

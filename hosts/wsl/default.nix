@@ -129,6 +129,10 @@
     accent = "green"; # red, pink, yellow, green, teal
   };
 
+  nix-mineral = {
+    enable = true;
+  };
+
   #hardware.system76.power-daemon.enable = true;
 
   services = {
