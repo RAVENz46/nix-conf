@@ -129,6 +129,12 @@
 
   nix-mineral = {
     enable = true;
+    overrides = {
+      desktop = {
+        allow-unprivileged-userns = true;
+        home-exec = true;
+      };
+    };
   };
 
   hardware.system76.power-daemon.enable = true;
