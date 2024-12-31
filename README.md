@@ -1,4 +1,4 @@
-# Category base nix configurations with personal awesome-rust
+# Category based nix configurations with personal awesome-rust
  This is my personal nix configuration files for nixos, linux, macos, nixos-on-wsl and nix-on-droid with personal awesome-rust.
 
 ## Features
