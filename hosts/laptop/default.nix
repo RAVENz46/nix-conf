@@ -4,7 +4,6 @@
   lib,
   inputs,
   outputs,
-  modulesPath,
   ...
 }:
 
@@ -134,6 +133,9 @@
         allow-unprivileged-userns = true;
         home-exec = true;
       };
+      security = {
+        minimize-swapping = true;
+      };
     };
   };
 
@@ -184,7 +186,6 @@
 
   imports =
     [
-      (modulesPath + "/profiles/hardened.nix")
       ./configuration.nix
       ./disk-config.nix
       ./hardware-configuration.nix

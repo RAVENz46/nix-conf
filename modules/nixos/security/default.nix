@@ -79,10 +79,15 @@ in
       #};
       dbus.apparmor = "enabled";
       kanidm.enablePam = notExcluded pkgs.kanidm;
+      timesyncd = {
+        enable = false;
+      };
+      ntpd-rs = {
+        enable = true;
+      };
     };
     systemd = {
       package = pkgs.systemd.override { withSelinux = true; };
-      coredump.enable = false;
     };
     boot = {
       extraModulePackages = with config.boot.kernelPackages; [ lkrg ];

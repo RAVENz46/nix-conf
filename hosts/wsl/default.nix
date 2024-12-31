@@ -4,7 +4,6 @@
   lib,
   inputs,
   outputs,
-  modulesPath,
   ...
 }:
 
@@ -131,6 +130,15 @@
 
   nix-mineral = {
     enable = true;
+    overrides = {
+      desktop = {
+        allow-unprivileged-userns = true;
+        home-exec = true;
+      };
+      security = {
+        minimize-swapping = true;
+      };
+    };
   };
 
   #hardware.system76.power-daemon.enable = true;
@@ -180,7 +188,6 @@
 
   imports =
     [
-      #(modulesPath + "/profiles/hardened.nix")
       ./configuration.nix
     ]
     ++ (with inputs; [

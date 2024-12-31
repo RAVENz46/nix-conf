@@ -4,7 +4,6 @@
   lib,
   inputs,
   outputs,
-  modulesPath,
   ...
 }:
 
@@ -139,6 +138,15 @@
 
   nix-mineral = {
     enable = true;
+    overrides = {
+      desktop = {
+        allow-unprivileged-userns = true;
+        home-exec = true;
+      };
+      security = {
+        minimize-swapping = true;
+      };
+    };
   };
 
   environment.systemPackages = with pkgs; [
@@ -168,7 +176,6 @@
 
   imports =
     [
-      (modulesPath + "/profiles/hardened.nix")
       ./configuration.nix
       ./disk-config.nix
       ./hardware-configuration.nix
