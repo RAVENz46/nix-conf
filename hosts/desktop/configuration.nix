@@ -21,10 +21,6 @@
     };
   };
 
-  environment = {
-    memoryAllocator.provider = lib.mkForce "libc";
-  };
-
   hardware = {
     enableRedistributableFirmware = true;
     graphics = {
@@ -41,10 +37,6 @@
 
   services = {
     xserver.videoDrivers = [ "nvidia" ];
-  };
-
-  security = {
-    unprivilegedUsernsClone = true;
   };
 
   programs.steam.platformOptimizations.enable = true;

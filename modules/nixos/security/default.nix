@@ -61,7 +61,7 @@ in
     });
     environment = {
       defaultPackages = [ ];
-      memoryAllocator.provider = "graphene-hardened";
+      #memoryAllocator.provider = "graphene-hardened";
       systemPackages = subtractLists cfg.excludePackages (
         with pkgs;
         [
@@ -91,6 +91,7 @@ in
     };
     boot = {
       extraModulePackages = with config.boot.kernelPackages; [ lkrg ];
+      #kernelModules = [ "lkrg" ];
       #kernelParams = [ "security=selinux" ];
       #kernelPatches = [
       #  {
