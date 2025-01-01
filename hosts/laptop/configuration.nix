@@ -7,7 +7,7 @@
 
 {
   boot = {
-    kernelPackages = pkgs.linuxPackages_6_11_hardened;
+    kernelPackages = pkgs.linuxPackages_6_12_hardened;
     supportedFilesystems = [
       "bcachefs"
       "exfat"
@@ -22,7 +22,28 @@
   };
 
   environment = {
-    memoryAllocator.provider = lib.mkForce "libc";
+    #gnome.excludePackages = with pkgs; [
+    #  baobab
+    #  epiphany
+    #  gnome-calculator
+    #  gnome-calendar
+    #  gnome-characters
+    #  gnome-clocks
+    #  gnome-console
+    #  gnome-contacts
+    #  gnome-font-viewer
+    #  gnome-maps
+    #  gnome-music
+    #  gnome-system-monitor
+    #  gnome-weather
+    #  loupe
+    #  nautilus
+    #  gnome-connections
+    #  simple-scan
+    #  snapshot
+    #  totem
+    #  yelp
+    #];
   };
 
   hardware = {
@@ -33,11 +54,12 @@
     };
   };
 
-  security = {
-    unprivilegedUsernsClone = true;
-  };
-
   services.kanata.keyboards.vimacs.devices = [
     "/dev/input/by-path/platform-i8042-serio-0-event-kbd"
   ];
+
+  #services.power-profiles-daemon.enable = lib.mkForce false;
+  #services.xserver = {
+  #  desktopManager.gnome.enable = true;
+  #};
 }
