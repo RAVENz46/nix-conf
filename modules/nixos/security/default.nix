@@ -87,7 +87,7 @@ in
       };
     };
     systemd = {
-      package = pkgs.systemd.override { withSelinux = true; };
+      #package = pkgs.systemd.override { withSelinux = true; };
     };
     boot = {
       extraModulePackages = with config.boot.kernelPackages; [ lkrg ];

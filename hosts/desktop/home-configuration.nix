@@ -59,6 +59,7 @@
       #viu
       manga-tui
       papers
+      #choose
     ];
 
     sessionPath = [
