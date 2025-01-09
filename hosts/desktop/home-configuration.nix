@@ -22,6 +22,7 @@
       #websurfx
       #stract
       #amdgpu_top
+      #limbo
       #mistral-rs
       #zluda
       #stardust-xr-kiara
@@ -36,6 +37,7 @@
       #gpauth
       #gpclient
 
+      #amber-lang
       #espanso #hm module available
       #deltachat-desktop
       #nekoray
@@ -46,6 +48,7 @@
       #pw-viz
       netop
       #rogcat
+      #sheldon
       tasks
       nix-du
       rippkgs

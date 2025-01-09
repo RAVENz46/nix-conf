@@ -29,6 +29,7 @@ in
     programs = {
       helix = {
         enable = notExcluded pkgs.helix;
+        #package = pkgs.evil-helix;
         defaultEditor = notExcluded pkgs.helix && !config.programs.nixvim.defaultEditor;
         settings = importTOML ./helix-vim.toml;
       };
@@ -41,9 +42,9 @@ in
 
         extraConfigLuaPre = '''';
 
-        extraConfigLua = ''
-          require('render-markdown').setup({})
-        '';
+        #extraConfigLua = ''
+        #  require('render-markdown').setup({})
+        #'';
 
         extraConfigLuaPost = '''';
 
@@ -94,19 +95,19 @@ in
               desc = "Toggle nvim-tree";
             };
           }
-          {
-            mode = "n";
-            key = "<leader>r";
-            action = ":RenderMarkdownToggle<CR>";
-            options = {
-              silent = true;
-              noremap = true;
-              desc = "Toggle render-markdown";
-            };
-          }
+          #{
+          #  mode = "n";
+          #  key = "<leader>r";
+          #  action = ":RenderMarkdownToggle<CR>";
+          #  options = {
+          #    silent = true;
+          #    noremap = true;
+          #    desc = "Toggle render-markdown";
+          #  };
+          #}
         ];
 
-        extraPlugins = with pkgs.vimPlugins; [ render-markdown-nvim ];
+        #extraPlugins = with pkgs.vimPlugins; [ render-markdown-nvim ];
 
         clipboard.providers.wl-copy = {
           enable = true;
@@ -304,6 +305,10 @@ in
           #};
 
           colorizer = {
+            enable = true;
+          };
+
+          markview = {
             enable = true;
           };
 

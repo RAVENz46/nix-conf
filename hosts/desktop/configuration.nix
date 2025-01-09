@@ -7,7 +7,7 @@
 
 {
   boot = {
-    kernelPackages = pkgs.linuxPackages_6_11_hardened;
+    kernelPackages = pkgs.linuxPackages_6_12_hardened;
     supportedFilesystems = [
       "bcachefs"
       "exfat"
