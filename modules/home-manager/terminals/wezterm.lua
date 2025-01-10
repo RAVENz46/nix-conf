@@ -10,9 +10,6 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
--- Avoid breaking textures
-config.front_end = "WebGpu"
-
 -- This is where you actually apply your config choices
 
 -- Appearance
