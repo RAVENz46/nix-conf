@@ -127,7 +127,7 @@
   };
 
   nix-mineral = {
-    enable = true;
+    #enable = true;
     overrides = {
       desktop = {
         allow-unprivileged-userns = true;
