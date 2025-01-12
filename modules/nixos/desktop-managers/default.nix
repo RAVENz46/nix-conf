@@ -88,11 +88,10 @@ in
     (mkIf (builtins.elem "cosmic" cfg.compositors) {
       environment = {
         cosmic.excludePackages = with pkgs; [
-          adwaita-icon-theme
           cosmic-edit
           cosmic-launcher
+          cosmic-player
           cosmic-term
-          hicolor-icon-theme
           pop-icon-theme
           pop-launcher
         ];
