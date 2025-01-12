@@ -136,18 +136,18 @@
     accent = "green"; # red, pink, yellow, green, teal
   };
 
-  nix-mineral = {
-    enable = true;
-    overrides = {
-      desktop = {
-        allow-unprivileged-userns = true;
-        home-exec = true;
-      };
-      security = {
-        minimize-swapping = true;
-      };
-    };
-  };
+  #nix-mineral = {
+  #  enable = true;
+  #  overrides = {
+  #    desktop = {
+  #      allow-unprivileged-userns = true;
+  #      home-exec = true;
+  #    };
+  #    security = {
+  #      minimize-swapping = true;
+  #    };
+  #  };
+  #};
 
   environment.systemPackages = with pkgs; [
     wl-clipboard-rs

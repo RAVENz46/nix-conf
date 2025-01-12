@@ -54,6 +54,7 @@ in
         plugins = with pkgs.obs-studio-plugins; [
           looking-glass-obs
           obs-backgroundremoval
+          obs-color-monitor
           obs-mute-filter
           obs-pipewire-audio-capture
           obs-source-switcher

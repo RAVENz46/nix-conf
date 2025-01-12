@@ -63,6 +63,7 @@
       manga-tui
       papers
       #choose
+      #voicevox
     ];
 
     sessionPath = [
