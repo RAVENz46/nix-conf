@@ -26,7 +26,7 @@ in
     home.packages = lib.subtractLists cfg.excludePackages (
       with pkgs;
       [ inputs.nix-software-center.packages.${system}.default ]
-      ++ optionals config.isNixOS [ inputs.nixos-conf-editor.packages.${system}.default ]
+      ++ lib.optionals config.isNixOS [ inputs.nixos-conf-editor.packages.${system}.default ]
     );
   };
 }

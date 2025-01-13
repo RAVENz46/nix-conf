@@ -28,11 +28,11 @@ in
         binocle
         gnome-obfuscate
       ]
-      ++ optionals stdenv.isLinux [
+      ++ lib.optionals stdenv.isLinux [
         authenticator
         key-rack
       ]
-      ++ optionals (stdenv.system == "x86_64-linux") [ proton-pass ]
+      ++ lib.optionals (stdenv.system == "x86_64-linux") [ proton-pass ]
     );
   };
 }

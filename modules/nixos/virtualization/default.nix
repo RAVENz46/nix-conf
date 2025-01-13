@@ -83,7 +83,7 @@ in
           quickemu
           stratovirt
         ]
-        ++ optionals stdenv.isx86_64 [ quickgui ]
+        ++ lib.optionals stdenv.isx86_64 [ quickgui ]
       );
     })
 

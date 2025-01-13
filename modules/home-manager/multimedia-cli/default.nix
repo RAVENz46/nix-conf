@@ -36,17 +36,19 @@ in
         yaydl
         ytermusic
       ]
-      ++ optionals stdenv.isLinux [
+      ++ lib.optionals stdenv.isLinux [
         scope-tui
         tplay
       ]
     );
 
-    programs.jerry = {
-      enable = notExcluded inputs.jerry.packages.${pkgs.system}.default;
-      config = {
-        player = "mpv";
-        #provider = "";
+    programs = {
+      jerry = {
+        enable = notExcluded inputs.jerry.packages.${pkgs.system}.default;
+        config = {
+          player = "mpv";
+          #provider = "";
+        };
       };
     };
   };

@@ -32,7 +32,7 @@ in
         ruffle
         symbolic-preview
       ]
-      ++ optionals stdenv.isLinux [
+      ++ lib.optionals stdenv.isLinux [
         contrast
         eyedropper
         fragments

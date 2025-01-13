@@ -28,7 +28,7 @@ in
         blender
         synfigstudio
       ]
-      ++ optionals stdenv.isLinux [ paraview ]
+      ++ lib.optionals stdenv.isLinux [ paraview ]
     );
   };
 }

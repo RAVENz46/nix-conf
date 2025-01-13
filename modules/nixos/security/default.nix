@@ -32,6 +32,15 @@ in
       info.enable = false;
     };
 
+    fileSystems."/nix/tmp" = {
+      device = "/nix/tmp";
+      options = [
+        "bind"
+        "nosuid"
+        "nodev"
+      ];
+    };
+
     security = {
       apparmor = {
         policies = {
@@ -52,12 +61,14 @@ in
         tctiEnvironment.enable = true;
       };
     };
+
     users.users = lib.genAttrs config.userList (f: {
       extraGroups = [
         "tss"
         "wheel"
       ];
     });
+
     environment = {
       defaultPackages = [ ];
       #memoryAllocator.provider = "graphene-hardened";
@@ -69,6 +80,7 @@ in
         ]
       );
     };
+
     services = {
       #clamav = {
       #  daemon.enable = true;
@@ -85,9 +97,17 @@ in
         enable = true;
       };
     };
+
     systemd = {
       #package = pkgs.systemd.override { withSelinux = true; };
+      services.nix-daemon.environment.TMPDIR = "/nix/tmp";
+      tmpfiles.settings."restrictetnixtmp"."/nix/tmp".z = {
+        mode = "0775";
+        user = "root";
+        group = "nixbld";
+      };
     };
+
     boot = {
       extraModulePackages = with config.boot.kernelPackages; [ lkrg ];
       #kernelModules = [ "lkrg" ];

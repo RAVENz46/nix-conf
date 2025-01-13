@@ -31,7 +31,7 @@ in
         browsers
         ladybird
       ]
-      ++ optionals stdenv.isLinux [ geopard ]
+      ++ lib.optionals stdenv.isLinux [ geopard ]
     );
 
     programs = {

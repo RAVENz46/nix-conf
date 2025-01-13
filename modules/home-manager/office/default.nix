@@ -24,8 +24,8 @@ in
   config = lib.mkIf cfg.enable {
     home.packages = lib.subtractLists cfg.excludePackages (
       with pkgs;
-      optionals stdenv.isLinux [ libreoffice ]
-      ++ optionals (stdenv.system == "x86_64-linux") [ onlyoffice-bin ]
+      lib.optionals stdenv.isLinux [ libreoffice ]
+      ++ lib.optionals (stdenv.system == "x86_64-linux") [ onlyoffice-bin ]
     );
   };
 }

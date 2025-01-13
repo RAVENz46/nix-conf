@@ -34,7 +34,7 @@ in
         snapshot
         switcheroo
       ]
-      ++ optionals stdenv.isLinux [
+      ++ lib.optionals stdenv.isLinux [
         coppwr
         glide-media-player
         helvum

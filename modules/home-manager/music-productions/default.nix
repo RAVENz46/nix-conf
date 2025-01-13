@@ -25,13 +25,13 @@ in
     home.packages = lib.subtractLists cfg.excludePackages (
       with pkgs;
       [ zrythm ]
-      ++ optionals stdenv.isLinux [
+      ++ lib.optionals stdenv.isLinux [
         ardour
         lsp-plugins
         muse
         qtractor
       ]
-      ++ optionals (stdenv.system == "x86_64-linux") [
+      ++ lib.optionals (stdenv.system == "x86_64-linux") [
         lmms
         yabridge
       ]

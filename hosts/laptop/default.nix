@@ -127,10 +127,11 @@
   };
 
   nix-mineral = {
-    #enable = true;
+    enable = true;
     overrides = {
       desktop = {
         allow-unprivileged-userns = true;
+        disable-usbguard = true;
         home-exec = true;
       };
       security = {

@@ -29,7 +29,7 @@ in
         process-viewer
         rustscan
       ]
-      ++ optionals stdenv.isLinux [
+      ++ lib.optionals stdenv.isLinux [
         mission-center
         resources
       ]

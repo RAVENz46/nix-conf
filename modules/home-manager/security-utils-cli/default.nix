@@ -37,8 +37,8 @@ in
         sbomnix
         vulnix
       ]
-      ++ optionals stdenv.isLinux [ oo7 ]
-      ++ optionals (stdenv.system == "x86_64-linux") [ noseyparker ]
+      ++ lib.optionals stdenv.isLinux [ oo7 ]
+      ++ lib.optionals (stdenv.system == "x86_64-linux") [ noseyparker ]
     );
   };
 }

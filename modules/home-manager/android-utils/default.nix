@@ -7,7 +7,6 @@
 
 let
   cfg = config.android-utils;
-  notExcluded = pkg: !(builtins.elem pkg config.android-utils.excludePackages);
 in
 {
   options = {
@@ -24,7 +23,7 @@ in
 
   config = lib.mkIf cfg.enable {
     home.packages = lib.subtractLists cfg.excludePackages (
-      with pkgs; [ scrcpy ] ++ optionals stdenv.isLinux [ universal-android-debloater ]
+      with pkgs; [ scrcpy ] ++ lib.optionals stdenv.isLinux [ universal-android-debloater ]
     );
   };
 }

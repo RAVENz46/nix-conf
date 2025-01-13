@@ -30,7 +30,7 @@ in
         shotcut
         vidmerger
       ]
-      ++ optionals stdenv.isLinux [
+      ++ lib.optionals stdenv.isLinux [
         flowblade
         identity
         kdePackages.kdenlive
@@ -38,7 +38,7 @@ in
         pitivi
         video-trimmer
       ]
-      ++ optionals (stdenv.system == "x86_64-linux") [ gyroflow ]
+      ++ lib.optionals (stdenv.system == "x86_64-linux") [ gyroflow ]
     );
   };
 }

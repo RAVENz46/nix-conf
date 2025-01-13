@@ -28,7 +28,7 @@ in
       [
         lapce
       ]
-      ++ optionals stdenv.isLinux [ cosmic-edit ]
+      ++ lib.optionals stdenv.isLinux [ cosmic-edit ]
     );
 
     programs = {

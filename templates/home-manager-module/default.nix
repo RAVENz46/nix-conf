@@ -23,7 +23,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = lib.subtractLists cfg.excludePackages (with pkgs; optionals stdenv.isLinux [ ]);
+    home.packages = lib.subtractLists cfg.excludePackages (with pkgs; lib.optionals stdenv.isLinux [ ]);
 
     programs = {
       packageName = {

@@ -31,7 +31,7 @@ in
         simp
         rawtherapee
       ]
-      ++ optionals stdenv.isLinux [ digikam ]
+      ++ lib.optionals stdenv.isLinux [ digikam ]
     );
   };
 }

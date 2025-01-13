@@ -33,7 +33,7 @@ in
         zenith
         zenith-nvidia
       ]
-      ++ optionals stdenv.isLinux [
+      ++ lib.optionals stdenv.isLinux [
         havn
         kmon
       ]

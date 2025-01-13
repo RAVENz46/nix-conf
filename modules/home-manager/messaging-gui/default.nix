@@ -26,7 +26,7 @@ in
     home.packages = lib.subtractLists cfg.excludePackages (
       with pkgs;
       [ protonmail-bridge-gui ]
-      ++ optionals stdenv.isLinux [
+      ++ lib.optionals stdenv.isLinux [
         flare-signal
         fractal
       ]

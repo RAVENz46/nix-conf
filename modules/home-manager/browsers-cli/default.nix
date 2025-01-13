@@ -29,7 +29,7 @@ in
         monolith
         wiki-tui
       ]
-      ++ optionals stdenv.isLinux [ ncgopher ]
+      ++ lib.optionals stdenv.isLinux [ ncgopher ]
     );
   };
 }

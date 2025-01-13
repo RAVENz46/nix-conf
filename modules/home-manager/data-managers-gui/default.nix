@@ -31,7 +31,7 @@ in
         szyszka
         warp
       ]
-      ++ optionals stdenv.isLinux [
+      ++ lib.optionals stdenv.isLinux [
         pika-backup
       ]
     );

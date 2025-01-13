@@ -28,7 +28,7 @@ in
         inkscape-with-extensions
         rnote
       ]
-      ++ optionals stdenv.isLinux [
+      ++ lib.optionals stdenv.isLinux [
         krita
         mypaint
       ]
