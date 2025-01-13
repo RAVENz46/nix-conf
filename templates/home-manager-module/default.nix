@@ -5,7 +5,6 @@
   ...
 }:
 
-with lib;
 let
   cfg = config.moduleName;
   notExcluded = pkg: !(builtins.elem pkg config.moduleName.excludePackages);
@@ -13,18 +12,18 @@ in
 {
   options = {
     moduleName = {
-      enable = mkEnableOption "Enables all CHANGEME";
+      enable = lib.mkEnableOption "Enables all CHANGEME";
 
-      excludePackages = mkOption {
+      excludePackages = lib.mkOption {
         description = "List of moduleName packages to exclude from the default home";
-        type = types.listOf types.package;
+        type = lib.types.listOf lib.types.package;
         default = [ ];
       };
     };
   };
 
-  config = mkIf cfg.enable {
-    home.packages = subtractLists cfg.excludePackages (with pkgs; optionals stdenv.isLinux [ ]);
+  config = lib.mkIf cfg.enable {
+    home.packages = lib.subtractLists cfg.excludePackages (with pkgs; optionals stdenv.isLinux [ ]);
 
     programs = {
       packageName = {

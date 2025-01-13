@@ -23,12 +23,12 @@ stdenv.mkDerivation rec {
     mv ${pname} $out/bin
   '';
 
-  meta = with lib; {
+  meta = {
     description = "";
     homepage = "";
-    license = licenses.FIXME;
-    maintainers = with maintainers; [ ];
+    license = lib.licenses.FIXME;
+    maintainers = with lib.maintainers; [ ];
     mainProgram = "";
-    platforms = platforms.FIXME;
+    platforms = lib.platforms.FIXME;
   };
 }
