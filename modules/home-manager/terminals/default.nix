@@ -5,7 +5,6 @@
   ...
 }:
 
-with lib;
 let
   cfg = config.terminals;
   notExcluded = pkg: !(builtins.elem pkg config.terminals.excludePackages);
@@ -13,18 +12,18 @@ in
 {
   options = {
     terminals = {
-      enable = mkEnableOption "Enables all terminals";
+      enable = lib.mkEnableOption "Enables all terminals";
 
-      excludePackages = mkOption {
+      excludePackages = lib.mkOption {
         description = "List of terminals packages to exclude from the default home";
-        type = types.listOf types.package;
+        type = lib.types.listOf lib.types.package;
         default = [ ];
       };
     };
   };
 
-  config = mkIf cfg.enable {
-    home.packages = subtractLists cfg.excludePackages (
+  config = lib.mkIf cfg.enable {
+    home.packages = lib.subtractLists cfg.excludePackages (
       with pkgs; optionals stdenv.isLinux [ cosmic-term ]
     );
 
@@ -35,7 +34,7 @@ in
 
       rio = {
         enable = notExcluded pkgs.rio;
-        settings = importTOML ./rio.toml;
+        settings = lib.importTOML ./rio.toml;
       };
 
       wezterm = {

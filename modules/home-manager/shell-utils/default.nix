@@ -5,7 +5,6 @@
   ...
 }:
 
-with lib;
 let
   cfg = config.shell-utils;
   notExcluded = pkg: !(builtins.elem pkg config.shell-utils.excludePackages);
@@ -13,24 +12,24 @@ in
 {
   options = {
     shell-utils = {
-      enable = mkEnableOption "Enables all shell utilities";
+      enable = lib.mkEnableOption "Enables all shell utilities";
 
-      excludePackages = mkOption {
+      excludePackages = lib.mkOption {
         description = "List of shell-utils packages to exclude from the default home";
-        type = types.listOf types.package;
+        type = lib.types.listOf lib.types.package;
         default = [ ];
       };
     };
   };
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     catppuccin = {
       starship = {
         enable = false;
       };
     };
 
-    home.packages = subtractLists cfg.excludePackages (
+    home.packages = lib.subtractLists cfg.excludePackages (
       with pkgs;
       [
         ast-grep
@@ -134,7 +133,7 @@ in
 
       starship = {
         enable = notExcluded pkgs.starship;
-        settings = importTOML ./starship.toml;
+        settings = lib.importTOML ./starship.toml;
       };
 
       tealdeer = {

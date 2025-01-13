@@ -5,7 +5,6 @@
   ...
 }:
 
-with lib;
 let
   cfg = config.desktop-managers;
   notExcluded = pkg: !(builtins.elem pkg config.desktop-managers.excludePackages);
@@ -13,28 +12,28 @@ in
 {
   options = {
     desktop-managers = {
-      compositors = mkOption {
-        type = types.listOf types.str;
+      compositors = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
         description = "Enable cosmic/niri";
         default = [ ];
       };
 
-      excludePackages = mkOption {
+      excludePackages = lib.mkOption {
         description = "List of desktop-managers packages to exclude from the default system";
-        type = types.listOf types.package;
+        type = lib.types.listOf lib.types.package;
         default = [ ];
       };
     };
   };
 
-  config = mkMerge [
-    (mkIf (notExcluded pkgs.cosmic-greeter) {
+  config = lib.mkMerge [
+    (lib.mkIf (notExcluded pkgs.cosmic-greeter) {
       services = {
         displayManager.cosmic-greeter.enable = true;
       };
     })
 
-    (mkIf (cfg.compositors != [ ]) {
+    (lib.mkIf (cfg.compositors != [ ]) {
       boot = {
         plymouth = {
           enable = true;
@@ -85,7 +84,7 @@ in
       };
     })
 
-    (mkIf (builtins.elem "cosmic" cfg.compositors) {
+    (lib.mkIf (builtins.elem "cosmic" cfg.compositors) {
       environment = {
         cosmic.excludePackages = with pkgs; [
           cosmic-edit
@@ -97,7 +96,7 @@ in
         ];
       };
 
-      security.rtkit.enable = mkForce false;
+      security.rtkit.enable = lib.mkForce false;
 
       services = {
         desktopManager.cosmic = {
@@ -112,7 +111,7 @@ in
       };
     })
 
-    (mkIf (builtins.elem "niri" cfg.compositors) {
+    (lib.mkIf (builtins.elem "niri" cfg.compositors) {
       environment = {
         systemPackages = with pkgs; [ swww ];
       };

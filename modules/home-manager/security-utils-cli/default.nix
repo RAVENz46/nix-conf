@@ -5,25 +5,24 @@
   ...
 }:
 
-with lib;
 let
   cfg = config.security-utils-cli;
 in
 {
   options = {
     security-utils-cli = {
-      enable = mkEnableOption "Enables all cli security utilities";
+      enable = lib.mkEnableOption "Enables all cli security utilities";
 
-      excludePackages = mkOption {
+      excludePackages = lib.mkOption {
         description = "List of security-utils-cli packages to exclude from the default home";
-        type = types.listOf types.package;
+        type = lib.types.listOf lib.types.package;
         default = [ ];
       };
     };
   };
 
-  config = mkIf cfg.enable {
-    home.packages = subtractLists cfg.excludePackages (
+  config = lib.mkIf cfg.enable {
+    home.packages = lib.subtractLists cfg.excludePackages (
       with pkgs;
       [
         cotp

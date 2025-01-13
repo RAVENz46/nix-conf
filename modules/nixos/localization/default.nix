@@ -5,18 +5,17 @@
   ...
 }:
 
-with lib;
 let
   cfg = config.localization;
 in
 {
   options = {
     localization = {
-      enable = mkEnableOption "Enables localization";
+      enable = lib.mkEnableOption "Enables localization";
     };
   };
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     time.timeZone = "Asia/Tokyo";
     i18n = {
       extraLocaleSettings = {

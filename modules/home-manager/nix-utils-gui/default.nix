@@ -6,25 +6,24 @@
   ...
 }:
 
-with lib;
 let
   cfg = config.nix-utils-gui;
 in
 {
   options = {
     nix-utils-gui = {
-      enable = mkEnableOption "Enables all gui nix utilities";
+      enable = lib.mkEnableOption "Enables all gui nix utilities";
 
-      excludePackages = mkOption {
+      excludePackages = lib.mkOption {
         description = "List of nix-utils-gui packages to exclude from the default home";
-        type = types.listOf types.package;
+        type = lib.types.listOf lib.types.package;
         default = [ ];
       };
     };
   };
 
-  config = mkIf cfg.enable {
-    home.packages = subtractLists cfg.excludePackages (
+  config = lib.mkIf cfg.enable {
+    home.packages = lib.subtractLists cfg.excludePackages (
       with pkgs;
       [ inputs.nix-software-center.packages.${system}.default ]
       ++ optionals config.isNixOS [ inputs.nixos-conf-editor.packages.${system}.default ]

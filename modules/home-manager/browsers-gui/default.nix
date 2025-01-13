@@ -5,7 +5,6 @@
   ...
 }:
 
-with lib;
 let
   cfg = config.browsers-gui;
   notExcluded = pkg: !(builtins.elem pkg config.browsers-gui.excludePackages);
@@ -13,18 +12,18 @@ in
 {
   options = {
     browsers-gui = {
-      enable = mkEnableOption "Enables all gui browsers";
+      enable = lib.mkEnableOption "Enables all gui browsers";
 
-      excludePackages = mkOption {
+      excludePackages = lib.mkOption {
         description = "List of browsers-gui packages to exclude from the default home";
-        type = types.listOf types.package;
+        type = lib.types.listOf lib.types.package;
         default = [ ];
       };
     };
   };
 
-  config = mkIf cfg.enable {
-    home.packages = subtractLists cfg.excludePackages (
+  config = lib.mkIf cfg.enable {
+    home.packages = lib.subtractLists cfg.excludePackages (
       with pkgs;
       [
         arti
@@ -104,7 +103,7 @@ in
         };
         profiles = {
           default = {
-            bookmarks = importJSON ./bookmarks.json;
+            bookmarks = lib.importJSON ./bookmarks.json;
             extraConfig = ''
               ${builtins.readFile "${pkgs.arkenfox-userjs}/user.js"}
             '';
@@ -162,7 +161,7 @@ in
         };
         profiles = {
           default = {
-            bookmarks = importJSON ./bookmarks.json;
+            bookmarks = lib.importJSON ./bookmarks.json;
             settings = {
               "browser.chrome.toolbar_tips" = false;
               "browser.compactmode.show" = true;

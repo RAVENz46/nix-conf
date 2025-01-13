@@ -5,7 +5,6 @@
   ...
 }:
 
-with lib;
 let
   cfg = config.text-editors-gui;
   notExcluded = pkg: !(builtins.elem pkg config.text-editors-gui.excludePackages);
@@ -13,18 +12,18 @@ in
 {
   options = {
     text-editors-gui = {
-      enable = mkEnableOption "Enables all gui text-editors";
+      enable = lib.mkEnableOption "Enables all gui text-editors";
 
-      excludePackages = mkOption {
+      excludePackages = lib.mkOption {
         description = "List of text-editors-gui packages to exclude from the default home";
-        type = types.listOf types.package;
+        type = lib.types.listOf lib.types.package;
         default = [ ];
       };
     };
   };
 
-  config = mkIf cfg.enable {
-    home.packages = subtractLists cfg.excludePackages (
+  config = lib.mkIf cfg.enable {
+    home.packages = lib.subtractLists cfg.excludePackages (
       with pkgs;
       [
         lapce

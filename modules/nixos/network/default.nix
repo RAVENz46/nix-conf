@@ -5,7 +5,6 @@
   ...
 }:
 
-with lib;
 let
   cfg = config.network;
   notExcluded = pkg: !(builtins.elem pkg config.network.excludePackages);
@@ -13,26 +12,26 @@ in
 {
   options = {
     network = {
-      enable = mkEnableOption "Enables network";
+      enable = lib.mkEnableOption "Enables network";
 
-      excludePackages = mkOption {
+      excludePackages = lib.mkOption {
         description = "List of network packages to exclude from the default system";
-        type = types.listOf types.package;
+        type = lib.types.listOf lib.types.package;
         default = [ ];
       };
     };
   };
 
-  config = mkIf cfg.enable {
-    environment.systemPackages = subtractLists cfg.excludePackages (with pkgs; [ rosenpass-tools ]);
+  config = lib.mkIf cfg.enable {
+    environment.systemPackages = lib.subtractLists cfg.excludePackages (with pkgs; [ rosenpass-tools ]);
 
-    users.users = genAttrs config.userList (f: {
+    users.users = lib.genAttrs config.userList (f: {
       extraGroups = [ "networkmanager" ];
     });
 
     networking = {
       firewall = {
-        trustedInterfaces = mkIf (notExcluded pkgs.tailscale) [ "tailscale0" ];
+        trustedInterfaces = lib.mkIf (notExcluded pkgs.tailscale) [ "tailscale0" ];
       };
       networkmanager = {
         enable = true;

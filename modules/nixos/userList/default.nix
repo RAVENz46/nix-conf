@@ -1,11 +1,10 @@
 { lib, ... }:
 
-with lib;
 {
   options = {
-    userList = mkOption {
+    userList = lib.mkOption {
       description = "List of users";
-      type = types.listOf types.str;
+      type = lib.types.listOf lib.types.str;
       default = [ ];
     };
   };

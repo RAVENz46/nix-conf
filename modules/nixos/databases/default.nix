@@ -5,7 +5,6 @@
   ...
 }:
 
-with lib;
 let
   cfg = config.databases;
   notExcluded = pkg: !(builtins.elem pkg config.databases.excludePackages);
@@ -13,17 +12,17 @@ in
 {
   options = {
     databases = {
-      enable = mkEnableOption "Enables all databases";
+      enable = lib.mkEnableOption "Enables all databases";
 
-      excludePackages = mkOption {
+      excludePackages = lib.mkOption {
         description = "List of databases packages to exclude from the default system";
-        type = types.listOf types.package;
+        type = lib.types.listOf lib.types.package;
         default = [ ];
       };
     };
   };
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     services = {
       influxdb2 = {
         enable = notExcluded pkgs.influxdb2;

@@ -5,25 +5,24 @@
   ...
 }:
 
-with lib;
 let
   cfg = config.video-editors;
 in
 {
   options = {
     video-editors = {
-      enable = mkEnableOption "Enables all video-editor apps";
+      enable = lib.mkEnableOption "Enables all video-editor apps";
 
-      excludePackages = mkOption {
+      excludePackages = lib.mkOption {
         description = "List of video-editors packages to exclude from the default home";
-        type = types.listOf types.package;
+        type = lib.types.listOf lib.types.package;
         default = [ ];
       };
     };
   };
 
-  config = mkIf cfg.enable {
-    home.packages = subtractLists cfg.excludePackages (
+  config = lib.mkIf cfg.enable {
+    home.packages = lib.subtractLists cfg.excludePackages (
       with pkgs;
       [
         olive-editor

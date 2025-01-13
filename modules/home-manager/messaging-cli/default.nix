@@ -5,7 +5,6 @@
   ...
 }:
 
-with lib;
 let
   cfg = config.messaging-cli;
   notExcluded = pkg: !(builtins.elem pkg config.messaging-cli.excludePackages);
@@ -13,18 +12,18 @@ in
 {
   options = {
     messaging-cli = {
-      enable = mkEnableOption "Enables all cli messaging apps";
+      enable = lib.mkEnableOption "Enables all cli messaging apps";
 
-      excludePackages = mkOption {
+      excludePackages = lib.mkOption {
         description = "List of messaging-cli packages to exclude from the default home";
-        type = types.listOf types.package;
+        type = lib.types.listOf lib.types.package;
         default = [ ];
       };
     };
   };
 
-  config = mkIf cfg.enable {
-    home.packages = subtractLists cfg.excludePackages (
+  config = lib.mkIf cfg.enable {
+    home.packages = lib.subtractLists cfg.excludePackages (
       with pkgs;
       [
         gurk-rs

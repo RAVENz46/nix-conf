@@ -5,7 +5,6 @@
   ...
 }:
 
-with lib;
 let
   cfg = config.ai-utils;
   notExcluded = pkg: !(builtins.elem pkg config.ai-utils.excludePackages);
@@ -13,18 +12,17 @@ in
 {
   options = {
     ai-utils = {
-      enable = mkEnableOption "Enables all ai utilities";
+      enable = lib.mkEnableOption "Enables all ai utilities";
 
-      excludePackages = mkOption {
+      excludePackages = lib.mkOption {
         description = "List of ai-utils packages to exclude from the default system";
-        #type = with types; listOf package;
-        type = types.listOf types.package;
+        type = lib.types.listOf lib.types.package;
         default = [ ];
       };
     };
   };
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     services = {
       ollama = {
         enable = notExcluded pkgs.ollama;

@@ -5,33 +5,32 @@
   ...
 }:
 
-with lib;
 let
   cfg = config.desktop-managers;
   notExcluded = pkg: !(builtins.elem pkg config.desktop-managers.excludePackages);
   mkUpper =
     str:
-    (toUpper (builtins.substring 0 1 str)) + (builtins.substring 1 (builtins.stringLength str) str);
+    (lib.toUpper (builtins.substring 0 1 str)) + (builtins.substring 1 (builtins.stringLength str) str);
 in
 {
   options = {
     desktop-managers = {
-      compositors = mkOption {
-        type = types.listOf types.str;
+      compositors = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
         description = "Enable cosmic/gnome/kde/niri";
         default = [ ];
       };
 
-      excludePackages = mkOption {
+      excludePackages = lib.mkOption {
         description = "List of desktop-managers packages to exclude from the default system";
-        type = types.listOf types.package;
+        type = lib.types.listOf lib.types.package;
         default = [ ];
       };
     };
   };
 
-  config = mkMerge [
-    (mkIf (cfg.compositors != [ ]) {
+  config = lib.mkMerge [
+    (lib.mkIf (cfg.compositors != [ ]) {
       home.pointerCursor = {
         #name = "ayabe";
         #package = pkgs.ayabe-cursor;
@@ -69,9 +68,9 @@ in
       };
     })
 
-    (mkIf (builtins.elem "cosmic" cfg.compositors) { })
+    (lib.mkIf (builtins.elem "cosmic" cfg.compositors) { })
 
-    (mkIf (builtins.elem "gnome" cfg.compositors) {
+    (lib.mkIf (builtins.elem "gnome" cfg.compositors) {
       home.packages =
         (with pkgs; [
           dconf-editor
@@ -104,7 +103,7 @@ in
       dconf.settings = { };
     })
 
-    (mkIf (builtins.elem "kde" cfg.compositors) {
+    (lib.mkIf (builtins.elem "kde" cfg.compositors) {
       home.packages = (with pkgs; [ application-title-bar ]) ++ (with pkgs.kdePackages; [ ]);
 
       programs.plasma = {
@@ -113,7 +112,7 @@ in
       };
     })
 
-    (mkIf (builtins.elem "niri" cfg.compositors) {
+    (lib.mkIf (builtins.elem "niri" cfg.compositors) {
       programs = {
         ironbar = {
           enable = true;

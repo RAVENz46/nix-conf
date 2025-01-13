@@ -5,19 +5,18 @@
   ...
 }:
 
-with lib;
 let
   cfg = config.audio;
 in
 {
   options = {
     audio = {
-      enable = mkEnableOption "Enables audio";
+      enable = lib.mkEnableOption "Enables audio";
     };
   };
 
-  config = mkIf cfg.enable {
-    users.users = genAttrs config.userList (f: {
+  config = lib.mkIf cfg.enable {
+    users.users = lib.genAttrs config.userList (f: {
       extraGroups = [ "audio" ];
     });
 

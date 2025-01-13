@@ -5,7 +5,6 @@
   ...
 }:
 
-with lib;
 let
   cfg = config.observability;
   notExcluded = pkg: !(builtins.elem pkg config.observability.excludePackages);
@@ -13,17 +12,17 @@ in
 {
   options = {
     observability = {
-      enable = mkEnableOption "Enables observability";
+      enable = lib.mkEnableOption "Enables observability";
 
-      excludePackages = mkOption {
+      excludePackages = lib.mkOption {
         description = "List of observability packages to exclude from the default system";
-        type = types.listOf types.package;
+        type = lib.types.listOf lib.types.package;
         default = [ ];
       };
     };
   };
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     services = {
       below = {
         enable = notExcluded pkgs.below;

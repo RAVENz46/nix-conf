@@ -5,7 +5,6 @@
   ...
 }:
 
-with lib;
 let
   cfg = config.data-managers-cli;
   notExcluded = pkg: !(builtins.elem pkg config.data-managers-cli.excludePackages);
@@ -13,18 +12,18 @@ in
 {
   options = {
     data-managers-cli = {
-      enable = mkEnableOption "Enables all cli data-managers";
+      enable = lib.mkEnableOption "Enables all cli data-managers";
 
-      excludePackages = mkOption {
+      excludePackages = lib.mkOption {
         description = "List of data-managers-cli packages to exclude from the default home";
-        type = types.listOf types.package;
+        type = lib.types.listOf lib.types.package;
         default = [ ];
       };
     };
   };
 
-  config = mkIf cfg.enable {
-    home.packages = subtractLists cfg.excludePackages (
+  config = lib.mkIf cfg.enable {
+    home.packages = lib.subtractLists cfg.excludePackages (
       with pkgs;
       [
         conserve

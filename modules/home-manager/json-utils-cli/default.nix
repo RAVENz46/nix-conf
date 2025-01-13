@@ -5,25 +5,24 @@
   ...
 }:
 
-with lib;
 let
   cfg = config.json-utils-cli;
 in
 {
   options = {
     json-utils-cli = {
-      enable = mkEnableOption "Enables all cli json utilities";
+      enable = lib.mkEnableOption "Enables all cli json utilities";
 
-      excludePackages = mkOption {
+      excludePackages = lib.mkOption {
         description = "List of json-utils-cli packages to exclude from the default home";
-        type = types.listOf types.package;
+        type = lib.types.listOf lib.types.package;
         default = [ ];
       };
     };
   };
 
-  config = mkIf cfg.enable {
-    home.packages = subtractLists cfg.excludePackages (
+  config = lib.mkIf cfg.enable {
+    home.packages = lib.subtractLists cfg.excludePackages (
       with pkgs;
       [
         jless

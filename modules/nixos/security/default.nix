@@ -5,7 +5,6 @@
   ...
 }:
 
-with lib;
 let
   cfg = config.security;
   notExcluded = pkg: !(builtins.elem pkg config.security.excludePackages);
@@ -13,17 +12,17 @@ in
 {
   options = {
     security = {
-      enable = mkEnableOption "Enables hardened settings";
+      enable = lib.mkEnableOption "Enables hardened settings";
 
-      excludePackages = mkOption {
+      excludePackages = lib.mkOption {
         description = "List of security packages to exclude from the default system";
-        type = types.listOf types.package;
+        type = lib.types.listOf lib.types.package;
         default = [ ];
       };
     };
   };
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     documentation = {
       enable = false;
       doc.enable = false;
@@ -53,7 +52,7 @@ in
         tctiEnvironment.enable = true;
       };
     };
-    users.users = genAttrs config.userList (f: {
+    users.users = lib.genAttrs config.userList (f: {
       extraGroups = [
         "tss"
         "wheel"
@@ -62,7 +61,7 @@ in
     environment = {
       defaultPackages = [ ];
       #memoryAllocator.provider = "graphene-hardened";
-      systemPackages = subtractLists cfg.excludePackages (
+      systemPackages = lib.subtractLists cfg.excludePackages (
         with pkgs;
         [
           apparmor-kernel-patches

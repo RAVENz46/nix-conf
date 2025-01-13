@@ -6,25 +6,24 @@
   ...
 }:
 
-with lib;
 let
   cfg = config.shell-funs;
 in
 {
   options = {
     shell-funs = {
-      enable = mkEnableOption "Enables all shell funs";
+      enable = lib.mkEnableOption "Enables all shell funs";
 
-      excludePackages = mkOption {
+      excludePackages = lib.mkOption {
         description = "List of shell-funs packages to exclude from the default home";
-        type = types.listOf types.package;
+        type = lib.types.listOf lib.types.package;
         default = [ ];
       };
     };
   };
 
-  config = mkIf cfg.enable {
-    home.packages = subtractLists cfg.excludePackages (
+  config = lib.mkIf cfg.enable {
+    home.packages = lib.subtractLists cfg.excludePackages (
       with pkgs;
       [
         charasay

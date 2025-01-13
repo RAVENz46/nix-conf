@@ -5,7 +5,6 @@
   ...
 }:
 
-with lib;
 let
   cfg = config.text-editors-cli;
   notExcluded = pkg: !(builtins.elem pkg config.text-editors-cli.excludePackages);
@@ -13,25 +12,25 @@ in
 {
   options = {
     text-editors-cli = {
-      enable = mkEnableOption "Enables all all cli text-editors";
+      enable = lib.mkEnableOption "Enables all all cli text-editors";
 
-      excludePackages = mkOption {
+      excludePackages = lib.mkOption {
         description = "List of text-editors-cli packages to exclude from the default home";
-        type = types.listOf types.package;
+        type = lib.types.listOf lib.types.package;
         default = [ ];
       };
     };
   };
 
-  config = mkIf cfg.enable {
-    home.packages = subtractLists cfg.excludePackages (with pkgs; [ amp ]);
+  config = lib.mkIf cfg.enable {
+    home.packages = lib.subtractLists cfg.excludePackages (with pkgs; [ amp ]);
 
     programs = {
       helix = {
         enable = notExcluded pkgs.helix;
         #package = pkgs.evil-helix;
         defaultEditor = notExcluded pkgs.helix && !config.programs.nixvim.defaultEditor;
-        settings = importTOML ./helix-vim.toml;
+        settings = lib.importTOML ./helix-vim.toml;
       };
 
       nixvim = {

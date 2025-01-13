@@ -5,7 +5,6 @@
   ...
 }:
 
-with lib;
 let
   cfg = config.misc;
   notExcluded = pkg: !(builtins.elem pkg config.misc.excludePackages);
@@ -13,23 +12,23 @@ in
 {
   options = {
     misc = {
-      enable = mkEnableOption "Enables all miscellaneous";
+      enable = lib.mkEnableOption "Enables all miscellaneous";
 
-      excludePackages = mkOption {
+      excludePackages = lib.mkOption {
         description = "List of misc packages to exclude from the default system";
-        type = types.listOf types.package;
+        type = lib.types.listOf lib.types.package;
         default = [ ];
       };
     };
   };
 
-  config = mkIf cfg.enable {
+  config = lib.mkIf cfg.enable {
     environment = {
-      systemPackages = subtractLists cfg.excludePackages (with pkgs; [ lact ]);
+      systemPackages = lib.subtractLists cfg.excludePackages (with pkgs; [ lact ]);
     };
 
-    users.users = mkIf config.programs.adb.enable (
-      genAttrs config.userList (f: {
+    users.users = lib.mkIf config.programs.adb.enable (
+      lib.genAttrs config.userList (f: {
         extraGroups = [ "adbusers" ];
       })
     );

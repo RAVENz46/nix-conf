@@ -5,19 +5,18 @@
   ...
 }:
 
-with lib;
 let
   cfg = config.shells;
 in
 {
   options = {
     shells = {
-      enable = mkEnableOption "Enables shells";
+      enable = lib.mkEnableOption "Enables shells";
     };
   };
 
-  config = mkIf cfg.enable {
-    users.users = genAttrs config.userList (f: {
+  config = lib.mkIf cfg.enable {
+    users.users = lib.genAttrs config.userList (f: {
       shell = pkgs.fish;
     });
 

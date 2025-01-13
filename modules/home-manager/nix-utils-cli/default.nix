@@ -5,7 +5,6 @@
   ...
 }:
 
-with lib;
 let
   cfg = config.nix-utils-cli;
   notExcluded = pkg: !(builtins.elem pkg config.nix-utils-cli.excludePackages);
@@ -13,18 +12,18 @@ in
 {
   options = {
     nix-utils-cli = {
-      enable = mkEnableOption "Enables all nix cli utilities";
+      enable = lib.mkEnableOption "Enables all nix cli utilities";
 
-      excludePackages = mkOption {
+      excludePackages = lib.mkOption {
         description = "List of nix-utils-cli packages to exclude from the default home";
-        type = types.listOf types.package;
+        type = lib.types.listOf lib.types.package;
         default = [ ];
       };
     };
   };
 
-  config = mkIf cfg.enable {
-    home.packages = subtractLists cfg.excludePackages (
+  config = lib.mkIf cfg.enable {
+    home.packages = lib.subtractLists cfg.excludePackages (
       with pkgs;
       [
         devenv

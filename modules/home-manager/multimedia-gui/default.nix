@@ -5,7 +5,6 @@
   ...
 }:
 
-with lib;
 let
   cfg = config.multimedia-gui;
   notExcluded = pkg: !(builtins.elem pkg config.multimedia-gui.excludePackages);
@@ -13,18 +12,18 @@ in
 {
   options = {
     multimedia-gui = {
-      enable = mkEnableOption "Enables all gui multimedia apps";
+      enable = lib.mkEnableOption "Enables all gui multimedia apps";
 
-      excludePackages = mkOption {
+      excludePackages = lib.mkOption {
         description = "List of multimedia-gui packages to exclude from the default home";
-        type = types.listOf types.package;
+        type = lib.types.listOf lib.types.package;
         default = [ ];
       };
     };
   };
 
-  config = mkIf cfg.enable {
-    home.packages = subtractLists cfg.excludePackages (
+  config = lib.mkIf cfg.enable {
+    home.packages = lib.subtractLists cfg.excludePackages (
       with pkgs;
       [
         fretboard

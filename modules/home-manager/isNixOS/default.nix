@@ -1,10 +1,9 @@
 { lib, ... }:
 
-with lib;
 {
   options = {
-    isNixOS = mkOption {
-      type = types.bool;
+    isNixOS = lib.mkOption {
+      type = lib.types.bool;
       default = false;
     };
   };

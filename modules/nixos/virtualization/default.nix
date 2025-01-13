@@ -5,7 +5,6 @@
   ...
 }:
 
-with lib;
 let
   cfg = config.virtualization;
   notExcluded = pkg: !(builtins.elem pkg config.virtualization.excludePackages);
@@ -13,26 +12,26 @@ in
 {
   options = {
     virtualization = {
-      hypervisor = mkOption {
-        type = types.str;
+      hypervisor = lib.mkOption {
+        type = lib.types.str;
         description = "Enable kvm or xen";
       };
 
       container = {
-        enable = mkEnableOption "Enable linux container";
+        enable = lib.mkEnableOption "Enable linux container";
       };
 
-      excludePackages = mkOption {
+      excludePackages = lib.mkOption {
         description = "List of virtualization packages to exclude from the default system";
-        type = types.listOf types.package;
+        type = lib.types.listOf lib.types.package;
         default = [ ];
       };
     };
   };
 
-  config = mkMerge [
-    (mkIf (cfg.hypervisor != "") {
-      users.users = genAttrs config.userList (f: {
+  config = lib.mkMerge [
+    (lib.mkIf (cfg.hypervisor != "") {
+      users.users = lib.genAttrs config.userList (f: {
         extraGroups = [ "libvirtd" ];
       });
       virtualisation = {
@@ -67,12 +66,12 @@ in
       ";
     })
 
-    (mkIf (cfg.hypervisor != "" || cfg.container.enable) {
+    (lib.mkIf (cfg.hypervisor != "" || cfg.container.enable) {
       programs.virt-manager.enable = notExcluded pkgs.virt-manager;
     })
 
-    (mkIf (cfg.hypervisor == "kvm") {
-      environment.systemPackages = subtractLists cfg.excludePackages (
+    (lib.mkIf (cfg.hypervisor == "kvm") {
+      environment.systemPackages = lib.subtractLists cfg.excludePackages (
         with pkgs;
         [
           cloud-hypervisor
@@ -88,7 +87,7 @@ in
       );
     })
 
-    (mkIf (cfg.hypervisor == "xen") {
+    (lib.mkIf (cfg.hypervisor == "xen") {
       virtualisation = {
         xen = {
           enable = pkgs.stdenv.isx86_64;
@@ -96,8 +95,8 @@ in
       };
     })
 
-    (mkIf cfg.container.enable {
-      environment.systemPackages = subtractLists cfg.excludePackages (
+    (lib.mkIf cfg.container.enable {
+      environment.systemPackages = lib.subtractLists cfg.excludePackages (
         with pkgs;
         [
           cntr
